@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0fb5c9" />
+  <title>Módulo para la Familia · Acompañar la recuperación | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#eefafb;--ink:#0c3a40;--ink-soft:#40707a;--teal:#0d9488;--cyan:#0fb5c9;--cyan-dark:#0a7d8c;--emerald:#10b981;--coral:#ff6b5e;--gold:#f6a821;--white:#fff;--line:#c9eaef;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--cyan-dark);text-decoration:none}
+    .topbar{background:var(--cyan-dark);color:#dbf5f9;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#0a7d8c 0%,#0fb5c9 45%,#10b981 110%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.1)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#e9feff;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(15,181,201,.7)}
+    .card h2{color:var(--cyan-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--cyan)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#e2f6f9;border-left:4px solid var(--cyan);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .warn{background:#fff2f0;border-left:4px solid var(--coral);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .warn p{margin:0;color:var(--ink)}
+    .phase{background:linear-gradient(135deg,#fff,#e2f6f9);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;margin:1rem 0;display:flex;gap:1rem;align-items:flex-start}
+    .phase .n{flex:none;font-size:1.4rem;font-weight:900;color:var(--cyan-dark);line-height:1;min-width:44px;text-align:center}
+    .phase p{margin:0;color:var(--ink-soft);font-size:.94rem}
+    .phase b{color:var(--ink)}
+    .verse{background:linear-gradient(135deg,#fff,#e2f6f9);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:1rem 1.2rem;margin:1rem 0;font-style:italic;color:var(--ink)}
+    .verse span{display:block;font-style:normal;font-weight:700;color:var(--cyan-dark);font-size:.85rem;margin-top:.4rem}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:.8rem;color:var(--ink)}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--cyan-dark);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--cyan-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#e2f6f9;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#083339;color:#a7d9df;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo para la Familia</span>
+      <h1>Acompañar la recuperación sin enfermarse</h1>
+      <p>El rol de la familia frente al consumo problemático, la codependencia y el camino de la recuperación. Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#victima">1. La familia: la víctima oculta de la adicción</a>
+        <a href="#clave">2. ¿Por qué es clave involucrar a la familia?</a>
+        <a href="#mapa">3. El mapa de la recuperación: las 4 fases</a>
+        <a href="#recaida">4. Caída y recaída: el rol de la familia</a>
+        <a href="#codependencia">5. La codependencia: la "adicción al adicto"</a>
+        <a href="#limites">6. Dejar de "encubrir": el amor con límites</a>
+        <a href="#confianza">7. Reconstruir la confianza y la comunicación</a>
+        <a href="#cuidarse">8. Cuidarse a uno mismo</a>
+        <a href="#esperanza">9. Una palabra de esperanza</a>
+        <a href="#tp">&#10148; Actividad de reflexión</a>
+      </div>
+
+      <section class="card" id="victima">
+        <h2>1. La familia: la víctima oculta de la adicción</h2>
+        <p>Cuando una persona cae en el consumo problemático, no sufre sola: <b>toda la familia se enferma con ella</b>. Padres, parejas, hijos y hermanos cargan con miedo, angustia, culpa y vergüenza. Muchos no logran dormir, viven pendientes del teléfono, se agotan física y emocionalmente.</p>
+        <p>A diferencia de otras enfermedades, la familia del adicto rara vez recibe apoyo: muchas veces esconde su dolor por miedo al "qué dirán" o por la idea equivocada de que "algo hicieron mal".</p>
+        <div class="box"><p>Preguntas típicas que se hacen las familias: <b>"¿Yo causé esto? ¿Hay esperanza? ¿Cómo puedo ayudar?"</b> Este módulo busca darles información práctica y aliviar esa carga.</p></div>
+      </section>
+
+      <section class="card" id="clave">
+        <h2>2. ¿Por qué es clave involucrar a la familia?</h2>
+        <p>La experiencia y la evidencia muestran algo claro: <b>la persona que se siente acompañada por una familia que la apoya tiene muchas más probabilidades de recuperarse</b> que quien cree que no le importa a nadie.</p>
+        <p>Pero para ser una influencia positiva, la familia también necesita estar sana e informada. Por eso el trabajo con familias apunta a:</p>
+        <ul>
+          <li>Entender qué es la adicción (una enfermedad, no una simple falta de voluntad ni un "vicio").</li>
+          <li>Comprender cómo el consumo afecta a cada miembro de la familia.</li>
+          <li>Aprender a apoyar la recuperación sin caer en conductas que la prolongan.</li>
+          <li>Cuidar la propia salud emocional del familiar.</li>
+        </ul>
+        <div class="box"><p>Para el operador preventor, la familia es un <b>aliado fundamental</b>. Invitarla, informarla y contenerla multiplica las chances de éxito del acompañamiento.</p></div>
+      </section>
+
+      <section class="card" id="mapa">
+        <h2>3. El mapa de la recuperación: las 4 fases</h2>
+        <p>La recuperación no es una línea recta: tiene altibajos. Conocer las fases ayuda a la familia a saber qué esperar y a no desanimarse en los momentos difíciles.</p>
+        <div class="phase"><span class="n">1</span><p><b>Abstinencia inicial (1-2 semanas):</b> aparecen el deseo intenso, la irritabilidad, la ansiedad, el bajón de ánimo y los problemas de sueño. Es el cuerpo y el cerebro adaptándose a la ausencia de la sustancia.</p></div>
+        <div class="phase"><span class="n">2</span><p><b>"Luna de miel" (4-6 semanas):</b> vuelve la energía y el optimismo. Cuidado: la persona puede creer que "ya está curada" y bajar la guardia. Todavía falta lo más difícil.</p></div>
+        <div class="phase"><span class="n">3</span><p><b>"El muro" (unos 3-4 meses):</b> la fase más dura y larga. Baja la energía, aparecen tristeza, apatía y regresan los deseos de consumir. El riesgo de recaída es alto. <b>Es una etapa temporal:</b> con apoyo y constancia, pasa.</p></div>
+        <div class="phase"><span class="n">4</span><p><b>Adaptación y reajuste:</b> la persona y la familia construyen un nuevo estilo de vida. Los cambios logrados se vuelven la nueva "normalidad". La recuperación es un proceso para toda la vida.</p></div>
+        <div class="box"><p>Saber que "el muro" existe y que es pasajero le permite a la familia acompañar con paciencia en lugar de tirar la toalla.</p></div>
+      </section>
+
+      <section class="card" id="recaida">
+        <h2>4. Caída y recaída: el rol de la familia</h2>
+        <p>Es importante que la familia distinga dos cosas:</p>
+        <ul>
+          <li><b>Caída (desliz):</b> un consumo puntual y aislado. No significa que todo el trabajo se perdió.</li>
+          <li><b>Recaída:</b> la vuelta al consumo descontrolado de antes.</li>
+        </ul>
+        <p>El mayor peligro de una caída es la <b>culpa</b> que puede llevar a pensar "ya está, arruiné todo, sigo consumiendo". Ahí la familia puede ayudar muchísimo: acompañando a que la persona se proteja, pida apoyo y vuelva a la abstinencia, <b>sin condenarla</b>.</p>
+        <div class="box"><p>Las recaídas suelen dispararse ante tres situaciones: <b>estados emocionales negativos</b> (tristeza, enojo, ansiedad), <b>conflictos con otros</b> y <b>presión social</b> (ambientes o personas ligadas al consumo).</p></div>
+      </section>
+
+      <section class="card" id="codependencia">
+        <h2>5. La codependencia: la "adicción al adicto"</h2>
+        <p>Así como existe la adicción a una sustancia, existe una forma de dependencia en la familia: la <b>codependencia</b>. Es un conjunto de conductas y pensamientos que causan dolor y se repiten de forma compulsiva como respuesta a la relación con un adicto. En pocas palabras: la persona termina "enganchada al adicto".</p>
+        <h3>Señales de la codependencia</h3>
+        <ul>
+          <li><b>Negación:</b> minimizar o tapar el problema ("no es para tanto").</li>
+          <li><b>Obsesión por el adicto:</b> el ánimo del familiar depende por completo del estado del adicto. "Si él está bien, yo estoy bien."</li>
+          <li><b>Compulsión por controlar:</b> revisar el celular, la ropa, los gastos, interrogar, vigilar cada movimiento.</li>
+          <li><b>Angustia crónica:</b> estrés permanente, insomnio, dolores, ansiedad, agotamiento.</li>
+          <li><b>Olvidarse de uno mismo:</b> dejar de lado las propias necesidades, gustos y proyectos.</li>
+        </ul>
+        <h3>Las "armas" que usa el adicto (y hay que reconocer)</h3>
+        <ul>
+          <li><b>El miedo:</b> "si le digo que no, capaz le pasa algo".</li>
+          <li><b>La culpa:</b> "vos tenés la culpa de que yo consuma".</li>
+          <li><b>La lástima:</b> dar pena para que lo rescaten una y otra vez.</li>
+        </ul>
+        <div class="warn"><p><b>&#9888; Un mini-chequeo para el familiar:</b> ¿tu ánimo depende del estado del adicto? ¿Vivís controlándolo? ¿Dejaste de lado tu vida? ¿Te cuesta decir "no" por culpa? ¿Seguís rescatándolo aunque nada cambie? Si varias respuestas son "sí", es probable que haya codependencia, y también necesita ayuda.</p></div>
+        <p>Como cualquier adicción, la codependencia es <b>progresiva</b>: si no se trabaja, se agrava. La buena noticia es que también tiene recuperación.</p>
+      </section>
+
+      <section class="card" id="limites">
+        <h2>6. Dejar de "encubrir": el amor con límites</h2>
+        <p>Por amor, muchas familias terminan <b>encubriendo</b> al adicto: le pagan las deudas, le mienten al jefe, lo sacan de los problemas, le tapan las consecuencias. Sin querer, eso <b>alimenta la adicción</b>, porque la persona nunca enfrenta el resultado de sus actos.</p>
+        <p>La alternativa sana es el <b>amor con límites</b> (o "amor firme"): querer profundamente a la persona, pero con la firmeza de no sostener la conducta destructiva.</p>
+        <h3>¿Qué es un límite?</h3>
+        <p>Un límite es un acuerdo claro sobre qué se está dispuesto a aceptar y qué no. Protege tanto al familiar como al adicto. Algunos ejemplos:</p>
+        <ul>
+          <li>No prestar dinero ni dejar el auto para consumir.</li>
+          <li>No permitir el consumo dentro de casa.</li>
+          <li>No aceptar mentiras como si fueran verdad.</li>
+          <li>No cubrir las consecuencias (deudas, líos legales, faltas al trabajo).</li>
+          <li>No aceptar promesas vacías: si se acuerda algo, se cumple.</li>
+        </ul>
+        <h3>El desprendimiento (no es desentenderse)</h3>
+        <p>El <b>desprendimiento</b> es tomar una distancia emocional sana para dejar de vivir "enganchado" al adicto. No es abandonarlo ni dejar de quererlo: es dejar de cargar una responsabilidad que no nos corresponde y permitir que la persona asuma la suya.</p>
+        <div class="warn"><p><b>&#9888; Importante:</b> ante situaciones de <b>violencia o abuso</b>, la prioridad es la seguridad. Poner distancia física puede ser necesario, y corresponde buscar ayuda y protección. El amor no obliga a soportar el maltrato.</p></div>
+      </section>
+
+      <section class="card" id="confianza">
+        <h2>7. Reconstruir la confianza y la comunicación</h2>
+        <p>El engaño es parte de la conducta adictiva, y eso rompe la confianza familiar. Recuperarla lleva tiempo: la abstinencia es el primer paso, pero la confianza <b>se vuelve a ganar</b> con hechos consistentes, no solo con palabras.</p>
+        <h3>Trampas comunes de la comunicación (para evitar)</h3>
+        <ul>
+          <li><b>Suponer:</b> reaccionar dando por hecho lo que el otro piensa, sin preguntar.</li>
+          <li><b>No pedir con claridad:</b> insinuar en lugar de decir directamente qué se necesita.</li>
+          <li><b>Mensajes contradictorios:</b> decir "sí" con la boca y "no" con el cuerpo.</li>
+          <li><b>No admitir errores:</b> convertir todo en una lucha de quién tiene razón.</li>
+        </ul>
+        <h3>Una herramienta simple: los "mensajes desde el yo"</h3>
+        <p>En vez de acusar ("nunca avisás, sos un desconsiderado"), hablar desde lo que uno siente: <b>"Cuando no avisás que llegás tarde, me preocupo mucho. ¿Podrías mandarme un mensaje?"</b>. Baja la tensión y abre el diálogo.</p>
+        <div class="box"><p>La cortesía cuenta: usar el mismo respeto y tono que usaríamos con un extraño. Un "por favor" y un "gracias" reconstruyen mucho más de lo que parece.</p></div>
+      </section>
+
+      <section class="card" id="cuidarse">
+        <h2>8. Cuidarse a uno mismo</h2>
+        <p>Quizás lo más importante para el familiar: <b>ocuparse de su propia salud</b>, pase lo que pase con el adicto. Tres verdades que conviene recordar:</p>
+        <ul>
+          <li><b>Vos no causaste la adicción.</b> No es tu culpa.</li>
+          <li><b>No podés curarla</b> por la otra persona. Solo el adicto puede recuperarse por sí mismo.</li>
+          <li><b>A quien sí podés ayudar y cambiar es a vos mismo.</b></li>
+        </ul>
+        <h3>Ideas para cuidarse</h3>
+        <ul>
+          <li>Buscar apoyo: grupos para familiares, personas de confianza, un profesional.</li>
+          <li>Dormir, comer y hacer ejercicio; recuperar rutinas y actividades placenteras.</li>
+          <li>Retomar vínculos, aficiones y proyectos propios.</li>
+          <li>Poner en palabras lo que se siente, en lugar de guardarlo.</li>
+        </ul>
+        <div class="box"><p>El familiar también tiene derecho a recuperarse. Cuidarse no es egoísmo: es la única base sólida desde la cual se puede acompañar de verdad.</p></div>
+      </section>
+
+      <section class="card" id="esperanza">
+        <h2>9. Una palabra de esperanza</h2>
+        <p>Convivir con una adicción es agotador, pero <b>hay salida</b>. Muchas familias que dejaron de rescatar, pusieron límites con amor y cuidaron su propia salud, vieron a su ser querido tocar fondo, reaccionar y comenzar un camino de recuperación real.</p>
+        <div class="verse">"Vengan a mí todos los que están cansados y cargados, y yo los haré descansar."<span>&#8212; Mateo 11:28</span></div>
+        <div class="box"><p>La familia no está sola en esta lucha. Buscar información, apoyo y acompañamiento &#8212; y, para quienes lo deseen, también el sostén de la fe y de una comunidad &#8212; puede marcar toda la diferencia.</p></div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Actividad de reflexión</h2>
+        <p>Respondé en base al material del módulo:</p>
+        <ol>
+          <li>¿Por qué decimos que la familia es "la víctima oculta" de la adicción?</li>
+          <li>Explicá las 4 fases de la recuperación y qué apoyo necesita la persona en cada una.</li>
+          <li>¿Qué es la codependencia? Nombrá al menos tres señales y explicá cómo el miedo, la culpa y la lástima se usan para manipular.</li>
+          <li>¿Qué diferencia hay entre "encubrir" y el "amor con límites"? Da tres ejemplos de límites saludables.</li>
+          <li>¿Qué es el desprendimiento y por qué no es lo mismo que abandonar o desentenderse?</li>
+          <li>Reescribí una frase acusadora convirtiéndola en un "mensaje desde el yo".</li>
+          <li>¿Por qué es tan importante que el familiar se cuide a sí mismo?</li>
+        </ol>
+        <div class="send">
+          &#128231; Enviá tu trabajo para ser corregido por los docentes a: <b>academiajason777@gmail.com</b>
+        </div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo para la Familia &#183; Operador Preventor en Adicciones y Consumos Problemáticos &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
