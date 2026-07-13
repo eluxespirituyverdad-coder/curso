@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a5d5a" />
+  <title>Módulo 4 · El tratamiento del consumo: Modelo Matrix | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;--teal:#0d9488;--teal-dark:#0a5d5a;--emerald:#10b981;--gold:#f6a821;--coral:#ff6b5e;--violet:#7c6cf0;--white:#fff;--line:#cdeae6;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--teal);text-decoration:none}
+    .topbar{background:var(--teal-dark);color:#d6f5f1;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#5b21b6,#7c6cf0 90%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.10)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#efeafe;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(13,148,136,.7)}
+    .card h2{color:var(--teal-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--violet)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--violet)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#f1eefe;border-left:4px solid var(--violet);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .flow{background:#f1eefe;border:1px dashed var(--violet);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0;text-align:center;font-weight:700;color:#5b21b6;font-size:.92rem;line-height:2}
+    .stages{display:grid;gap:.7rem;margin:1rem 0}
+    .stage{background:#fff;border:1px solid var(--line);border-left:5px solid var(--violet);border-radius:12px;padding:.9rem 1.1rem}
+    .stage b{color:var(--teal-dark)}
+    .stage span{display:block;font-size:.85rem;color:var(--ink-soft);margin-top:.2rem}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:1rem;color:var(--ink)}
+    .op{display:block;margin:.15rem 0 .15rem .4rem;color:var(--ink-soft);font-size:.93rem}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--teal-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#f1eefe;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo 4</span>
+      <h1>El tratamiento del consumo: el Modelo Matrix y las habilidades de recuperación</h1>
+      <p>Cómo se trata el consumo problemático desde un modelo basado en evidencia. Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#matrix">1. ¿Qué es el Modelo Matrix?</a>
+        <a href="#estructura">2. Estructura del tratamiento</a>
+        <a href="#etapas">3. Las etapas de la recuperación</a>
+        <a href="#disparadores">4. Los disparadores (triggers)</a>
+        <a href="#parada">5. La parada de pensamiento</a>
+        <a href="#pec">6. Pensamientos, emociones y conductas</a>
+        <a href="#ambivalencia">7. La ambivalencia y la lucha interna</a>
+        <a href="#impulsividad">8. Impulsividad y recompensa inmediata</a>
+        <a href="#organizarse">9. Organizarse: la estructura como herramienta</a>
+        <a href="#tp">&#10148; Prueba del Módulo 4 (10 preguntas)</a>
+      </div>
+
+      <section class="card" id="matrix">
+        <h2>1. ¿Qué es el Modelo Matrix?</h2>
+        <p>El <b>Modelo Matrix</b> es un modelo de <b>tratamiento ambulatorio intensivo</b> del consumo de sustancias, con más de 25 años de investigación. Nació en Estados Unidos a mediados de los años 80 para responder a la epidemia de consumo de cocaína y luego se generalizó a otras drogas (alcohol, cannabis, estimulantes).</p>
+        <p>Está considerado por el <b>NIDA</b> (National Institute on Drug Abuse) como uno de los modelos <b>empíricos más efectivos</b>, y se ha aplicado con éxito en distintos países, poblaciones y culturas.</p>
+        <div class="box"><p>La idea central es simple y potente: la adicción afecta la química del cerebro, y la recuperación es un <b>proceso de aprendizaje</b> en el que la persona reemplaza viejos hábitos por nuevas conductas, con estructura, apoyo y herramientas concretas.</p></div>
+      </section>
+
+      <section class="card" id="estructura">
+        <h2>2. Estructura del tratamiento</h2>
+        <p>El tratamiento grupal dura aproximadamente <b>4 meses</b>, y luego continúa con un grupo de seguimiento semanal hasta completar el año (opcional). Combina distintos tipos de sesiones:</p>
+        <ul>
+          <li><b>Sesiones individuales y conjuntas:</b> acuerdo de tratamiento, factores de recuperación, plan de continuidad.</li>
+          <li><b>Habilidades de recuperación temprana:</b> las primeras herramientas para dejar de consumir.</li>
+          <li><b>Prevención de recaídas:</b> para sostener la abstinencia en el tiempo (lo vemos en el Módulo 5).</li>
+          <li><b>Sesiones educativas familiares:</b> el entorno también participa del proceso.</li>
+        </ul>
+        <p>Se trabaja sobre reglas básicas: <b>abstinencia total</b> (incluido alcohol y cannabis), asistencia y puntualidad, confidencialidad y respeto, y participación voluntaria y activa.</p>
+      </section>
+
+      <section class="card" id="etapas">
+        <h2>3. Las etapas de la recuperación</h2>
+        <p>Recuperarse no es un proceso misterioso: cuando se deja de consumir, el cerebro comienza a reajustarse (especialmente el sistema de la <b>dopamina</b>). Conocer las etapas ayuda a entender por qué aparecen ciertos malestares. El recorrido varía según la persona y la sustancia, pero suele seguir estos estadios:</p>
+        <div class="stages">
+          <div class="stage"><b>Abstinencia (1 a 2 semanas)</b><span>Los primeros días tras dejar el consumo: fuertes deseos, tristeza, baja energía, problemas de sueño e irritabilidad. Con el alcohol pueden aparecer síntomas peligrosos que a veces requieren desintoxicación médica.</span></div>
+          <div class="stage"><b>Luna de miel (15 días a 2 meses)</b><span>La persona se siente bien y con mucha energía; algunos creen que "ya se curaron" y abandonan. Es clave aprovechar ese impulso en actividades de recuperación.</span></div>
+          <div class="stage"><b>El muro (2 a 6 meses)</b><span>Etapa de tristeza, cambios emocionales, irritabilidad y falta de entusiasmo por cambios químicos del cerebro. Si la persona sigue abstinente, estos sentimientos se van desvaneciendo.</span></div>
+          <div class="stage"><b>Reajuste (a partir del 6º mes)</b><span>El cerebro se ha recuperado mucho. La tarea principal es reforzar un estilo de vida saludable. El peligro más grande es confiarse y volver a viejos hábitos.</span></div>
+        </div>
+      </section>
+
+      <section class="card" id="disparadores">
+        <h2>4. Los disparadores (triggers)</h2>
+        <p>Los <b>disparadores</b> son personas, lugares, cosas, sentimientos y momentos que provocan ganas de consumir (deseo irrefrenable o <b>craving</b>). El cerebro asocia esos disparadores con el consumo, y la sola presencia del disparador empuja hacia la sustancia. Hay dos tipos:</p>
+        <ul>
+          <li><b>Disparadores externos:</b> situaciones y contextos (fiestas, bares, cobrar el sueldo, ciertos amigos, fines de semana).</li>
+          <li><b>Disparadores internos:</b> emociones y estados (ira, aburrimiento, soledad, ansiedad, frustración, incluso la alegría).</li>
+        </ul>
+        <p>Detener las ansias de consumo es esencial, y se logra en tres pasos:</p>
+        <ol>
+          <li><b>Identificar</b> los disparadores.</li>
+          <li><b>Evitar</b> exponerse a ellos siempre que sea posible (por ejemplo, no llevar grandes cantidades de dinero).</li>
+          <li><b>Enfrentarlos de una manera diferente</b> a la del pasado (por ejemplo, planificar ejercicio o ir a un grupo de ayuda los viernes a la noche).</li>
+        </ol>
+      </section>
+
+      <section class="card" id="parada">
+        <h2>5. La parada de pensamiento</h2>
+        <p>En la adicción, los disparadores, pensamientos, deseos y consumo parecen ir todos juntos, pero en realidad siguen una secuencia:</p>
+        <div class="flow">DISPARADOR &#8594; PENSAMIENTO &#8594; DESEO (craving) &#8594; CONSUMO</div>
+        <p>La forma más sencilla de evitar que un pensamiento lleve al consumo es <b>pararlo apenas aparece</b>, antes de que se transforme en un deseo fuerte. Técnicas útiles:</p>
+        <ul>
+          <li><b>Visualización:</b> imaginar un interruptor en la mente que apaga los pensamientos de consumo, y tener preparada otra imagen que los reemplace.</li>
+          <li><b>Gomazo:</b> llevar una goma elástica en la muñeca; al notar un pensamiento de consumo, tirar de ella y decir (o visualizar) "¡NO!", y enseguida pensar en otra cosa.</li>
+          <li><b>Relajación:</b> respirar hondo tres veces seguidas, llenando los pulmones y soltando el aire despacio, para bajar la tensión.</li>
+          <li><b>Llamar a alguien:</b> tener a mano una lista de personas de apoyo para llamar cuando aparecen los deseos.</li>
+        </ul>
+        <div class="box"><p>Dejar que los pensamientos se conviertan en deseos de consumo es, en el fondo, decidir seguir consumiendo. Parar el pensamiento a tiempo es una decisión de recuperación.</p></div>
+      </section>
+
+      <section class="card" id="pec">
+        <h2>6. Pensamientos, emociones y conductas</h2>
+        <p>El consumo regular cambia la forma en que la persona <b>piensa, siente y se comporta</b>:</p>
+        <ul>
+          <li><b>Pensamientos:</b> vienen de la parte racional del cerebro. Se puede aprender a "cambiar de canal" cuando aparecen pensamientos que ponen en peligro la abstinencia.</li>
+          <li><b>Emociones:</b> la felicidad, la tristeza, la ira y el miedo no son buenas ni malas; no se pueden elegir, pero sí se puede controlar <b>qué se hace</b> con ellas.</li>
+          <li><b>Conductas:</b> todo lo que la persona hace. Las <b>conductas adictivas</b> son las cosas que se hacen a causa del consumo, para ocultarlo o para poder consumir: mentir, robar, ser poco fiable, aislarse, descuidar la salud y las responsabilidades, actuar de forma impulsiva.</li>
+        </ul>
+        <p>Reconocer estas conductas ayuda a protegerse del consumo, porque suelen reaparecer <b>antes</b> de una recaída.</p>
+      </section>
+
+      <section class="card" id="ambivalencia">
+        <h2>7. La ambivalencia y la lucha interna</h2>
+        <p>La <b>ambivalencia</b> es tener dos sentimientos opuestos sobre algo. En la recuperación es totalmente normal: todo cambio importante genera ambivalencia. La persona puede querer dejar de consumir y, al mismo tiempo, extrañar los efectos de la sustancia.</p>
+        <p>Esa "lucha interna" enfrenta al <b>yo racional</b> con el <b>yo consumidor</b>, que busca excusas para volver a consumir. Ayuda mucho poner por escrito las <b>ventajas e inconvenientes</b> de consumir y de no consumir, para ver con claridad qué motiva cada decisión.</p>
+        <p>También es clave aprender a <b>rechazar el ofrecimiento</b> de sustancias: responder rápido y sin titubear, sostener la mirada, decir un "No" claro y firme, acortar la conversación y retirarse de la situación.</p>
+      </section>
+
+      <section class="card" id="impulsividad">
+        <h2>8. Impulsividad y recompensa inmediata</h2>
+        <p>La <b>impulsividad</b> es hacer las cosas rápido y sin pensar en las consecuencias. Las respuestas impulsivas suelen traer consecuencias negativas. La <b>recompensa inmediata</b> (el placer del ahora) muchas veces contradice el objetivo principal de la recuperación: la abstinencia.</p>
+        <div class="box"><p><b>El experimento de Mischel:</b> a un grupo de niños se les ofrecía una golosina, pero si esperaban unos minutos recibían dos. Los que aprendieron a esperar (a tolerar la frustración) fueron, años después, personas más seguras, decididas y equilibradas. Conclusión: el <b>autocontrol</b> y la capacidad de posponer la recompensa se pueden entrenar y ayudan enormemente en la recuperación.</p></div>
+        <p>Estrategias para controlar la impulsividad: imaginar la recompensa de forma negativa, llamar a una persona de confianza, distraerse (distracción cognitiva) y transformar imaginariamente el impulso en una situación desagradable.</p>
+      </section>
+
+      <section class="card" id="organizarse">
+        <h2>9. Organizarse: la estructura como herramienta</h2>
+        <p>Las personas con problemas de consumo no suelen organizar bien su tiempo. En un tratamiento residencial, la estructura la pone la institución; en el ambulatorio, <b>tu organización es tu estructura</b>.</p>
+        <ul>
+          <li>Usar una <b>agenda</b>: lo que se organiza "en la cabeza" se desvanece rápido. Escribirlo y cumplirlo mantiene el control.</li>
+          <li>El propio usuario diseña su agenda y trata de no hacer cambios: si cumple lo que planifica, no consume.</li>
+          <li>Llevar un <b>calendario</b> marcando los días de abstinencia ayuda a ver el progreso y refuerza la motivación.</li>
+        </ul>
+        <div class="box"><p>No cumplir lo planificado puede ser una señal de que el "cerebro adicto" está retomando el control. La estructura diaria es una de las herramientas más simples y poderosas de la recuperación.</p></div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Prueba del Módulo 4 (10 preguntas)</h2>
+        <p>Respondé las 10 preguntas. En las de opción, marcá la respuesta correcta; en las abiertas, desarrollá con tus palabras.</p>
+        <ol>
+          <li>¿Qué es el Modelo Matrix y para qué tipo de tratamiento se utiliza?</li>
+          <li>El Modelo Matrix está reconocido como uno de los modelos más efectivos por:
+            <span class="op">a) La OMS</span>
+            <span class="op">b) El NIDA (National Institute on Drug Abuse)</span>
+            <span class="op">c) La SEDRONAR</span>
+          </li>
+          <li>Mencioná y explicá brevemente las cuatro etapas de la recuperación.</li>
+          <li>La etapa en la que la persona se siente muy bien y con energía, y a veces cree que "ya se curó", se llama:
+            <span class="op">a) El muro</span>
+            <span class="op">b) Reajuste</span>
+            <span class="op">c) Luna de miel</span>
+          </li>
+          <li>¿Qué son los disparadores? Dá un ejemplo de un disparador externo y uno interno.</li>
+          <li>Ordená correctamente la secuencia que lleva al consumo:
+            <span class="op">a) Deseo &#8594; disparador &#8594; pensamiento &#8594; consumo</span>
+            <span class="op">b) Disparador &#8594; pensamiento &#8594; deseo &#8594; consumo</span>
+            <span class="op">c) Pensamiento &#8594; consumo &#8594; disparador &#8594; deseo</span>
+          </li>
+          <li>Explicá dos técnicas de parada de pensamiento y cómo las aplicarías.</li>
+          <li>¿Qué son las conductas adictivas? Nombrá al menos tres.</li>
+          <li>¿Qué nos enseña el experimento de Mischel sobre el autocontrol y la recuperación?</li>
+          <li>¿Por qué la organización del tiempo (usar una agenda) es tan importante en un tratamiento ambulatorio?</li>
+        </ol>
+        <div class="send">&#128231; Enviá tu prueba resuelta para ser corregida a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+        <a href="modulo3.html" class="btn">&#8592; Módulo 3</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo 4 &#183; Operador Preventor en Adicciones y Consumos Problemáticos &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
