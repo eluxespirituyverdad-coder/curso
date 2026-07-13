@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7c6cf0" />
+  <title>Módulo Complementario · Libertad de la pornografía y las pantallas | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#f3f1fe;--ink:#241a4d;--ink-soft:#5a5378;--teal:#0d9488;--violet:#7c6cf0;--violet-dark:#5a49c9;--emerald:#10b981;--gold:#f6a821;--coral:#ff6b5e;--white:#fff;--line:#ded9f7;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--violet-dark);text-decoration:none}
+    .topbar{background:var(--violet-dark);color:#e7e3fb;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#5a49c9 0%,#7c6cf0 45%,#f6a821 130%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.1)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#f3f0ff;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .optnote{background:linear-gradient(135deg,#fff,#fff6e6);border:1.5px solid var(--gold);border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:1.6rem}
+    .optnote b{color:#b9791b}
+    .optnote p{margin:0;color:var(--ink-soft);font-size:.95rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(124,108,240,.7)}
+    .card h2{color:var(--violet-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--violet)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--violet)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#efecfd;border-left:4px solid var(--violet);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .verse{background:linear-gradient(135deg,#fff,#efecfd);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:1rem 1.2rem;margin:1rem 0;font-style:italic;color:var(--ink)}
+    .verse span{display:block;font-style:normal;font-weight:700;color:var(--violet-dark);font-size:.85rem;margin-top:.4rem}
+    .step{background:linear-gradient(135deg,#fff,#efecfd);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;margin:1rem 0;display:flex;gap:1rem;align-items:flex-start}
+    .step .n{flex:none;font-size:1.5rem;font-weight:900;color:var(--violet);line-height:1;min-width:44px;text-align:center}
+    .step p{margin:0;color:var(--ink-soft);font-size:.94rem}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:.8rem;color:var(--ink)}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--violet-dark);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--violet-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#efecfd;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#2a2058;color:#c3bbf0;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo Complementario</span>
+      <h1>Libertad de la pornografía y las pantallas</h1>
+      <p>Una mirada de ayuda espiritual y práctica frente a adicciones específicas. Complemento optativo del curso Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="optnote">
+        <p><b>&#10024; Módulo complementario y optativo.</b> Este módulo ofrece un abordaje desde la perspectiva de la fe cristiana, pensado para quienes buscan acompañamiento espiritual además del enfoque preventivo y clínico del curso. Integra información científica y consejería bíblica. Su realización es voluntaria y no es requisito para aprobar el curso.</p>
+      </div>
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#intro">1. ¿Por qué un módulo espiritual?</a>
+        <a href="#que-es">2. ¿Qué es la pornografía? Tipos y alcance</a>
+        <a href="#efectos">3. Efectos de la pornografía</a>
+        <a href="#adictiva">4. ¿Por qué se vuelve adictiva? El cerebro y el ciclo</a>
+        <a href="#pantallas">5. La adicción a las pantallas</a>
+        <a href="#biblia">6. Una perspectiva bíblica</a>
+        <a href="#libertad">7. Camino de libertad: estrategias prácticas</a>
+        <a href="#consejeria">8. Consejería práctica (padres, jóvenes y adultos)</a>
+        <a href="#versiculos">9. Versículos de apoyo</a>
+        <a href="#tp">&#10148; Actividad de reflexión (optativa)</a>
+      </div>
+
+      <section class="card" id="intro">
+        <h2>1. ¿Por qué un módulo espiritual?</h2>
+        <p>A lo largo del curso trabajamos la prevención de las adicciones desde una mirada preventiva, social y clínica. Este módulo complementario suma una dimensión más: la <b>ayuda espiritual</b>, especialmente valiosa para acompañar a personas de fe que enfrentan adicciones específicas como la <b>pornografía</b> y el <b>uso problemático de las pantallas</b>.</p>
+        <p>El operador preventor se cruza con realidades que no son solo físicas o psicológicas, sino también emocionales y espirituales. Muchas personas viven estas luchas en silencio, con vergüenza y culpa. Este módulo busca dar herramientas para <b>acompañar con respeto, sin condenar</b>, ofreciendo esperanza y un camino de restauración.</p>
+        <div class="box"><p>Integramos dos miradas que se complementan: la <b>evidencia científica</b> (cómo afecta al cerebro y a la conducta) y la <b>consejería bíblica</b> (el cuidado del corazón, la comunidad y la fe). No reemplaza el tratamiento profesional: lo acompaña.</p></div>
+      </section>
+
+      <section class="card" id="que-es">
+        <h2>2. ¿Qué es la pornografía? Tipos y alcance</h2>
+        <p>La palabra "pornografía" viene del griego <b>porné</b> ("ramera") y refiere a la exhibición de conductas sexuales con el fin de provocar lujuria y placer. Envilece la sexualidad y la reduce a un objeto de consumo, separándola del amor, el compromiso y el respeto.</p>
+        <h3>Tipos más frecuentes</h3>
+        <ul>
+          <li><b>Pornografía leve ("soft"):</b> desnudez y actividad sexual no explícita; suele ser de acceso libre y legal.</li>
+          <li><b>Pornografía fuerte ("hard"):</b> actividades sexuales explícitas y degradantes; incluye material de Internet, líneas telefónicas, espectáculos, etc.</li>
+          <li><b>Pornografía por Internet (ciberporno):</b> hoy la más extendida, por su fácil acceso, anonimato e intimidad. Se consume desde el hogar o el celular sin salir a ningún lado.</li>
+          <li><b>Pornografía infantil:</b> es un <b>delito grave</b> y una forma de explotación y abuso. Nunca debe minimizarse; su detección obliga a denunciar y proteger a la víctima.</li>
+        </ul>
+        <div class="box"><p>Un patrón habitual: se empieza con material "suave" y, por el efecto de tolerancia, se necesita material cada vez más fuerte para obtener la misma estimulación. Ese ascenso es una de las señales de que la conducta se está volviendo adictiva.</p></div>
+      </section>
+
+      <section class="card" id="efectos">
+        <h2>3. Efectos de la pornografía</h2>
+        <p>Diversos investigadores coinciden en que el consumo sostenido de pornografía puede producir daños en varios planos:</p>
+        <ul>
+          <li><b>Genera dependencia:</b> el deseo de material cada vez más explícito funciona de forma parecida a otras adicciones.</li>
+          <li><b>Insensibiliza:</b> banaliza la violencia, el abuso y la cosificación de la persona.</li>
+          <li><b>Distorsiona la sexualidad:</b> presenta a las personas como meros objetos de placer, alejando el sexo del amor y del cuidado del otro.</li>
+          <li><b>Degrada los vínculos y el matrimonio:</b> crea expectativas irreales, insatisfacción, secreto y mentira, y erosiona la confianza.</li>
+          <li><b>Daña psicológicamente a niños y adolescentes:</b> condiciona su afectividad y su comprensión de la sexualidad en una etapa muy influenciable.</li>
+          <li><b>Produce daño espiritual:</b> puede convertirse en un obstáculo real para la relación con Dios y con los demás, alimentando el egoísmo y el aislamiento.</li>
+        </ul>
+        <div class="box"><p>La consecuencia más silenciosa es el <b>aislamiento</b>: la persona se encierra en un mundo privado y pierde interés por sus relaciones reales, su familia y sus responsabilidades.</p></div>
+      </section>
+
+      <section class="card" id="adictiva">
+        <h2>4. ¿Por qué se vuelve adictiva? El cerebro y el ciclo</h2>
+        <p>La pornografía activa con mucha fuerza el <b>circuito de recompensa</b> del cerebro, liberando dopamina (el neurotransmisor del placer y la motivación). Con la repetición, el cerebro se "acostumbra" y necesita estímulos más intensos para sentir lo mismo: es la <b>tolerancia</b>.</p>
+        <h3>El ciclo que atrapa</h3>
+        <div class="step"><span class="n">1</span><p><b>Detonante:</b> una emoción o situación que dispara el impulso (aburrimiento, soledad, estrés, cansancio, un momento a solas con la pantalla).</p></div>
+        <div class="step"><span class="n">2</span><p><b>Conducta:</b> se busca y se consume el material para calmar o escapar de esa emoción.</p></div>
+        <div class="step"><span class="n">3</span><p><b>Alivio momentáneo:</b> llega una sensación breve de placer o descarga.</p></div>
+        <div class="step"><span class="n">4</span><p><b>Consecuencia:</b> aparecen la culpa, la vergüenza y el vacío... que se vuelven un nuevo detonante. Así el ciclo se repite.</p></div>
+        <div class="box"><p>Entender el ciclo es clave: la salida no está solo en "esforzarse más", sino en <b>identificar los detonantes</b> y aprender a responder de otra manera antes de llegar a la conducta.</p></div>
+      </section>
+
+      <section class="card" id="pantallas">
+        <h2>5. La adicción a las pantallas</h2>
+        <p>El uso problemático del celular, las redes sociales y los videojuegos comparte con la pornografía el mismo mecanismo de recompensa inmediata: cada notificación, "like" o nivel superado libera una pequeña dosis de gratificación que invita a volver una y otra vez.</p>
+        <p>No se trata de demonizar la tecnología (que tiene enormes beneficios), sino de recuperar el <b>dominio propio</b> y el equilibrio. La pregunta clave no es "cuántas horas", sino: <b>¿controlo yo el uso, o el uso me controla a mí?</b></p>
+        <h3>Señales de alerta</h3>
+        <ul>
+          <li>Revisar el celular de forma compulsiva, incluso sin motivo.</li>
+          <li>Ansiedad o irritabilidad cuando no se puede usar.</li>
+          <li>Descuido de relaciones, estudio, trabajo, descanso o vida devocional.</li>
+          <li>Usar las pantallas para escapar de emociones difíciles.</li>
+        </ul>
+        <div class="box"><p>Una práctica saludable: establecer <b>tiempos y espacios libres de pantalla</b> (comidas, primera hora del día, antes de dormir) y cultivar actividades reales que llenen los vacíos que la pantalla promete llenar.</p></div>
+      </section>
+
+      <section class="card" id="biblia">
+        <h2>6. Una perspectiva bíblica</h2>
+        <p>La Biblia no presenta la sexualidad como algo sucio, sino como un <b>diseño bueno de Dios</b>, pensado para vivirse en el marco del amor, el compromiso y el respeto mutuo. La pornografía distorsiona ese diseño: separa el placer de la relación y del cuidado del otro.</p>
+        <p>Por eso la Escritura llama a <b>huir de la inmoralidad sexual</b> y a cuidar el corazón y la mente, no como una carga, sino como un camino de libertad y de respeto por uno mismo y por los demás.</p>
+        <div class="verse">"Huyan, pues, de la inmoralidad sexual (...) ¿No saben que su cuerpo es templo del Espíritu Santo?"<span>&#8212; 1 Corintios 6:18-19</span></div>
+        <div class="verse">"Todo lo que es verdadero, todo lo honorable, todo lo justo, todo lo puro, todo lo amable (...) en esto piensen."<span>&#8212; Filipenses 4:8</span></div>
+        <p>El mensaje central es de <b>gracia y esperanza</b>: nadie está demasiado lejos para ser restaurado. La caída no es el final; hay perdón, ayuda y un camino de vuelta.</p>
+      </section>
+
+      <section class="card" id="libertad">
+        <h2>7. Camino de libertad: estrategias prácticas</h2>
+        <p>La libertad no llega de golpe: es un proceso que combina decisión, hábitos nuevos, comunidad y fe. Estas estrategias reúnen lo mejor de los materiales trabajados:</p>
+
+        <h3>Las 3 actitudes de base</h3>
+        <ul>
+          <li><b>Admitir:</b> reconocer el problema con sinceridad, sin minimizarlo ni justificarlo. "El primer paso es dejar de negar".</li>
+          <li><b>Actuar:</b> tomar decisiones concretas y quitar los accesos a la tentación.</li>
+          <li><b>Avanzar:</b> sostener el proceso en el tiempo, sabiendo que habrá altibajos.</li>
+        </ul>
+
+        <h3>Herramientas concretas</h3>
+        <div class="step"><span class="n">&#9873;</span><p><b>Identificá tus detonantes</b> (H.A.L.T.): cuidado especial cuando estás <b>Hambriento, Ansioso/enojado, Solo o Cansado</b>. Son los momentos de mayor vulnerabilidad.</p></div>
+        <div class="step"><span class="n">&#9873;</span><p><b>Huí de la tentación:</b> eliminá el material que tengas, usá filtros y bloqueadores, y evitá los lugares y momentos de riesgo. La mejor pelea es la que se evita.</p></div>
+        <div class="step"><span class="n">&#9873;</span><p><b>Renová tu mente:</b> reemplazá el hábito por otros que llenen de verdad (lectura, ejercicio, servicio, vínculos reales, vida devocional). Lo que se aprende, se puede desaprender.</p></div>
+        <div class="step"><span class="n">&#9873;</span><p><b>Rendí cuentas:</b> contale a una persona de confianza que te acompañe y a quien puedas ser sincero. La adicción crece en el secreto y se debilita en la luz.</p></div>
+        <div class="step"><span class="n">&#9873;</span><p><b>Plan de 40 a 90 días:</b> proponete un período de abstinencia con metas cortas ("hoy no"), registrando avances y celebrando cada logro. El cerebro necesita tiempo para volver a equilibrarse.</p></div>
+
+        <div class="box"><p>La <b>iglesia local</b> y una comunidad sana cumplen un rol enorme: ofrecen pertenencia, acompañamiento y un lugar donde no estar solo en la lucha. El aislamiento alimenta la adicción; la comunidad ayuda a sostener la libertad.</p></div>
+      </section>
+
+      <section class="card" id="consejeria">
+        <h2>8. Consejería práctica</h2>
+        <p>El acompañamiento cambia según la persona. Estas orientaciones ayudan al operador, líder, docente o familiar a intervenir con sabiduría y sensibilidad.</p>
+
+        <h3>Para padres de familia</h3>
+        <ul>
+          <li>Acompañar el uso de Internet con diálogo, no solo con control: conversar sobre los riesgos con confianza y sin dramatizar.</li>
+          <li>Acordar reglas claras sobre pantallas y usar filtros/bloqueadores adecuados a la edad.</li>
+          <li>Enseñar a no dar información personal ni concertar encuentros con desconocidos.</li>
+          <li>Mantener un clima de confianza para que el hijo/a pueda contar lo que ve o lo que le pasa.</li>
+        </ul>
+
+        <h3>Para jóvenes</h3>
+        <ul>
+          <li>Ofrecer una buena educación sexual y afectiva: que la referencia no sea el material pornográfico.</li>
+          <li>Enseñar cómo reaccionar si se topan con este contenido (por accidente o por presión de grupo).</li>
+          <li>Estar cerca, generar confianza y trabajar la autoestima y el manejo de emociones.</li>
+        </ul>
+
+        <h3>Para adultos</h3>
+        <ul>
+          <li>Escuchar con aceptación y absoluta discreción; muchas veces cuesta hablar del tema.</li>
+          <li>Ayudar a comprender por qué recurre a la pornografía (qué emoción o vacío intenta calmar).</li>
+          <li>Acompañar hacia una decisión de cambio, el perdón y hábitos nuevos.</li>
+          <li>Promover la rendición de cuentas, la constancia y la celebración de cada avance, sin condenar las recaídas.</li>
+        </ul>
+
+        <div class="box"><p>Regla de oro del acompañamiento: <b>firmeza con el problema, ternura con la persona.</b> El objetivo no es avergonzar, sino restaurar.</p></div>
+      </section>
+
+      <section class="card" id="versiculos">
+        <h2>9. Versículos de apoyo</h2>
+        <div class="verse">"No permitas que su belleza encienda tu pasión; no te dejes atrapar por sus miradas."<span>&#8212; Proverbios 6:25</span></div>
+        <div class="verse">"Cualquiera que mira a una mujer para codiciarla, ya adulteró con ella en su corazón."<span>&#8212; Mateo 5:28</span></div>
+        <div class="verse">"Sobre toda cosa guardada, guarda tu corazón; porque de él mana la vida."<span>&#8212; Proverbios 4:23</span></div>
+        <div class="verse">"No los ha sorprendido ninguna tentación que no sea humana; y fiel es Dios, que (...) dará también la salida."<span>&#8212; 1 Corintios 10:13</span></div>
+        <div class="verse">"Si confesamos nuestros pecados, él es fiel y justo para perdonar y limpiarnos de toda maldad."<span>&#8212; 1 Juan 1:9</span></div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Actividad de reflexión (optativa)</h2>
+        <p>Este módulo es complementario. Si querés profundizar, te proponemos reflexionar y responder estas consignas:</p>
+        <ol>
+          <li>¿Por qué es importante que un operador preventor incorpore también la dimensión espiritual y emocional al acompañar a una persona?</li>
+          <li>Explicá con tus palabras el "ciclo" de la adicción a la pornografía y por qué la culpa puede transformarse en un nuevo detonante.</li>
+          <li>¿Qué diferencia hay entre un uso saludable y un uso problemático de las pantallas? Da ejemplos.</li>
+          <li>Mencioná tres estrategias prácticas del camino de libertad y explicá cómo las aplicarías al acompañar a alguien.</li>
+          <li>¿Qué rol cumplen la comunidad, la familia y "rendir cuentas" en el proceso de restauración?</li>
+          <li>Elegí uno de los versículos y explicá cómo puede dar esperanza a una persona que lucha con esta adicción.</li>
+        </ol>
+        <div class="send">
+          &#128231; Si querés que un docente lea tu reflexión, enviala a: <b>academiajason777@gmail.com</b>
+        </div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo Complementario &#183; Libertad de la pornografía y las pantallas &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
