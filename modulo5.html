@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a5d5a" />
+  <title>Módulo 5 · Prevención de recaídas | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;--teal:#0d9488;--teal-dark:#0a5d5a;--emerald:#10b981;--gold:#f6a821;--coral:#ff6b5e;--coral-dark:#c23b30;--white:#fff;--line:#cdeae6;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--teal);text-decoration:none}
+    .topbar{background:var(--teal-dark);color:#d6f5f1;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#c23b30,#ff8a5e 90%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#fff2ee;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(13,148,136,.7)}
+    .card h2{color:var(--teal-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--coral)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--coral)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#fff0ed;border-left:4px solid var(--coral);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .halt{display:grid;gap:.6rem;margin:1rem 0}
+    .halt div{background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:12px;padding:.8rem 1.1rem;color:var(--ink-soft);font-size:.92rem}
+    .halt b{color:var(--coral-dark)}
+    .comm{display:grid;gap:.6rem;margin:1rem 0}
+    .comm div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.8rem 1.1rem;color:var(--ink-soft);font-size:.92rem}
+    .comm b{color:var(--teal-dark)}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:1rem;color:var(--ink)}
+    .op{display:block;margin:.15rem 0 .15rem .4rem;color:var(--ink-soft);font-size:.93rem}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .btn.gold{background:var(--gold);color:#5a3a00}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--teal-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#fff0ed;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo 5</span>
+      <h1>Prevención de recaídas y mantenimiento de la recuperación</h1>
+      <p>Cómo sostener la recuperación en el tiempo y prevenir la recaída. Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#recaida">1. ¿Qué es la recaída?</a>
+        <a href="#deriva">2. Cómo ocurre: la deriva y los amarres</a>
+        <a href="#justificaciones">3. Las justificaciones de la recaída</a>
+        <a href="#abstinencia">4. La abstinencia total</a>
+        <a href="#halt">5. HALT: cuatro estados de alto riesgo</a>
+        <a href="#estres">6. Manejo del estrés y de la ira</a>
+        <a href="#comunicacion">7. Habilidades de comunicación</a>
+        <a href="#autocuidado">8. Autocuidado, honestidad y confianza</a>
+        <a href="#apoyo">9. Apoyo mutuo, espiritualidad y "día a día"</a>
+        <a href="#tp">&#10148; Prueba del Módulo 5 (10 preguntas)</a>
+      </div>
+
+      <section class="card" id="recaida">
+        <h2>1. ¿Qué es la recaída?</h2>
+        <p>La recuperación es mucho más que no consumir. El primer paso del tratamiento es dejar de consumir; el siguiente es <b>no volver a empezar</b>. Ese proceso se llama <b>prevención de recaídas</b>.</p>
+        <p>La <b>recaída</b> es volver a consumir sustancias junto con todas las conductas y hábitos que ello conlleva. Un dato clave: las <b>conductas y pensamientos adictivos</b> suelen reaparecer <b>antes</b> del consumo. Aprender a reconocerlos permite frenar el proceso a tiempo.</p>
+        <ul>
+          <li><b>Pensamientos adictivos:</b> los que hacen creer que consumir "está bien" ("puedo tomar solo una copa", "me lo merezco", "necesito un descanso").</li>
+          <li><b>Sobrecarga emocional:</b> sentimientos que no desaparecen y se hacen más fuertes (aburrimiento, ansiedad, irritabilidad, depresión) y pueden volverse insoportables.</li>
+        </ul>
+        <div class="box"><p>Lo más importante es <b>hacer algo apenas se reconocen las señales de peligro</b>: llamar al terapeuta o a un amigo, hacer ejercicio, hablar con la familia, organizar el tiempo con rigor.</p></div>
+      </section>
+
+      <section class="card" id="deriva">
+        <h2>2. Cómo ocurre: la deriva y los amarres</h2>
+        <p>La recaída <b>no ocurre de repente</b>. El movimiento que va desde la abstinencia hasta la recaída puede ser lento y sutil, como un barco que se aleja poco a poco del lugar donde estaba amarrado. Ese movimiento se llama <b>deriva</b>.</p>
+        <p>Las actividades que la persona hace para mantenerse abstinente son los <b>"amarres"</b>: las cuerdas que sostienen la recuperación en su lugar y previenen la deriva. Por ejemplo:</p>
+        <ul>
+          <li>Hacer ejercicio (por ejemplo, 20 minutos, 3 veces por semana).</li>
+          <li>Ir a las citas con el terapeuta y a la terapia de grupo.</li>
+          <li>Organizar las actividades diarias y mantener patrones de alimentación y sueño.</li>
+          <li>Asistir a reuniones de ayuda mutua.</li>
+          <li>Evitar personas y lugares que son disparadores.</li>
+        </ul>
+        <div class="box"><p>Conviene revisar los amarres cada semana. Cuando una o dos de esas conductas empiezan a fallar, puede estar comenzando la deriva hacia la recaída: es el momento de reaccionar.</p></div>
+      </section>
+
+      <section class="card" id="justificaciones">
+        <h2>3. Las justificaciones de la recaída</h2>
+        <p>Justificar la recaída es un proceso mental: el "cerebro adicto" inventa excusas para acercar a la persona a situaciones de riesgo. Reconocer y anticipar estas justificaciones ayuda a interrumpir el proceso. Las más comunes:</p>
+        <ul>
+          <li><b>"La culpa es de otro":</b> "un viejo amigo llamó", "me trajeron vino", "alguien me ofreció una cerveza".</li>
+          <li><b>Sucesos desafortunados:</b> "perdí el trabajo", "me dejó mi pareja", "murió un familiar; no puedo superarlo sin consumir".</li>
+          <li><b>"Ya estoy curado / ponerme a prueba":</b> "puedo controlar", "quiero ver si puedo estar cerca de mis viejos amigos".</li>
+          <li><b>Celebraciones:</b> "una vez al año no hace daño", "es un momento especial, tengo que celebrarlo".</li>
+        </ul>
+        <div class="box"><p>Recordá: mantenerse abstinente tiene poco que ver con ser "fuerte". La gente que lo logra lo hace siendo <b>inteligente</b>: alejándose de los disparadores y de las situaciones de riesgo.</p></div>
+      </section>
+
+      <section class="card" id="abstinencia">
+        <h2>4. La abstinencia total</h2>
+        <p>La abstinencia total &#8212;incluido el alcohol y el cannabis&#8212; es un objetivo necesario, aunque la persona haya entrado a tratamiento por otra sustancia. ¿Por qué?</p>
+        <ul>
+          <li>Quien consume estimulantes tiene una probabilidad <b>ocho veces mayor</b> de recaer si consume alcohol, y <b>tres veces mayor</b> si consume marihuana, que quien se abstiene.</li>
+          <li>Los lugares y personas asociados al alcohol suelen ser los mismos disparadores del consumo de otras sustancias.</li>
+          <li>El alcohol afecta el cerebro racional, disminuye la inhibición y aumenta la probabilidad de consumir otras drogas.</li>
+        </ul>
+        <div class="box"><p>Si dejar de beber resulta más difícil de lo que se creía, puede ser señal de una mayor dependencia del alcohol de la que se pensaba.</p></div>
+      </section>
+
+      <section class="card" id="halt">
+        <h2>5. HALT: cuatro estados de alto riesgo</h2>
+        <p><b>HALT</b> es una sigla (del inglés) muy usada en los programas de recuperación. Recuerda que la persona es especialmente vulnerable a la recaída cuando está:</p>
+        <div class="halt">
+          <div><b>H — Hambriento (Hungry):</b> el hambre altera la química corporal y reduce el autocontrol. Comer con regularidad aumenta la estabilidad emocional.</div>
+          <div><b>A — Enfadado (Angry):</b> la ira es uno de los motivos de recaída más frecuentes. Hay que aprender a canalizarla de forma saludable, hablando de lo que la produce.</div>
+          <div><b>L — Solo (Lonely):</b> la soledad es real y dolorosa, y vuelve a la persona más vulnerable. Reconstruir vínculos sanos es parte de la recuperación.</div>
+          <div><b>T — Cansado (Tired):</b> el agotamiento y los problemas de sueño dejan a la persona sin energía para sostener la recuperación.</div>
+        </div>
+      </section>
+
+      <section class="card" id="estres">
+        <h2>6. Manejo del estrés y de la ira</h2>
+        <p>El <b>estrés</b> es la respuesta emocional y física ante situaciones difíciles, sobre todo cuando se prolongan. Aparece cuando las exigencias superan la capacidad percibida para afrontarlas. Señales: dolor de cabeza, fatiga, irritabilidad, problemas para dormir, dificultad para concentrarse.</p>
+        <p>Formas de reducir el estrés: invertir el tiempo en actividades satisfactorias, centrarse en el presente, dedicar un rato diario a algo relajante, dividir los grandes objetivos en tareas pequeñas, aprender a decir "no" y usar técnicas de relajación.</p>
+        <p>La <b>ira</b> lleva a mucha gente a recaer, especialmente al inicio. Alternativas saludables: hablar con la persona con la que se está enojado, hablarlo con el terapeuta o el grupo, escribir sobre los sentimientos de ira y hacer ejercicio.</p>
+      </section>
+
+      <section class="card" id="comunicacion">
+        <h2>7. Habilidades de comunicación</h2>
+        <p>Los estilos de comunicación son las distintas maneras de relacionarnos. Hay tres principales:</p>
+        <div class="comm">
+          <div><b>Estilo asertivo:</b> defender los propios deseos respetando los de los demás. Genera situaciones de "Gano-Ganás". Es el estilo saludable.</div>
+          <div><b>Estilo pasivo:</b> adaptarse a los deseos de los demás sin tener en cuenta los propios. Genera "Pierdo-Ganás".</div>
+          <div><b>Estilo agresivo:</b> imponer los propios deseos por encima de los demás. Genera "Gano-Perdés".</div>
+        </div>
+        <p>Ejemplo: si en una fiesta alguien insiste en que bebas y vos decidiste no hacerlo, la respuesta <b>asertiva</b> es mirar a los ojos y decir con tono firme pero tranquilo: "Prefiero tomar agua".</p>
+      </section>
+
+      <section class="card" id="autocuidado">
+        <h2>8. Autocuidado, honestidad y confianza</h2>
+        <p><b>Autocuidado:</b> la persona con dependencia suele descuidar su salud y su aspecto, lo que baja la autoestima. Cuidarse (ir al médico, alimentarse bien, hacer ejercicio, cuidar la imagen) es parte de volver a valorarse y respetarse.</p>
+        <p><b>Honestidad:</b> la falta de honestidad es parte de la dependencia. Estar en tratamiento y no ser honesto convierte todo el esfuerzo en una pérdida de tiempo. Ser "parcialmente honesto" no es ser honesto.</p>
+        <p><b>Confianza:</b> el consumo daña la confianza de los seres queridos. Al dejar de consumir, la confianza no vuelve enseguida: se pierde en un instante, pero se reconstruye poco a poco, con el tiempo y con hechos.</p>
+      </section>
+
+      <section class="card" id="apoyo">
+        <h2>9. Apoyo mutuo, espiritualidad y "día a día"</h2>
+        <p><b>Apoyo mutuo:</b> participar en grupos semanales de apoyo después del tratamiento intensivo es muy recomendable. Hacer nuevos amigos y reparar relaciones fortalece la recuperación.</p>
+        <p><b>Espiritualidad:</b> entendida de forma amplia (los valores, el sentido de la vida, la paz interior), da fortaleza a muchas personas y hace menos necesario el consumo. La <b>Oración de la Serenidad</b> resume una actitud clave: aceptar lo que no se puede cambiar, tener valor para cambiar lo que sí, y sabiduría para distinguir.</p>
+        <p><b>"Día a día":</b> no obsesionarse con estar abstinente "para siempre", sino concentrarse en el hoy y el ahora. También ayuda planificar pequeñas "islas" de descanso y disfrute (un paseo, una salida, ver a un amigo) para que la vida no se vuelva rutinaria ni aburrida.</p>
+        <div class="box"><p>El rol del operador es acompañar todo este proceso: ayudar a identificar amarres y disparadores, sostener la motivación, reforzar los logros y estar presente en los momentos de mayor vulnerabilidad.</p></div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Prueba del Módulo 5 (10 preguntas)</h2>
+        <p>Respondé las 10 preguntas. En las de opción, marcá la respuesta correcta; en las abiertas, desarrollá con tus palabras.</p>
+        <ol>
+          <li>¿Qué es la recaída y por qué es importante reconocer las conductas adictivas antes del consumo?</li>
+          <li>¿Cómo se llama el movimiento lento y sutil que aleja a la persona de la abstinencia?
+            <span class="op">a) La deriva</span>
+            <span class="op">b) El muro</span>
+            <span class="op">c) La luna de miel</span>
+          </li>
+          <li>¿Qué son los "amarres"? Mencioná al menos tres ejemplos.</li>
+          <li>Nombrá y explicá dos justificaciones típicas que usa el "cerebro adicto" para recaer.</li>
+          <li>Según el material, mantenerse abstinente tiene que ver principalmente con:
+            <span class="op">a) Ser fuerte y tener fuerza de voluntad</span>
+            <span class="op">b) Ser inteligente y alejarse de los disparadores</span>
+            <span class="op">c) Ponerse a prueba en situaciones de riesgo</span>
+          </li>
+          <li>¿Por qué se recomienda la abstinencia total, incluso del alcohol y el cannabis?</li>
+          <li>¿Qué significan las siglas HALT y por qué son estados de alto riesgo?</li>
+          <li>Explicá los tres estilos de comunicación (asertivo, pasivo y agresivo) con un ejemplo del estilo asertivo.</li>
+          <li>¿Por qué el autocuidado y la honestidad son importantes en la recuperación?</li>
+          <li>¿Cuál pensás que es el rol del operador en el sostenimiento de la recuperación y la prevención de recaídas?</li>
+        </ol>
+        <div class="send">&#128231; Enviá tu prueba resuelta para ser corregida a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+        <a href="examen-final.html" class="btn gold">Ir al Examen Final &#10140;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo 5 &#183; Operador Preventor en Adicciones y Consumos Problemáticos &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
