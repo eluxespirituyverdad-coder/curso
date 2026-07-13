@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7c6cf0" />
+  <title>Módulo Complementario · Libertad de las adicciones (mirada espiritual) | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#fdf6ee;--ink:#3a2a10;--ink-soft:#6b5a3c;--teal:#0d9488;--violet:#7c6cf0;--violet-dark:#5a49c9;--emerald:#10b981;--gold:#f6a821;--gold-dark:#c67f0f;--coral:#ff6b5e;--white:#fff;--line:#efe0c9;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--gold-dark);text-decoration:none}
+    .topbar{background:var(--gold-dark);color:#fff5e2;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#c67f0f 0%,#f6a821 50%,#7c6cf0 135%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.38);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#fff6e8;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .optnote{background:linear-gradient(135deg,#fff,#f3f0ff);border:1.5px solid var(--violet);border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:1.6rem}
+    .optnote b{color:var(--violet-dark)}
+    .optnote p{margin:0;color:var(--ink-soft);font-size:.95rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(198,127,15,.7)}
+    .card h2{color:var(--gold-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--gold)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#fff6e6;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .verse{background:linear-gradient(135deg,#fff,#f3f0ff);border:1px solid var(--line);border-left:4px solid var(--violet);border-radius:0 12px 12px 0;padding:1rem 1.2rem;margin:1rem 0;font-style:italic;color:var(--ink)}
+    .verse span{display:block;font-style:normal;font-weight:700;color:var(--violet-dark);font-size:.85rem;margin-top:.4rem}
+    .step{background:linear-gradient(135deg,#fff,#fff6e6);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;margin:1rem 0;display:flex;gap:1rem;align-items:flex-start}
+    .step .n{flex:none;font-size:1.5rem;font-weight:900;color:var(--gold-dark);line-height:1;min-width:44px;text-align:center}
+    .step p{margin:0;color:var(--ink-soft);font-size:.94rem}
+    .cycle{background:#f3f0ff;border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0}
+    .cycle p{margin:0 0 .4rem;color:var(--ink)}
+    .cycle b{color:var(--violet-dark)}
+    .tp{background:linear-gradient(160deg,#fff,#f3f0ff);border:1.5px solid var(--violet)}
+    .tp h2{color:var(--violet-dark);border-bottom-color:var(--violet)}
+    .tp ol li{margin-bottom:.8rem;color:var(--ink)}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--gold-dark);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--gold-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#f3f0ff;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#3a2a10;color:#e9d6b3;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo Complementario</span>
+      <h1>Libertad de las adicciones: una mirada espiritual</h1>
+      <p>Un abordaje de fe para romper las cadenas de las dependencias. Complemento optativo del curso Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="optnote">
+        <p><b>&#10024; Módulo complementario y optativo.</b> Este módulo suma una mirada desde la fe cristiana a lo trabajado en el curso. No reemplaza el tratamiento profesional ni el abordaje clínico: lo acompaña. Su realización es voluntaria y no es requisito para aprobar el curso.</p>
+      </div>
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#intro">1. ¿Qué es una adicción? Más allá de las sustancias</a>
+        <a href="#senales">2. Las 5 señales de una adicción</a>
+        <a href="#porque">3. ¿Por qué nos aferramos? Alivio y control</a>
+        <a href="#ciclo">4. El ciclo de la adicción</a>
+        <a href="#aprobacion">5. Cuando buscamos en la gente lo que solo Dios da</a>
+        <a href="#identidad">6. Libertad en Cristo, no solo fuerza de voluntad</a>
+        <a href="#comunidad">7. El rol de la familia y la comunidad</a>
+        <a href="#progreso">8. Señales de progreso: el camino de recuperación</a>
+        <a href="#versiculos">9. Versículos de apoyo</a>
+        <a href="#tp">&#10148; Actividad de reflexión (optativa)</a>
+      </div>
+
+      <section class="card" id="intro">
+        <h2>1. ¿Qué es una adicción? Más allá de las sustancias</h2>
+        <p>Una adicción es una <b>dependencia esclavizante y destructiva</b>: algo que empieza controlándonos hasta que ya no podemos dejarlo, aunque queramos. No se limita a las drogas o el alcohol. Muchas conductas cotidianas pueden volverse adictivas: la <b>comida, el sexo, el trabajo, el juego, las compras, las relaciones, las pantallas</b> y hasta la <b>necesidad de aprobación</b>.</p>
+        <p>Sería un error pensarla solo en términos físicos. La mayoría de las adicciones también tienen una raíz <b>moral y espiritual</b>: intentamos llenar con algo externo un vacío que es del corazón.</p>
+        <div class="box"><p>La pregunta clave no es solo "¿estoy predispuesto o no?", sino: <b>¿estoy dispuesto a hacer lo necesario para poner esa conducta bajo el dominio de la razón, la fe y la ayuda de Dios y de los demás?</b></p></div>
+      </section>
+
+      <section class="card" id="senales">
+        <h2>2. Las 5 señales de una adicción</h2>
+        <p>Cuando estas señales aparecen juntas, indican una dependencia esclavizante:</p>
+        <ul>
+          <li><b>Concentración absorbente:</b> la conducta consume cada vez más tiempo, pensamientos y energía.</li>
+          <li><b>Tolerancia creciente:</b> se necesita cada vez más para lograr el mismo efecto.</li>
+          <li><b>Negación creciente:</b> se oculta, se minimiza y se convence uno de que "puede parar cuando quiera".</li>
+          <li><b>Consecuencias perjudiciales:</b> daña la familia, el trabajo, la salud, la reputación y el respeto propio. No hay adicciones inofensivas.</li>
+          <li><b>Privación dolorosa:</b> al quitarla aparecen ansiedad, irritabilidad, temblores, depresión (síndrome de abstinencia).</li>
+        </ul>
+      </section>
+
+      <section class="card" id="porque">
+        <h2>3. ¿Por qué nos aferramos? Alivio y control</h2>
+        <p>Las adicciones no son solo un capricho: la persona las vive como un "salvavidas". Ofrecen dos cosas que se sienten necesarias en un mundo doloroso e impredecible:</p>
+        <ul>
+          <li><b>La búsqueda de alivio:</b> adormecen el dolor de la culpa, el rechazo, la soledad o el vacío... pero solo por un rato. Con el tiempo, la adicción multiplica el dolor que quería calmar.</li>
+          <li><b>La búsqueda de poder y control:</b> dan la ilusión de "tener el mando" y una sensación predecible en medio del descontrol. Pero terminan enseñoreándose de la persona.</li>
+        </ul>
+        <div class="box"><p>Lo que se descubre demasiado tarde: a cambio de alivio y control, la adicción termina esclavizando. "Pararíamos si pudiéramos", pero nos volvimos esclavos de nuestros propios deseos.</p></div>
+      </section>
+
+      <section class="card" id="ciclo">
+        <h2>4. El ciclo de la adicción</h2>
+        <p>La dependencia se repite en un círculo que gira cada vez más hondo:</p>
+        <div class="cycle">
+          <p><b>1) Exigencia de alivio</b> &#8594; aparece el dolor o la incomodidad y se "necesita" la conducta.</p>
+          <p><b>2) Actividad adictiva</b> &#8594; llega el alivio y la sensación de control... por un momento.</p>
+          <p><b>3) Culpa y vergüenza</b> &#8594; después del placer breve, aparece el malestar.</p>
+          <p><b>4) Promesas y enmiendas</b> &#8594; "no lo hago más", pero nada ocupa el lugar vacío.</p>
+          <p><b>5) Desilusión y desesperación</b> &#8594; vuelve el dolor... y otra vez la exigencia de alivio.</p>
+        </div>
+        <p>Romper este ciclo casi siempre requiere llegar al <b>final de uno mismo</b>: admitir que solo no se puede, y estar dispuesto a pedir ayuda.</p>
+      </section>
+
+      <section class="card" id="aprobacion">
+        <h2>5. Cuando buscamos en la gente lo que solo Dios da</h2>
+        <p>Existe una adicción silenciosa y muy común: la <b>adicción a la aprobación</b>. La persona "necesita" ser aceptada y aprobada por los demás para sentirse valiosa, igual que un adicto necesita su dosis. Vive esclavizada al miedo al rechazo, a la culpa y a la vergüenza, y termina siendo una eterna "complaciente" que no puede decir que no.</p>
+        <p>La raíz suele ser una <b>profunda inseguridad</b>: heridas, rechazo o abuso que dejaron la sensación de "no valer". La salida no es esforzarse más por caer bien, sino descubrir que el valor propio <b>no depende del desempeño ni de la opinión de la gente</b>, sino del amor incondicional de Dios.</p>
+        <div class="box"><p>Buscamos en las personas, el dinero, el sexo o los logros lo que solo Dios puede dar: aceptación, seguridad, valor y sentido. Por eso ninguna de esas cosas llega a llenarnos del todo.</p></div>
+      </section>
+
+      <section class="card" id="identidad">
+        <h2>6. Libertad en Cristo, no solo fuerza de voluntad</h2>
+        <p>Muchos intentan salir de la adicción a pura fuerza de voluntad, con un programa tras otro, y terminan agotados y derrotados. La libertad más profunda no llega por "esforzarse más", sino por <b>saber quién es uno en Cristo</b>: amado, perdonado y aceptado, no por lo que hace, sino por lo que Dios hizo por él.</p>
+        <h3>Cuatro mentiras que mantienen atada a la persona</h3>
+        <ul>
+          <li><b>La desesperanza:</b> "nunca voy a cambiar, no tengo salida".</li>
+          <li><b>La culpa:</b> vivir aplastado por el pasado, sin recibir el perdón.</li>
+          <li><b>La autoayuda:</b> "puedo solo, no necesito a Dios ni a nadie".</li>
+          <li><b>La inseguridad:</b> "no valgo nada, nadie me puede querer".</li>
+        </ul>
+        <div class="box"><p>La verdad es la que libera. La batalla se libra en la <b>mente</b>: cuando cambiamos las mentiras que creemos por la verdad, cambia también la forma en que vivimos. "Conocerán la verdad, y la verdad los hará libres" (Juan 8:32).</p></div>
+      </section>
+
+      <section class="card" id="comunidad">
+        <h2>7. El rol de la familia y la comunidad</h2>
+        <p>Nadie se recupera solo. La familia y la comunidad cumplen un rol decisivo, pero deben hacerlo con <b>amor firme</b>, no encubriendo:</p>
+        <ul>
+          <li><b>Dejar de "encubrir":</b> mentir por el adicto o taparle las consecuencias solo alimenta la adicción. El amor a veces necesita poner límites.</li>
+          <li><b>Decir la verdad con amor:</b> firmeza con el problema, ternura con la persona.</li>
+          <li><b>Acompañar y rendir cuentas:</b> caminar junto a otros que comprenden la lucha (grupos de apoyo, la iglesia local).</li>
+          <li><b>No cargar la culpa ajena:</b> el familiar también necesita cuidarse y buscar ayuda.</li>
+        </ul>
+        <div class="box"><p>La comunidad sana ofrece pertenencia, aceptación y un lugar donde no estar solo. La adicción crece en el aislamiento y el secreto; se debilita en la luz y el acompañamiento.</p></div>
+      </section>
+
+      <section class="card" id="progreso">
+        <h2>8. Señales de progreso: el camino de recuperación</h2>
+        <p>La recuperación suele ser un proceso largo, con avances y recaídas. Estas son señales de que la persona va por buen camino:</p>
+        <div class="step"><span class="n">1</span><p><b>Admite que necesita ayuda:</b> deja de pretender que puede solo.</p></div>
+        <div class="step"><span class="n">2</span><p><b>Descubre que el dolor no es el enemigo:</b> aprende a enfrentar la tristeza en vez de anestesiarla.</p></div>
+        <div class="step"><span class="n">3</span><p><b>Acepta la responsabilidad de sus decisiones:</b> deja de culpar a todos y reconoce su parte.</p></div>
+        <div class="step"><span class="n">4</span><p><b>Reconoce su necesidad de misericordia:</b> recibe el perdón que no se merece.</p></div>
+        <div class="step"><span class="n">5</span><p><b>Descubre la gratitud:</b> agradece la bondad recibida y eso transforma el corazón.</p></div>
+        <div class="step"><span class="n">6</span><p><b>Hace de la entrega un estilo de vida:</b> se rinde cada día, no solo cuando toca fondo.</p></div>
+        <div class="step"><span class="n">7</span><p><b>Se dedica a ayudar a otros:</b> el que fue consolado, consuela; y ahí encuentra sentido.</p></div>
+      </section>
+
+      <section class="card" id="versiculos">
+        <h2>9. Versículos de apoyo</h2>
+        <div class="verse">"Vengan a mí todos los que están cansados y cargados, y yo los haré descansar."<span>&#8212; Mateo 11:28</span></div>
+        <div class="verse">"No los ha sorprendido ninguna tentación que no sea humana; y fiel es Dios, que (...) dará también la salida."<span>&#8212; 1 Corintios 10:13</span></div>
+        <div class="verse">"Si el Hijo los libera, serán verdaderamente libres."<span>&#8212; Juan 8:36</span></div>
+        <div class="verse">"Echa sobre el Señor tu carga, y él te sostendrá."<span>&#8212; Salmo 55:22</span></div>
+        <div class="verse">"Todo lo puedo en Cristo que me fortalece."<span>&#8212; Filipenses 4:13</span></div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Actividad de reflexión (optativa)</h2>
+        <p>Si querés profundizar, te proponemos reflexionar y responder:</p>
+        <ol>
+          <li>¿Por qué decimos que una adicción no es solo un problema físico, sino también moral y espiritual? Da un ejemplo.</li>
+          <li>Explicá con tus palabras el "ciclo de la adicción" (los 5 pasos) y por qué es tan difícil romperlo solo.</li>
+          <li>¿Qué es la "adicción a la aprobación" y por qué la buscamos en los lugares equivocados?</li>
+          <li>Nombrá las cuatro mentiras que mantienen atada a la persona y explicá cómo la verdad puede vencer a cada una.</li>
+          <li>¿Cuál es la diferencia entre "encubrir" a un adicto y acompañarlo con amor firme?</li>
+          <li>De las 7 señales de progreso, ¿cuál te parece la más difícil y por qué?</li>
+        </ol>
+        <div class="send">
+          &#128231; Si querés que un docente lea tu reflexión, enviala a: <b>academiajason777@gmail.com</b>
+        </div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo Complementario &#183; Libertad de las adicciones (mirada espiritual) &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
