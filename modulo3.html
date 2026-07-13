@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a5d5a" />
+  <title>Módulo 3 · Adicciones conductuales y nuevos consumos | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;--teal:#0d9488;--teal-dark:#0a5d5a;--emerald:#10b981;--gold:#f6a821;--coral:#ff6b5e;--white:#fff;--line:#cdeae6;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--teal);text-decoration:none}
+    .topbar{background:var(--teal-dark);color:#d6f5f1;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#0a5d5a 0%,#0d9488 45%,#10b981 100%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#eafffb;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(13,148,136,.7)}
+    .card h2{color:var(--teal-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--emerald)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#e7f7f3;border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .stat{background:linear-gradient(135deg,#fff,#e7f7f3);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;margin:1rem 0;display:flex;gap:1rem;align-items:center}
+    .stat .n{flex:none;font-size:1.9rem;font-weight:900;color:var(--coral);line-height:1;min-width:70px;text-align:center}
+    .stat p{margin:0;color:var(--ink-soft);font-size:.92rem}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:.8rem;color:var(--ink)}
+    table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}
+    table th{background:var(--teal);color:#fff;padding:.6rem .8rem;text-align:left;font-size:.85rem}
+    table td{border:1px solid var(--line);padding:.6rem .8rem;color:var(--ink-soft);vertical-align:top}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--teal-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#e7f7f3;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo 3</span>
+      <h1>Adicciones conductuales y nuevos consumos</h1>
+      <p>Ludopatía, apuestas online, pantallas y redes: mecanismos, estadísticas actuales, factores de riesgo y prevención. Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#que-son">1. ¿Qué son las adicciones conductuales?</a>
+        <a href="#caracteristicas">2. Características principales</a>
+        <a href="#cerebro">3. Mecanismos cerebrales y fisiológicos</a>
+        <a href="#tipos">4. Tipos comunes</a>
+        <a href="#consecuencias">5. Consecuencias y señales de alarma</a>
+        <a href="#estadisticas">6. Estadísticas en Argentina (EPRA 2024)</a>
+        <a href="#prevencion">7. Prevención de las adicciones conductuales</a>
+        <a href="#factores">8. Factores protectores y de riesgo</a>
+        <a href="#tp">&#10148; Trabajo Práctico Nº 3 (para entregar)</a>
+      </div>
+
+      <section class="card" id="que-son">
+        <h2>1. ¿Qué son las adicciones conductuales?</h2>
+        <p>Las <b>adicciones conductuales</b>, también conocidas como adicciones sin sustancia o comportamentales, son trastornos en los que la persona desarrolla una dependencia hacia una <b>conducta específica</b>, sin que exista consumo de una sustancia química como ocurre en las adicciones tradicionales. Ejemplos comunes son la ludopatía (juego patológico), la adicción a internet, a las redes sociales, a los videojuegos, las compras compulsivas y el sexo, entre otros.</p>
+        <p>Comparten muchas características con las adicciones a sustancias. La <b>principal diferencia</b> es que en las conductuales no hay ingesta de ningún compuesto químico.</p>
+      </section>
+
+      <section class="card" id="caracteristicas">
+        <h2>2. Características principales</h2>
+        <ul>
+          <li><b>Pérdida de control</b> sobre la conducta: la persona no puede regular el inicio, la frecuencia, la intensidad o la duración de la conducta adictiva.</li>
+          <li><b>Dependencia psicológica:</b> existe un intenso deseo o ansia (craving) por realizar la conducta, que se vuelve prioritaria frente a otras actividades.</li>
+          <li><b>Tolerancia:</b> se requiere aumentar la frecuencia o intensidad de la conducta para obtener el mismo nivel de satisfacción.</li>
+          <li><b>Síndrome de abstinencia:</b> malestar emocional, irritabilidad o ansiedad cuando no se puede realizar la conducta.</li>
+          <li><b>Interferencia en la vida cotidiana:</b> afecta las relaciones familiares, sociales, laborales y la salud mental.</li>
+          <li><b>Persistencia pese a las consecuencias negativas:</b> la persona continúa a pesar de conocer los daños que le ocasiona.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="cerebro">
+        <h2>3. Mecanismos cerebrales y fisiológicos</h2>
+        <p>Las adicciones conductuales y las adicciones a sustancias comparten mecanismos cerebrales similares. Ambas activan el <b>circuito de recompensa cerebral</b>, especialmente el sistema <b>dopaminérgico</b>, lo que refuerza la repetición de la conducta adictiva.</p>
+        <p>Este refuerzo positivo inicial (placer) puede evolucionar hacia un <b>refuerzo negativo</b>, donde la conducta se realiza para aliviar el malestar o el vacío emocional.</p>
+        <div class="box"><p>Según los manuales diagnósticos actuales, solo el <b>juego patológico</b> está oficialmente reconocido como adicción comportamental en el DSM-5, aunque otros tipos están en estudio o han sido incluidos en la Clasificación Internacional de Enfermedades (CIE-11).</p></div>
+      </section>
+
+      <section class="card" id="tipos">
+        <h2>4. Tipos comunes de adicciones conductuales</h2>
+        <ul>
+          <li>Juego patológico (ludopatía).</li>
+          <li>Adicción a internet y redes sociales.</li>
+          <li>Adicción a los videojuegos.</li>
+          <li>Compras compulsivas.</li>
+          <li>Adicción al sexo.</li>
+          <li>Adicción a la comida.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="consecuencias">
+        <h2>5. Consecuencias y señales de alarma</h2>
+        <p>Las consecuencias pueden ser graves: deterioro de relaciones personales, problemas económicos, bajo rendimiento escolar o laboral, aislamiento social, ansiedad, depresión y baja autoestima.</p>
+        <h3>Señales de alarma</h3>
+        <ul>
+          <li>Aumento progresivo del tiempo dedicado a la conducta.</li>
+          <li>Incapacidad para controlarla.</li>
+          <li>Abandono de otras actividades.</li>
+          <li>Aislamiento social.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="estadisticas">
+        <h2>6. Estadísticas en Argentina (EPRA 2024)</h2>
+        <p>La <b>Encuesta de Prácticas de Riesgo Adictivo (EPRA) 2024</b>, realizada por el Ministerio de Desarrollo Humano y Hábitat de CABA junto con la UCA, es el primer estudio de este tipo en la ciudad y ofrece datos específicos sobre adicciones conductuales.</p>
+        <div class="stat"><span class="n">40%</span><p>de los jóvenes presenta un <b>alto riesgo</b> en el uso del celular. 6 de cada 10 usan el celular más de 5 horas al día.</p></div>
+        <div class="stat"><span class="n">16%</span><p>de los jóvenes de 18 a 30 años <b>apostó en línea</b> alguna vez en su vida.</p></div>
+        <div class="stat"><span class="n">17,4%</span><p>de la población encuestada manifestó <b>preocupación por las apuestas online</b> de algún miembro del hogar (la conducta de mayor prevalencia entre las preocupaciones adictivas).</p></div>
+        <h3>Consumo de sustancias (referencia para comparación)</h3>
+        <ul>
+          <li>Consumo de alcohol en el último mes: 62% en adultos y 70% en jóvenes varones de 18 a 30 años.</li>
+          <li>Consumo de marihuana en el último mes: 12%, con mayor prevalencia en varones y jóvenes.</li>
+        </ul>
+        <h3>Contexto nacional</h3>
+        <p>El 3,4% de los hogares urbanos de Argentina reporta tener algún miembro con adicción (conductuales y de sustancias), siendo el <b>alcoholismo</b> la más frecuente. En CABA, la preocupación por el uso problemático del celular y las apuestas online <b>supera</b> a la del consumo de sustancias en la percepción de las familias.</p>
+        <div class="box"><p>Solo <b>1 de cada 10</b> jóvenes de 18 a 30 años tiene un comportamiento libre de riesgo. Las adicciones conductuales (pantallas y apuestas online) están en aumento y ya son una problemática relevante en la agenda de salud mental y social.</p></div>
+      </section>
+
+      <section class="card" id="prevencion">
+        <h2>7. Prevención de las adicciones conductuales</h2>
+        <p>Requiere un enfoque integral que involucre a la familia, la escuela, la comunidad y el entorno social.</p>
+        <h3>Educación y sensibilización</h3>
+        <ul>
+          <li>Informar desde edades tempranas sobre los riesgos de las conductas adictivas (videojuegos, apuestas, redes, compras).</li>
+          <li>Promover el pensamiento crítico y la toma de decisiones responsables.</li>
+        </ul>
+        <h3>Desarrollo de habilidades personales y sociales</h3>
+        <ul>
+          <li>Fomentar la autoestima y la autovaloración.</li>
+          <li>Enseñar gestión emocional, manejo del estrés y resolución de conflictos.</li>
+          <li>Estimular la capacidad de resistir la presión de grupo y poner límites saludables.</li>
+        </ul>
+        <h3>Fortalecimiento del entorno familiar</h3>
+        <ul>
+          <li>Mantener buena comunicación entre padres e hijos, con diálogo abierto y supervisión adecuada.</li>
+          <li>Conocer las actividades y amistades de los hijos.</li>
+          <li>Establecer normas claras sobre el uso de tecnologías y el tiempo de ocio.</li>
+        </ul>
+        <h3>Ocupación del tiempo libre y detección precoz</h3>
+        <ul>
+          <li>Fomentar actividades recreativas, deportivas y culturales que promuevan estilos de vida saludables.</li>
+          <li>Identificar señales de alerta (aislamiento, pérdida de control, descuido de responsabilidades).</li>
+          <li>Buscar ayuda profesional ante los primeros signos, para intervenir de manera temprana.</li>
+          <li>Implementar programas de prevención en escuelas y comunidades, y capacitar a docentes y profesionales.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="factores">
+        <h2>8. Factores protectores y de riesgo</h2>
+        <table>
+          <tr><th>Factores protectores</th><th>Factores de riesgo</th></tr>
+          <tr><td>Buena autoestima</td><td>Baja autoestima</td></tr>
+          <tr><td>Comunicación familiar</td><td>Falta de supervisión parental</td></tr>
+          <tr><td>Actividades saludables</td><td>Tiempo libre sin supervisión</td></tr>
+          <tr><td>Apoyo social y escolar</td><td>Entornos sociales permisivos</td></tr>
+          <tr><td>Información y educación</td><td>Desconocimiento de riesgos</td></tr>
+        </table>
+        <div class="box"><p>La clave está en <b>fortalecer los factores de protección</b>, reducir los de riesgo y promover estilos de vida equilibrados y saludables desde la infancia y la adolescencia.</p></div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Trabajo Práctico Nº 3</h2>
+        <p>Respondé las siguientes consignas en base al material del módulo y a tu propia investigación:</p>
+        <ol>
+          <li>¿Qué son las adicciones conductuales y en qué se diferencian de las adicciones a sustancias?</li>
+          <li>Mencioná y explicá las características principales de una adicción conductual.</li>
+          <li>¿Qué papel cumple el circuito de recompensa cerebral y la dopamina en estas adicciones?</li>
+          <li>Según el DSM-5, ¿cuál es la única adicción conductual oficialmente reconocida?</li>
+          <li>Elegí una adicción conductual (apuestas online, pantallas, videojuegos, compras) e investigá en la web datos actuales sobre su impacto en Argentina.</li>
+          <li>Enumerá las señales de alarma que permiten detectar tempranamente una adicción conductual.</li>
+          <li>Elaborá un cuadro con al menos cuatro factores protectores y cuatro factores de riesgo.</li>
+          <li>Proponé tres acciones de prevención que un operador podría implementar en una escuela o en un club barrial.</li>
+        </ol>
+        <div class="send">
+          &#128231; Enviá tu trabajo para ser corregido por los docentes a: <b>academiajason@gmail.com</b>
+        </div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+        <a href="modulo2.html" class="btn">&#8592; Módulo 2</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo 3 &#183; Operador Preventor en Adicciones y Consumos Problemáticos &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
