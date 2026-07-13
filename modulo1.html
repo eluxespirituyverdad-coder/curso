@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a5d5a" />
+  <title>Módulo 1 · Visión integral de las adicciones | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;--teal:#0d9488;--teal-dark:#0a5d5a;--emerald:#10b981;--gold:#f6a821;--coral:#ff6b5e;--white:#fff;--line:#cdeae6;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--teal);text-decoration:none}
+    .topbar{background:var(--teal-dark);color:#d6f5f1;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#0a5d5a 0%,#0d9488 45%,#10b981 100%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#eafffb;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(13,148,136,.7)}
+    .card h2{color:var(--teal-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--emerald)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#e7f7f3;border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0;color:var(--ink)}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:.8rem;color:var(--ink)}
+    table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+    table td{border:1px solid var(--line);padding:.6rem .8rem;color:var(--ink-soft)}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--teal-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#e7f7f3;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo 1</span>
+      <h1>Visión integral de las adicciones y consumos problemáticos</h1>
+      <p>Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#programa">1. Programa y objetivos de la capacitación</a>
+        <a href="#introduccion">2. Introducción: historia y concepto de adicción</a>
+        <a href="#caracteristicas">3. Características de una conducta adictiva</a>
+        <a href="#sustancias">4. Las adicciones con sustancias (drogas psicoactivas)</a>
+        <a href="#uso">5. Uso, abuso y dependencia</a>
+        <a href="#dsm">6. Trastornos inducidos por sustancias (DSM-IV-TR)</a>
+        <a href="#comportamentales">7. Las adicciones comportamentales</a>
+        <a href="#roles">8. Roles del operador</a>
+        <a href="#encuadre">9. El encuadre</a>
+        <a href="#reglas">10. Las 10 reglas del operador</a>
+        <a href="#tp">&#10148; Trabajo Práctico Nº 1 (para entregar)</a>
+      </div>
+
+      <section class="card" id="programa">
+        <h2>1. Programa y objetivos</h2>
+        <p>El <b>Operador en Adicciones y Consumos Problemáticos</b> es un agente muy demandado y necesario, ya que constituye un recurso auxiliar fundamental para la prevención y el tratamiento del consumo de drogas y alcohol.</p>
+        <h3>Objetivos</h3>
+        <ul>
+          <li>Capacitar al asistente en todos los aspectos de este flagelo, con una mirada integral de la persona y del sufrimiento que conlleva.</li>
+          <li>Aportar un marco teórico y técnico que oriente a intervenir en la problemática de manera contextualizada.</li>
+          <li>Formar para la prevención e intervención temprana sobre el uso y abuso de drogas, examinando causas y consecuencias, incluyendo los aportes de las neurociencias.</li>
+          <li>Conocer la problemática para integrar equipos interdisciplinarios que acompañen a la persona enferma y su familia, en especial considerando la realidad de los adolescentes.</li>
+        </ul>
+        <h3>Ejes temáticos</h3>
+        <ul>
+          <li>Visión integral de las adicciones.</li>
+          <li>Consumo de sustancias.</li>
+          <li>Prevención de adicciones.</li>
+          <li>Toxicología y emergencias.</li>
+        </ul>
+        <h3>Rol del operador</h3>
+        <ul>
+          <li>Dispositivos de abordaje &#8211; Comunidades terapéuticas.</li>
+          <li>Planificación de estrategias para la ejecución de acciones preventivas.</li>
+          <li>El adicto y su vínculo familiar.</li>
+          <li>Tratamientos.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="introduccion">
+        <h2>2. Introducción</h2>
+        <p>La historia de las adicciones va unida a la historia del hombre: fumar tabaco, beber alcohol, mascar hojas de coca, usar el opio para el dolor, fumar marihuana, etc. Junto a estas sustancias y sus derivados, hoy destacan las <b>nuevas adicciones</b>: algunas derivadas de sustancias (heroína, cocaína, drogas de diseño, LSD) y otras <b>comportamentales</b>, sin sustancia (adicción a Internet, al juego, al teléfono, al sexo, a las compras, etc.).</p>
+        <p>Inicialmente el concepto se basaba en la <b>dependencia</b> (física y psíquica) a sustancias psicoactivas. Con el tiempo se observó que también ciertas conductas, sin sustancia de por medio, podían producir dependencia, tolerancia y síndrome de abstinencia. Una característica común y central de las conductas adictivas es la <b>pérdida de control</b>.</p>
+        <div class="box">
+          <p><b>Elementos característicos de una adicción según Gossop (1989):</b></p>
+          <ol>
+            <li>Un fuerte deseo o sentimiento de compulsión para llevar a cabo la conducta.</li>
+            <li>Capacidad deteriorada para controlar la conducta (su comienzo, mantenimiento o nivel).</li>
+            <li>Malestar y estado de ánimo alterado cuando la conducta es impedida o se deja de hacer.</li>
+            <li>Persistir en la conducta a pesar de la clara evidencia de que produce graves consecuencias.</li>
+          </ol>
+        </div>
+        <p>El mayor problema de las adicciones no son solo sus efectos a corto plazo, sino los efectos a mediano y largo plazo: cáncer, enfermedades cardiovasculares y hepáticas, SIDA, hepatitis, además de problemas sociales, legales y familiares. Según la ONUDD (Informe Mundial sobre Drogas 2022), Argentina es uno de los países sudamericanos donde más creció el consumo de cocaína en las últimas décadas.</p>
+      </section>
+
+      <section class="card" id="caracteristicas">
+        <h2>3. Características de una conducta adictiva</h2>
+        <p>Cuando hablamos de adicción partimos de los criterios de dependencia de sustancias psicoactivas, ya que en toda adicción &#8212;con o sin sustancia&#8212; se dan fenómenos de tolerancia, abstinencia, etc. Para el <b>DSM-IV-TR</b> (APA, 2000) la dependencia es un patrón desadaptativo de consumo que conlleva deterioro o malestar clínicamente significativo, expresado por tres o más síntomas durante un período de 12 meses.</p>
+        <h3>Los cinco aspectos principales</h3>
+        <ol>
+          <li><b>Compulsión o pérdida de control:</b> es la característica principal del problema.</li>
+          <li><b>Síndrome de abstinencia:</b> conjunto de signos y síntomas físicos y psicológicos que aparecen cuando se interrumpe el consumo (o la conducta).</li>
+          <li><b>Tolerancia:</b> necesidad de incrementar la sustancia (o el tiempo/esfuerzo) para conseguir el mismo efecto que al principio. Se distingue la tolerancia farmacológica, la <b>conductual</b> (por aprendizaje y estímulos ambientales) y la <b>cruzada</b> (entre distintas sustancias, ej. alcohol y barbitúricos). Se vincula con la <b>neuroadaptación</b>.</li>
+          <li><b>Intoxicación</b> (en sustancias químicas) o <b>cuasi-disociación</b> (estar "fuera de sí").</li>
+          <li><b>Problemas graves</b> en la esfera física/sanitaria, personal, familiar, laboral y social.</li>
+        </ol>
+        <p>A esto se suma la <b>politoxicomanía</b> (varias conductas adictivas a la vez en un mismo individuo) y la frecuente presencia de patología orgánica, psicológica y psiquiátrica asociada.</p>
+      </section>
+
+      <section class="card" id="sustancias">
+        <h2>4. Las adicciones con sustancias</h2>
+        <h3>Alcohol y tabaco (drogas legales)</h3>
+        <p>El consumo de alcohol ha cambiado de patrón: del consumo moderado y diario (modelo mediterráneo) a un consumo de fin de semana, en grandes cantidades y con el objetivo de la embriaguez (patrón anglosajón), sumado al fenómeno del "botellón" en jóvenes. Fumar es la principal causa evitable de mortalidad y morbilidad en los países desarrollados.</p>
+        <h3>Cannabis</h3>
+        <p>Tiene efectos psicoactivos y produce intoxicación, tolerancia y dependencia. Se presenta como <b>hachís</b> (resina), triturado seco de flores y hojas, o <b>aceite</b>. Efecto bifásico: fase de estimulación (euforia, aumento de la percepción, ansiedad) seguida de sedación (relajación, somnolencia). Altera atención y memoria reciente; el consumo prolongado se asocia a fracaso escolar y a un posible <b>síndrome amotivacional</b> (anergia y abulia).</p>
+        <h3>Heroína (opiáceo)</h3>
+        <p>Produce primero náuseas y vómitos, luego placer, euforia y reducción de ansiedad ("luna de miel"). La intoxicación se caracteriza por <b>miosis intensa</b> (pupilas en punta de alfiler), euforia, apatía, retardo psicomotor, somnolencia, lenguaje farfullante, bradicardia, hipotensión, hipotermia y estreñimiento. La sobredosis puede causar la muerte por depresión respiratoria. El síndrome de abstinencia aparece unas 8 horas después del último consumo, con síntomas parecidos a una gripe fuerte.</p>
+        <h3>Cocaína</h3>
+        <p>Se consume en hojas masticadas, clorhidrato (esnifado o inyectado) o crack (fumado). Sus efectos: euforia, labilidad emocional, grandiosidad, hiperalerta, agitación, insomnio, anorexia, hipersexualidad y tendencia a la violencia. Al dejarla se produce un intenso "crash" (disforia, depresión, hipersomnolencia, craving). Produce alta dependencia psicológica y poca dependencia física.</p>
+        <h3>Drogas de síntesis y anfetaminas</h3>
+        <p>Estimulan el SNC: elevan el ánimo, disminuyen la fatiga y el apetito. Al finalizar el efecto aparecen depresión y fatiga. Su abstinencia produce depresión, irritabilidad, anhedonia y, a veces, ideación paranoide.</p>
+      </section>
+
+      <section class="card" id="uso">
+        <h2>5. Uso, abuso y dependencia</h2>
+        <ul>
+          <li><b>Uso:</b> consumo de una sustancia que no produce consecuencias negativas apreciables (habitualmente esporádico).</li>
+          <li><b>Abuso:</b> uso continuado a pesar de las consecuencias negativas derivadas del mismo.</li>
+          <li><b>Dependencia:</b> uso excesivo que genera consecuencias negativas significativas a lo largo del tiempo.</li>
+        </ul>
+        <p>Según la <b>CIE-10 (OMS, 1992)</b>, la dependencia es un conjunto de manifestaciones fisiológicas, comportamentales y cognoscitivas en el cual el consumo adquiere la máxima prioridad para el individuo. Se diagnostica si en los últimos 12 meses estuvieron presentes tres o más de estos rasgos:</p>
+        <ol>
+          <li>Deseo intenso o compulsión a consumir.</li>
+          <li>Disminución de la capacidad de controlar el consumo (inicio, término o cantidad).</li>
+          <li>Síntomas de abstinencia al reducir o cesar el consumo.</li>
+          <li>Tolerancia.</li>
+          <li>Abandono progresivo de otras fuentes de placer y aumento del tiempo dedicado a la sustancia.</li>
+          <li>Persistencia en el consumo pese a las consecuencias perjudiciales evidentes.</li>
+        </ol>
+        <p>Se distinguen la <b>dependencia física</b> (tolerancia, neuroadaptación y abstinencia) y la <b>dependencia psíquica</b> (satisfacción e impulso psíquico que exigen consumir para producir placer o evitar malestar). El <b>potencial adictivo</b> es la tendencia de una sustancia a producir dependencia (ej.: el tabaco tiene alto poder adictivo).</p>
+      </section>
+
+      <section class="card" id="dsm">
+        <h2>6. Trastornos mentales inducidos por sustancias (DSM-IV-TR)</h2>
+        <table>
+          <tr><td>Delirium inducido por sustancias</td></tr>
+          <tr><td>Demencia persistente inducida por sustancias</td></tr>
+          <tr><td>Trastorno amnésico persistente inducido por sustancias</td></tr>
+          <tr><td>Trastorno psicótico inducido por sustancias</td></tr>
+          <tr><td>Trastorno del estado de ánimo inducido por sustancias</td></tr>
+          <tr><td>Trastorno de ansiedad inducido por sustancias</td></tr>
+          <tr><td>Trastorno sexual inducido por sustancias</td></tr>
+          <tr><td>Trastorno del sueño inducido por sustancias</td></tr>
+          <tr><td>Trastorno perceptivo persistente por alucinógenos (flashback)</td></tr>
+        </table>
+      </section>
+
+      <section class="card" id="comportamentales">
+        <h2>7. Las adicciones comportamentales</h2>
+        <p>Son aquellas producidas por conductas (no por sustancias) que cumplen los criterios clínicos de dependencia, tolerancia, abstinencia y pérdida de control:</p>
+        <ul>
+          <li><b>Juego patológico:</b> única adicción sin sustancia recogida en el DSM-IV-TR. Se caracteriza por preocupación por el juego, necesidad de apostar cantidades crecientes, fracaso en controlarlo, inquietud al intentar detenerlo, "cazar" las pérdidas, mentiras, actos ilegales para financiarlo y pérdida de relaciones significativas.</li>
+          <li><b>Adicción al sexo y al amor:</b> pérdida de la capacidad de elección; incluye tolerancia, dependencia, craving, abstinencia, obsesión, conductas compulsivas y secreto.</li>
+          <li><b>Adicción al trabajo:</b> "trabajo compulsivo"; anteponer el trabajo a la familia, amigos y a uno mismo, con abstinencia (irritabilidad, culpa) al detenerse.</li>
+          <li><b>Compras compulsivas:</b> comprar por el hecho de comprar, favorecido por las tarjetas de crédito.</li>
+          <li><b>Nuevas tecnologías:</b> televisión, videojuegos, computadora, teléfono móvil e Internet, especialmente en adolescentes y personas aisladas.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="roles">
+        <h2>8. Roles del operador</h2>
+        <p>El operador cumple varios roles según el ámbito donde interactúa:</p>
+        <h3>A) En su contexto de trabajo</h3>
+        <p>Requiere flexibilidad y adaptación para trabajar con otras disciplinas: receptividad, generosidad para aportar datos al equipo, humildad para pedir ayuda y participación en reuniones e instancias multidisciplinarias.</p>
+        <h3>B) En el ámbito social</h3>
+        <p>Es un referente social. Debe ajustarse al código de ética y a normas de conducta apropiadas para quien propicia cambios favorables en la vida de otros.</p>
+        <h3>C) En su rol con los asistidos y sus familias</h3>
+        <p>Requiere empatía, confianza, interés por la tarea, seguridad en el manejo de los límites, dedicación, intuición y creatividad.</p>
+        <h3>D) En su ámbito personal</h3>
+        <p>Como todo ser humano tiene una historia, un presente y un futuro. Debe trabajar sus propias problemáticas para poder enfrentar situaciones de transferencia y operar adecuadamente.</p>
+      </section>
+
+      <section class="card" id="encuadre">
+        <h2>9. El encuadre</h2>
+        <p>Toda tarea debe estar enmarcada y delimitada para evitar la desorganización y el caos. El encuadre es, según Bleger, "el conjunto de condiciones constantes dentro de las cuales se va a desarrollar un proceso". Funciona como <b>fondo fijo</b> sobre el cual emerge lo variable (el proceso).</p>
+        <p>Las constantes a tener en cuenta son:</p>
+        <ul>
+          <li><b>Espaciales:</b> el lugar.</li>
+          <li><b>Temporales:</b> duración, horario y frecuencia.</li>
+          <li><b>Funcionales:</b> definición de la tarea y de las funciones necesarias.</li>
+        </ul>
+        <p>Su función es de <b>sostén y continencia</b>: reduce las interferencias al mínimo, potencia la productividad de la tarea y brinda seguridad psicológica, absorbiendo ansiedades intensas.</p>
+      </section>
+
+      <section class="card" id="reglas">
+        <h2>10. Las 10 reglas del operador</h2>
+        <ol>
+          <li><b>Entender y promover la autoayuda y la ayuda mutua.</b> El cuidado mutuo, la comunicación y la cercanía entre residentes son herramientas terapéuticas fundamentales. Se busca desarrollar la reflexión y la capacidad de espera, evitando el <i>acting out</i>.</li>
+          <li><b>Entender y practicar el modelaje del rol positivo.</b> Facilitar elecciones hacia un comportamiento digno, usando la confrontación como clarificación de la experiencia subjetiva del paciente.</li>
+          <li><b>Entender el aprendizaje social versus el aprendizaje didáctico.</b> El aprendizaje social se logra a través de la interacción y la repetición/diferenciación de escenas para su superación.</li>
+          <li><b>No a la dicotomía "nosotros/ellos".</b> Minimizar la asimetría médico-paciente; promover la responsabilización y el apoderamiento del paciente sobre su proceso.</li>
+          <li><b>Promoción de la movilidad ascendente y del sistema de privilegios.</b> Los privilegios son accesos otorgados sobre la base del cumplimiento terapéutico; funcionan como reforzadores positivos.</li>
+          <li><b>Practicar el concepto de "actuar como si".</b> Fomentar el crecimiento personal a pesar del estrés ambiental; favorecer la incorporación de un modelo maduro de obrar y relacionarse.</li>
+          <li><b>Comprender la relación entre pertenencia e individualidad.</b> La pertenencia comunitaria debe facilitar una identidad personal, mediante procesos de resocialización.</li>
+          <li><b>Comprender la necesidad de un sistema de creencias dentro de la comunidad.</b> La comunidad tiene una ideología que opera como encuadre y argumento del progreso.</li>
+          <li><b>Capacidad de mantener registros específicos.</b> Historia clínica, libros de actas y de herramientas: mejoran la calidad del servicio y obligan a reflexionar sobre la propia acción.</li>
+          <li><b>Entender y facilitar el proceso grupal.</b> Los grupos son herramientas terapéuticas (grupo encuentro, instancia "a" y "b", expresión de sentimiento, asamblea). El operador no es despectivo ni autoritario: mantiene el grupo en funcionamiento reforzando los desempeños positivos.</li>
+        </ol>
+        <div class="box">
+          <p><b>Nota:</b> Al finalizar esta primera parte se trabajará con el libro de Luciano Levin, <i>"Las adicciones como construcción social"</i>, que utilizaremos como material de referencia en varios de los módulos siguientes.</p>
+        </div>
+      </section>
+
+      <section class="card tp" id="tp">
+        <h2>&#128221; Trabajo Práctico Nº 1</h2>
+        <p>Respondé las siguientes consignas en base al material del módulo y a tu propia investigación:</p>
+        <ol>
+          <li>¿Cuáles son los elementos característicos de una adicción según Gossop?</li>
+          <li>Realizá una búsqueda en la web y explicá brevemente qué es el DSM IV.</li>
+          <li>Desarrollá una síntesis sobre lo que plantea el DSM IV acerca de la conducta adictiva. Establecé una diferencia con el DSM V.</li>
+          <li>¿Cuáles son las formas de uso del cannabis y sus efectos?</li>
+          <li>¿Cuáles son los síntomas característicos de la intoxicación por heroína?</li>
+          <li>¿Qué enfermedades infecciosas aparecen con frecuencia en pacientes con adicción?</li>
+          <li>Definí y explicá los términos: USO, ABUSO y DEPENDENCIA de drogas.</li>
+          <li>Mencioná los trastornos comportamentales inducidos por sustancias según el DSM IV.</li>
+          <li>Mirá el siguiente video y realizá un breve análisis articulando con el tema sujeto y aprendizaje:<br>
+            <a href="https://www.youtube.com/watch?v=6Pk7hWBg8uk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=6Pk7hWBg8uk</a></li>
+          <li><b>Actividad final:</b> realizá un cuadro sinóptico de los temas desarrollados hasta aquí.</li>
+        </ol>
+        <div class="send">
+          &#128231; Enviá tu trabajo para ser corregido por los docentes a: <b>academiajason@gmail.com</b>
+        </div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo 1 &#183; Operador Preventor en Adicciones y Consumos Problemáticos &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
