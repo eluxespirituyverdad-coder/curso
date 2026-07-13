@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a5d5a" />
+  <title>Módulo Introductorio | Academia Jasón</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;--teal:#0d9488;--teal-dark:#0a5d5a;--emerald:#10b981;--gold:#f6a821;--coral:#ff6b5e;--white:#fff;--line:#cdeae6;--container:860px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    a{color:var(--teal);text-decoration:none}
+    .topbar{background:var(--teal-dark);color:#d6f5f1;font-size:.82rem;padding:.7rem 0;font-weight:600}
+    .topbar a{color:#fff;font-weight:700}
+    .head{background:linear-gradient(135deg,#0a5d5a 0%,#0d9488 45%,#10b981 100%);color:#fff;padding:2.6rem 0;position:relative;overflow:hidden}
+    .head:after{content:"";position:absolute;bottom:-90px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .head .container{position:relative;z-index:2}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;text-transform:uppercase;margin-bottom:.9rem}
+    .head h1{color:#fff;font-size:1.7rem;font-weight:900;line-height:1.2}
+    .head p{color:#eafffb;margin-top:.6rem;font-size:.98rem}
+    main{padding:2.4rem 0 3rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;margin-bottom:1.6rem;box-shadow:0 14px 40px -30px rgba(13,148,136,.7)}
+    .card h2{color:var(--teal-dark);font-size:1.3rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:3px solid var(--emerald)}
+    .card h3{color:var(--ink);font-size:1.05rem;margin:1.3rem 0 .5rem}
+    .card h4{color:var(--teal);font-size:.98rem;margin:1rem 0 .4rem}
+    .card p{margin-bottom:.9rem;color:var(--ink-soft)}
+    .card b{color:var(--ink)}
+    .card ul{margin:.4rem 0 1rem 0;list-style:none}
+    .card ul li{position:relative;padding-left:1.3rem;margin-bottom:.5rem;color:var(--ink-soft)}
+    .card ul li:before{content:"";position:absolute;left:0;top:.7rem;width:7px;height:7px;border-radius:50%;background:var(--emerald)}
+    .card ol{margin:.4rem 0 1rem 1.2rem;color:var(--ink-soft)}
+    .card ol li{margin-bottom:.5rem;padding-left:.3rem}
+    .box{background:#e7f7f3;border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0}
+    .box p{margin:0 0 .6rem 0;color:var(--ink)}
+    .box p:last-child{margin-bottom:0}
+    .quote{background:#fff6e6;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1rem 0;font-style:italic}
+    .quote p{margin:0;color:var(--ink)}
+    .quote .src{display:block;margin-top:.6rem;font-style:normal;font-weight:700;font-size:.85rem;color:var(--teal)}
+    .tp{background:linear-gradient(160deg,#fff,#fff6e6);border:1.5px solid var(--gold)}
+    .tp h2{color:#b9791b;border-bottom-color:var(--gold)}
+    .tp ol li{margin-bottom:.8rem;color:var(--ink)}
+    .tp ul li{color:var(--ink)}
+    table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}
+    table th{background:var(--teal);color:#fff;padding:.6rem .8rem;text-align:left;font-size:.85rem}
+    table td{border:1px solid var(--line);padding:.6rem .8rem;color:var(--ink-soft);vertical-align:top}
+    .flow{background:#e7f7f3;border:1px dashed var(--teal);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0;text-align:center;font-weight:700;color:var(--teal-dark);font-size:.92rem;line-height:2}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:10px;font-size:.92rem}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+    .toc b{color:var(--teal-dark)}
+    .toc a{display:block;padding:.3rem 0;border-bottom:1px dashed var(--line);color:var(--ink-soft);font-size:.93rem}
+    .toc a:last-child{border-bottom:none}
+    .send{background:#e7f7f3;border-radius:10px;padding:.8rem 1rem;font-size:.9rem;color:var(--ink);margin-top:1rem}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.6rem 0;font-size:.8rem}
+    footer b{color:var(--gold)}
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver al aula</a></div></div>
+
+  <header class="head">
+    <div class="container">
+      <span class="kick">Módulo Introductorio</span>
+      <h1>Formación transversal: pensar, estudiar y ejercer en el siglo XXI</h1>
+      <p>Operador Preventor en Adicciones y Consumos Problemáticos · Academia Jasón</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="toc">
+        <b>Contenido del módulo</b>
+        <a href="#presentacion">Presentación institucional</a>
+        <a href="#enfoque">Enfoque pedagógico y competencias</a>
+        <a href="#s1">Sección 1 · El estudiante y el rol profesional en el siglo XXI</a>
+        <a href="#s2">Sección 2 · Estudio autónomo y autorregulación</a>
+        <a href="#s3">Sección 3 · Comunicación académica y profesional</a>
+        <a href="#s4">Sección 4 · Pensamiento crítico y toma de decisiones</a>
+        <a href="#s5">Sección 5 · Ética profesional y responsabilidad social</a>
+        <a href="#s6">Sección 6 · Trabajo colaborativo e interdisciplina</a>
+        <a href="#s7">Sección 7 · Fundamentos de investigación</a>
+        <a href="#s8">Sección 8 · Tecnología y ciudadanía digital</a>
+        <a href="#cierre">Cierre del módulo</a>
+      </div>
+
+      <section class="card" id="presentacion">
+        <h2>Presentación institucional</h2>
+        <p>La <b>Academia Jasón</b> asume la educación como una práctica transformadora, ética y socialmente comprometida. Nuestra propuesta formativa integra saber técnico, pensamiento crítico, responsabilidad ciudadana y desarrollo humano integral.</p>
+        <p>Este <b>Módulo Introductorio</b> constituye un trayecto transversal obligatorio para todas las carreras y certificaciones. No es un contenido accesorio: es la base formativa que orienta el modo de estudiar, pensar y ejercer profesionalmente.</p>
+        <p>En un contexto atravesado por:</p>
+        <ul>
+          <li>Inteligencia artificial y automatización.</li>
+          <li>Crisis ambientales y sociales.</li>
+          <li>Transformaciones laborales aceleradas.</li>
+          <li>Sobrecarga informativa.</li>
+          <li>Nuevos dilemas éticos digitales.</li>
+        </ul>
+        <p>Formarse hoy implica desarrollar competencias cognitivas, éticas, comunicativas y colaborativas, además de saberes técnicos. Este módulo propone un recorrido reflexivo y práctico que articula identidad profesional, autonomía en el aprendizaje, comunicación académica, pensamiento crítico, ética aplicada, trabajo interdisciplinario, investigación básica y ciudadanía digital.</p>
+        <div class="box"><p>No se trata solo de aprobar un requisito, sino de construir una base sólida para una práctica profesional consciente, rigurosa y comprometida con la realidad latinoamericana.</p></div>
+      </section>
+
+      <section class="card" id="enfoque">
+        <h2>Enfoque pedagógico y competencias</h2>
+        <h3>Este módulo está diseñado desde:</h3>
+        <ul>
+          <li>Enfoque por competencias.</li>
+          <li>Aprendizaje significativo.</li>
+          <li>Metodología reflexiva y aplicada.</li>
+          <li>Perspectiva interdisciplinaria.</li>
+          <li>Compromiso social y regional.</li>
+        </ul>
+        <h3>Competencias transversales que desarrolla</h3>
+        <p>Al finalizar el módulo, el/la estudiante será capaz de:</p>
+        <ol>
+          <li>Asumir su rol como sujeto activo de aprendizaje.</li>
+          <li>Aplicar técnicas de estudio autónomo y autorregulación.</li>
+          <li>Comunicar ideas de forma clara en contextos académicos y profesionales.</li>
+          <li>Analizar críticamente información y situaciones complejas.</li>
+          <li>Tomar decisiones fundamentadas.</li>
+          <li>Actuar con criterios éticos en escenarios reales.</li>
+          <li>Trabajar colaborativamente en equipos interdisciplinarios.</li>
+          <li>Comprender nociones básicas de investigación científica.</li>
+          <li>Ejercer ciudadanía digital responsable.</li>
+        </ol>
+        <h3>Estructura didáctica de cada sección</h3>
+        <ul>
+          <li>Introducción conceptual clara.</li>
+          <li>Desarrollo teórico organizado.</li>
+          <li>Cuadros comparativos y síntesis visual.</li>
+          <li>Texto de autor para análisis crítico.</li>
+          <li>Actividades reflexivas guiadas.</li>
+          <li>Trabajo práctico integrador.</li>
+          <li>Criterios de evaluación explícitos.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="s1">
+        <h2>Sección 1 · El estudiante y el rol profesional en el siglo XXI</h2>
+        <h3>Propósito formativo</h3>
+        <p>Acompañar al estudiante en la construcción de su identidad académica y en la toma de conciencia de su rol profesional como proyecto ético y social. La formación superior implica asumir una posición activa frente al conocimiento, frente a la comunidad y frente a sí mismo.</p>
+        <p>Ser estudiante hoy supone una transformación subjetiva: pasar de ser consumidor de información a productor de sentido; de receptor de instrucciones a protagonista de un proceso formativo que impactará en su entorno.</p>
+        <h3>1.1 Ser estudiante hoy: de receptor a protagonista</h3>
+        <p>La figura tradicional del estudiante &#8212;silencioso, obediente, centrado en aprobar&#8212; resulta insuficiente para los desafíos contemporáneos. El siglo XXI exige un perfil autónomo, crítico, flexible y capaz de aprender de manera continua. Ello implica cinco dimensiones fundamentales:</p>
+        <h4>1. Aprender a aprender</h4>
+        <p>El conocimiento ya no es estable ni definitivo. La competencia central no es acumular información, sino desarrollar estrategias de aprendizaje autónomo:</p>
+        <ul>
+          <li>Identificar fuentes confiables.</li>
+          <li>Organizar el tiempo de estudio.</li>
+          <li>Utilizar herramientas digitales de manera crítica.</li>
+          <li>Evaluar la propia comprensión.</li>
+          <li>Reconocer errores como oportunidades de mejora.</li>
+        </ul>
+        <h4>2. Gestionar información digital</h4>
+        <p>Vivimos en una cultura de sobreabundancia informativa. La disponibilidad de datos no garantiza comprensión. El estudiante protagonista debe distinguir información validada de opiniones sin fundamento, comprender algoritmos y sesgos, y usar la tecnología como medio y no como fin.</p>
+        <h4>3. Pensar críticamente</h4>
+        <p>Implica analizar argumentos, detectar falacias, reconocer supuestos y evaluar evidencias. No consiste en oponerse sistemáticamente, sino en examinar con rigor: relacionar, contextualizar y analizar los conceptos.</p>
+        <h4>4. Adaptarse al cambio</h4>
+        <p>La automatización y la transformación de los mercados laborales generan incertidumbre. Adaptarse no es aceptar pasivamente cualquier cambio, sino comprender los cambios estructurales, actualizar competencias, desarrollar flexibilidad cognitiva y mantener una actitud de aprendizaje continuo.</p>
+        <h4>5. Construir sentido profesional</h4>
+        <p>La formación dejó de ser acumulación de datos para convertirse en formación de criterio. Construir sentido profesional supone preguntarse: ¿Qué necesidades sociales aborda mi profesión? ¿Qué responsabilidad ética conlleva? ¿Cómo quiero ejercerla?</p>
+        <h3>1.2 El conocimiento profesional: saber y acción</h3>
+        <table>
+          <tr><th>Tipo de conocimiento</th><th>Característica</th><th>Ejemplo</th></tr>
+          <tr><td>Empírico</td><td>Surge de la experiencia</td><td>Aprender observando</td></tr>
+          <tr><td>Técnico</td><td>Procedimental, aplicado</td><td>Enfermería, estética</td></tr>
+          <tr><td>Científico</td><td>Sistemático, verificable</td><td>Medicina, derecho</td></tr>
+        </table>
+        <p>El profesional no descarta el conocimiento empírico ni el técnico: los integra bajo criterios científicos y éticos. Formar profesionales reflexivos es distinto de entrenar técnicos: el técnico ejecuta procedimientos; el profesional reflexivo comprende el sentido de su práctica, la adapta a situaciones complejas y asume responsabilidad por sus decisiones.</p>
+        <h3>1.3 Vocación y proyecto de vida</h3>
+        <p>Desde una perspectiva académica, la vocación es la intersección de cuatro dimensiones: <b>intereses personales</b>, <b>habilidades</b> desarrolladas o potenciales, <b>valores éticos</b> y <b>oportunidades sociales</b>. No se descubre de manera instantánea; se construye progresivamente. El proyecto profesional es dinámico y requiere planificación estratégica con metas de corto, mediano y largo plazo.</p>
+        <div class="quote">
+          <p>&#8220;El conocimiento se ha vuelto tan especializado que ya no puede separarse de la tecnología, de la política o del mercado. Pero si los futuros profesionales solo aprenden a obedecer normas o a cumplir rutinas, sin preguntarse por el sentido de lo que hacen, no serán verdaderos profesionales, sino autómatas funcionales. Formar estudiantes no es solo enseñar contenidos: es enseñar a pensar con libertad y responsabilidad.&#8221;</p>
+          <span class="src">Mariana Maggio, "Educación en Pandemia y Post-Pandemia", 2021</span>
+        </div>
+        <div class="box">
+          <p><b>Guía de análisis:</b></p>
+          <p>1. ¿Qué modelo educativo critica la autora?</p>
+          <p>2. ¿Cómo se vincula esta crítica con la automatización actual?</p>
+          <p>3. ¿Qué diferencia existe entre formar técnicos y formar profesionales reflexivos?</p>
+        </div>
+      </section>
+
+      <section class="card tp">
+        <h2>&#128221; Trabajo Práctico Nº 1 · Carta Fundacional del Estudiante</h2>
+        <p><b>Consigna:</b> Redactá una carta reflexiva en la que definas:</p>
+        <ul>
+          <li>Qué significa para vos ser estudiante en el siglo XXI.</li>
+          <li>Qué valores orientarán tu formación.</li>
+          <li>Qué tipo de profesional aspirás a ser.</li>
+          <li>Qué compromisos asumís frente a la comunidad académica y social.</li>
+        </ul>
+        <p>La carta debe integrar los conceptos trabajados en la sección y evidenciar reflexión crítica.</p>
+        <h3>Criterios de evaluación</h3>
+        <table>
+          <tr><th>Criterio</th><th>Ponderación</th></tr>
+          <tr><td>Profundidad reflexiva</td><td>30%</td></tr>
+          <tr><td>Articulación conceptual</td><td>20%</td></tr>
+          <tr><td>Claridad y coherencia</td><td>20%</td></tr>
+          <tr><td>Integración ética</td><td>20%</td></tr>
+          <tr><td>Presentación formal</td><td>10%</td></tr>
+        </table>
+        <div class="send">&#128231; Enviá tu trabajo para ser corregido a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <section class="card" id="s2">
+        <h2>Sección 2 · Estudio autónomo y autorregulación en la era digital</h2>
+        <h3>Propósito formativo</h3>
+        <p>Fortalecer la capacidad del estudiante para gestionar su propio aprendizaje en contextos digitales complejos, promoviendo la autorregulación, la metacognición y el uso responsable de herramientas tecnológicas, incluida la inteligencia artificial. El estudio autónomo no es una opción complementaria, sino una condición estructural.</p>
+        <h3>2.1 Autonomía y metacognición</h3>
+        <p>La autonomía académica no significa estudiar en soledad, sino asumir un rol activo en la planificación, ejecución y evaluación del propio aprendizaje. La <b>metacognición</b> es la capacidad de reflexionar sobre los propios procesos de pensamiento: ¿Entiendo realmente este concepto? ¿Qué estrategia me resulta más eficaz? ¿Dónde cometo errores? ¿Qué necesito reforzar?</p>
+        <h3>2.2 El ciclo de autorregulación</h3>
+        <div class="flow">META &#8594; PLAN &#8594; ACCIÓN &#8594; MONITOREO &#8594; AJUSTE &#8594; EVALUACIÓN</div>
+        <ol>
+          <li><b>Meta:</b> definir un objetivo claro (comprender un marco teórico, resolver problemas, elaborar un ensayo, integrar conceptos).</li>
+          <li><b>Plan:</b> organizar recursos y tiempos; decidir qué contenidos y estrategias emplear.</li>
+          <li><b>Acción:</b> ejecutar las estrategias con comprensión y atención consciente.</li>
+          <li><b>Monitoreo:</b> supervisar el desempeño para detectar distracciones, errores y dificultades. Es evaluación en proceso.</li>
+          <li><b>Ajuste:</b> cambiar estrategia, buscar otra fuente, pedir ayuda o reorganizar tiempos.</li>
+          <li><b>Evaluación:</b> valorar el resultado. ¿Se logró la meta? ¿Qué mejorar? Esto alimenta futuros ciclos.</li>
+        </ol>
+        <h3>2.3 Inteligencia artificial como herramienta de estudio</h3>
+        <p>Su incorporación exige un enfoque crítico y responsable:</p>
+        <ul>
+          <li>Utilizarla para comprender, no para copiar.</li>
+          <li>Pedir explicaciones alternativas cuando un concepto no se entiende.</li>
+          <li>Solicitar ejemplos o esquemas aclaratorios.</li>
+          <li>Verificar la información generada con fuentes académicas confiables.</li>
+        </ul>
+        <p>El riesgo aparece cuando la IA se convierte en sustituto del pensamiento. Un estudiante autorregulado la usa como apoyo, no como reemplazo del esfuerzo cognitivo.</p>
+        <h3>2.4 Complejidad y pensamiento sistémico</h3>
+        <p>Edgar Morin plantea que la educación tradicional fragmenta el conocimiento en disciplinas aisladas, perdiendo la interconexión de los fenómenos. Frente a ello propone un pensamiento complejo.</p>
+        <div class="quote">
+          <p>&#8220;En una época en la que el acceso a la información es casi ilimitado, estudiar no consiste en memorizar, sino en seleccionar, comprender y aplicar el conocimiento. El problema ya no es la falta de datos, sino la abundancia de ellos sin criterio. Por eso, el estudiante debe transformarse en curador de su propio aprendizaje, eligiendo con inteligencia qué saber incorporar y qué desechar.&#8221;</p>
+          <span class="src">Edgar Morin, "Los siete saberes necesarios para la educación del futuro", 1999</span>
+        </div>
+        <div class="box">
+          <p><b>Actividad de análisis:</b></p>
+          <p>1. ¿Cuál es el riesgo de tener acceso ilimitado a información?</p>
+          <p>2. ¿Cómo se relaciona esta idea con tu experiencia usando Internet o redes para estudiar?</p>
+          <p>3. ¿Qué estrategias podés aplicar para convertirte en "curador" de tu propio aprendizaje?</p>
+        </div>
+      </section>
+
+      <section class="card tp">
+        <h2>&#128221; Trabajo Práctico · Mi Caja de Herramientas de Estudio</h2>
+        <p><b>Consigna:</b> Diseñá una "caja de herramientas" personal (en formato gráfico o escrito) en la que:</p>
+        <ol>
+          <li>Selecciones al menos cuatro técnicas de estudio que ya usás o te gustaría usar.</li>
+          <li>Expliques por qué las elegiste, cómo las aplicarías y en qué situaciones concretas.</li>
+          <li>Añadas una reflexión final sobre qué cambios podrías hacer para mejorar tu organización del tiempo o espacio de estudio.</li>
+        </ol>
+        <p><b>Formato libre:</b> ficha técnica, infografía, presentación o texto escrito (mínimo 2 páginas). Puede incluir ilustraciones, esquemas o capturas de apps que uses.</p>
+        <div class="send">&#128231; Enviá tu trabajo para ser corregido a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <section class="card" id="s3">
+        <h2>Sección 3 · Comunicación académica y profesional</h2>
+        <h3>Propósito formativo</h3>
+        <p>No hay producción de conocimiento sin intercambio discursivo. La sección propone comprender la comunicación como construcción de sentido, desarrollar habilidades orales y escritas, y reconocer la escritura como proceso cognitivo.</p>
+        <h3>3.1 Comunicación como construcción de sentido</h3>
+        <p>Comunicar no es transmitir información, sino producir significado en interacción con otros. En lo académico cumple funciones esenciales: explicar conceptos, argumentar posiciones, presentar resultados, debatir ideas y justificar decisiones profesionales. Requiere claridad conceptual, coherencia argumentativa y adecuación al contexto.</p>
+        <h3>3.2 Comunicación oral</h3>
+        <p>La exposición oral requiere organización clara de ideas, uso adecuado del lenguaje técnico, contacto visual y postura coherente, dominio del tiempo y capacidad de síntesis. No es improvisación: es planificación y ensayo.</p>
+        <h4>Rúbrica para exposición oral</h4>
+        <table>
+          <tr><th>Criterio</th><th>Nivel alto</th><th>Nivel medio</th><th>Nivel básico</th></tr>
+          <tr><td>Claridad</td><td>Ideas ordenadas y coherentes</td><td>Algunas imprecisiones</td><td>Desorganización conceptual</td></tr>
+          <tr><td>Lenguaje corporal</td><td>Seguro y coherente</td><td>Moderado</td><td>Inseguro o rígido</td></tr>
+          <tr><td>Dominio del contenido</td><td>Exposición fluida</td><td>Dependencia parcial del guión</td><td>Lectura constante</td></tr>
+        </table>
+        <h3>3.3 y 3.4 La escritura como proceso cognitivo</h3>
+        <p>Escribir no es volcar ideas espontáneamente: es estructurar el pensamiento. Daniel Cassany permite comprender la escritura como proceso (no como producto terminado) con varias fases: <b>planificación, redacción inicial, revisión y reescritura</b>. La idea central es que <b>escribir es reescribir</b>. La escritura clarifica el pensamiento, profundiza la comprensión, detecta vacíos conceptuales y fortalece la argumentación.</p>
+        <div class="quote">
+          <p>&#8220;Escribir no es simplemente pasar ideas al papel. Es pensar en voz baja, reescribir, corregir, cambiar, volver a empezar. Una buena escritura es siempre el resultado de un proceso, no de un golpe de inspiración. Por eso, enseñar a escribir es enseñar a pensar. Y aprender a escribir es también aprender a aprender.&#8221;</p>
+          <span class="src">Daniel Cassany, "Afilar el lápiz", 2007</span>
+        </div>
+        <div class="box">
+          <p><b>Actividad de análisis:</b></p>
+          <p>1. ¿Qué vínculo establece el autor entre escritura y pensamiento?</p>
+          <p>2. ¿Por qué escribir no es un acto inmediato, sino un proceso?</p>
+          <p>3. ¿Te identificás con esta idea? ¿Cómo podés mejorar tu propia escritura?</p>
+        </div>
+      </section>
+
+      <section class="card tp">
+        <h2>&#128221; Trabajo Práctico · Mi presentación profesional</h2>
+        <p><b>Consigna:</b> Elaborá una presentación personal en dos formatos:</p>
+        <p><b>A) Escrito (1 página):</b> redactá un texto formal en el que te presentes como estudiante o futuro profesional, expliques tu interés por el área en que te formás y comentes qué competencias te gustaría desarrollar.</p>
+        <p><b>B) Oral (3 a 5 minutos):</b> grabá un audio o video presentándote ante un público general (por ejemplo una entrevista de trabajo o exposición en clase). Usá un tono claro y pausado, sin leer.</p>
+        <div class="send">&#128231; Enviá tu trabajo para ser corregido a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <section class="card" id="s4">
+        <h2>Sección 4 · Pensamiento crítico, racionalidad y toma de decisiones</h2>
+        <h3>Propósito formativo</h3>
+        <p>Fortalecer la capacidad de analizar situaciones complejas, evaluar información con rigor y tomar decisiones fundamentadas. En un contexto de sobreinformación, polarización y automatización, el pensamiento crítico es una competencia esencial. La racionalidad no se opone a la sensibilidad: la orienta mediante criterios de análisis sistemático.</p>
+        <h3>4.1 Fundamentos del pensamiento crítico</h3>
+        <p>Pensar críticamente no es desconfiar de todo, sino examinar ideas con criterios claros. Descansa en tres pilares:</p>
+        <ol>
+          <li><b>Distinguir hechos de opiniones:</b> los hechos son verificables mediante evidencia; las opiniones son juicios personales; las valoraciones, apreciaciones normativas. Confundirlos favorece la manipulación informativa.</li>
+          <li><b>Evaluar evidencia:</b> preguntarse por la fuente, su confiabilidad, la existencia de datos verificables y si la conclusión se deriva lógicamente. Reconocer la diferencia entre correlación y causalidad, y entre anécdota y estudio sistemático.</li>
+          <li><b>Reconocer sesgos:</b> el pensamiento está influido por creencias, emociones y experiencias. La conciencia de los propios límites cognitivos es condición de una racionalidad madura.</li>
+        </ol>
+        <h3>4.2 Sesgos cognitivos y manipulación informativa</h3>
+        <ul>
+          <li><b>Sesgo de confirmación:</b> tendencia a buscar y recordar información que confirma nuestras creencias, ignorando la que las contradice. Los algoritmos refuerzan "burbujas informativas".</li>
+          <li><b>Pensamiento grupal:</b> el deseo de consenso lleva a minimizar el análisis crítico; se evita el desacuerdo para mantener la armonía.</li>
+          <li><b>Autoritarismo cognitivo:</b> aceptar una afirmación solo por la autoridad de quien la enuncia, sin evaluar su contenido.</li>
+        </ul>
+        <h3>4.3 Proceso racional de toma de decisiones</h3>
+        <div class="flow">PROBLEMA &#8594; ANÁLISIS &#8594; ALTERNATIVAS &#8594; ELECCIÓN &#8594; REVISIÓN</div>
+        <ol>
+          <li><b>Identificación del problema:</b> definir la situación con precisión y distinguir síntomas de causas.</li>
+          <li><b>Análisis de información:</b> evaluar fuentes, contrastar datos y considerar impactos y restricciones.</li>
+          <li><b>Evaluación de alternativas:</b> generar diversas opciones y analizar consecuencias, impacto ético, viabilidad y riesgos.</li>
+          <li><b>Elección fundamentada:</b> basarse en argumentos y criterios claros, asumiendo responsabilidad.</li>
+          <li><b>Revisión de consecuencias:</b> evaluar el resultado para detectar errores, ajustar estrategias y aprender.</li>
+        </ol>
+        <p>José Antonio Marina sostiene que la verdadera inteligencia implica <b>autogobierno</b>: pensar por cuenta propia, evaluar argumentos y actuar conforme a principios racionales y éticos. La autonomía intelectual no es aislamiento individualista, sino participación consciente en comunidades de diálogo.</p>
+        <div class="box"><p>En la era digital, el pensamiento crítico es una <b>herramienta de defensa cognitiva</b>: permite identificar discursos manipulativos, evaluar información antes de compartirla, resistir presiones grupales y tomar decisiones profesionales éticamente responsables.</p></div>
+      </section>
+
+      <section class="card" id="s5">
+        <h2>Sección 5 · Ética profesional y responsabilidad social</h2>
+        <h3>Propósito formativo</h3>
+        <p>Consolidar la dimensión ética de la formación, entendiendo que toda práctica implica decisiones que afectan a otras personas, instituciones y comunidades. La ética profesional no es un agregado al conocimiento técnico: constituye su fundamento orientador.</p>
+        <h3>5.1 ¿Qué entendemos por ética profesional?</h3>
+        <p>Es el conjunto de principios, valores y criterios que orientan la práctica. Implica preguntarse: ¿Qué consecuencias tiene mi intervención? ¿A quién beneficia y a quién puede perjudicar? ¿Actúo con justicia y responsabilidad? ¿Respeto la dignidad de las personas?</p>
+        <h3>5.2 La ética del cuidado</h3>
+        <p>Introduce una perspectiva relacional centrada en la responsabilidad hacia el otro concreto: reconocimiento de la vulnerabilidad humana, atención a las necesidades particulares, responsabilidad en vínculos asimétricos y empatía. El profesional no trabaja con "casos" o "usuarios", sino con sujetos con historia, derechos y dignidad.</p>
+        <h3>5.3 Bioética básica</h3>
+        <table>
+          <tr><th>Principio</th><th>Significado</th></tr>
+          <tr><td>Autonomía</td><td>Respeto por la capacidad de decidir de forma informada sobre la propia vida.</td></tr>
+          <tr><td>Beneficencia</td><td>Actuar buscando el bienestar del otro.</td></tr>
+          <tr><td>No maleficencia</td><td>Evitar causar daño intencional o negligente.</td></tr>
+          <tr><td>Justicia</td><td>Distribuir recursos y oportunidades de manera equitativa.</td></tr>
+        </table>
+        <h3>5.4 Ética digital</h3>
+        <p>La práctica hoy involucra datos, plataformas, algoritmos y comunicación virtual. Sus desafíos: protección de datos personales, privacidad y confidencialidad, seguridad informativa, transparencia en el uso de algoritmos y prevención de desinformación. La tecnología no es neutral.</p>
+        <h3>5.5 Responsabilidad en el uso de Inteligencia Artificial</h3>
+        <ul>
+          <li>Utilizarla como herramienta de apoyo, no como sustituto del juicio profesional.</li>
+          <li>Verificar los resultados generados.</li>
+          <li>Reconocer posibles sesgos algorítmicos.</li>
+          <li>Garantizar transparencia frente a usuarios y clientes.</li>
+          <li>Evitar la dependencia acrítica.</li>
+        </ul>
+        <p>El uso ético se basa en tres ejes: supervisión humana constante, responsabilidad por las decisiones tomadas y compromiso con la equidad y la inclusión.</p>
+        <h3>5.6 Responsabilidad social</h3>
+        <p>Trasciende la relación individual: incluye el impacto colectivo de las prácticas. El profesional socialmente responsable contribuye al desarrollo comunitario, reconoce desigualdades estructurales, promueve inclusión y respeto por la diversidad, y actúa con compromiso ciudadano.</p>
+        <div class="quote">
+          <p>&#8220;Educar no es llenar cabezas de datos. Es despertar la conciencia de que la libertad de uno termina donde comienza la del otro. Es formar seres humanos capaces de indignarse ante la injusticia. Si nuestros alumnos aprenden a mirar para otro lado cuando hay sufrimiento, entonces hemos fracasado.&#8221;</p>
+          <span class="src">Paulo Freire, "Pedagogía del oprimido", 1970</span>
+        </div>
+        <div class="box">
+          <p><b>Actividad de análisis:</b></p>
+          <p>1. ¿Qué diferencia plantea el autor entre educar y adoctrinar?</p>
+          <p>2. ¿Qué significa educar desde la ética y no desde el castigo?</p>
+          <p>3. ¿Cómo podrías aplicar esta reflexión en tu formación y en tu rol profesional?</p>
+        </div>
+      </section>
+
+      <section class="card tp">
+        <h2>&#128221; Trabajo Práctico · Mi código ético personal y profesional</h2>
+        <p><b>Consigna:</b> Redactá un documento breve (2 o 3 páginas) que funcione como tu "código de ética" personal y profesional. Debe contener:</p>
+        <ol>
+          <li>Los valores que considerás fundamentales para tu formación y futura práctica (mínimo 5).</li>
+          <li>Un ejemplo real o hipotético donde hayas enfrentado o podrías enfrentar un dilema ético.</li>
+          <li>Una reflexión final sobre el rol del profesional en la sociedad.</li>
+        </ol>
+        <p><b>Formato sugerido:</b> Introducción (¿por qué tener un código ético propio?), desarrollo (valores con explicación + ejemplo) y cierre (reflexión final).</p>
+        <div class="send">&#128231; Enviá tu trabajo para ser corregido a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <section class="card" id="s6">
+        <h2>Sección 6 · Trabajo colaborativo e interdisciplina</h2>
+        <h3>Propósito formativo</h3>
+        <p>Desarrollar competencias para el trabajo colaborativo en contextos complejos. Ninguna práctica profesional relevante se realiza de manera aislada. El trabajo colaborativo no es "trabajar en grupo": implica coordinación consciente, construcción colectiva de sentido, liderazgo distribuido y responsabilidad compartida.</p>
+        <h3>6.1 ¿Por qué trabajar colaborativamente?</h3>
+        <p>Los desafíos actuales son complejos y multidimensionales. El trabajo colaborativo permite integrar perspectivas diversas, enriquecer el análisis, mejorar las decisiones, compartir responsabilidades y potenciar la innovación.</p>
+        <h3>6.2 Interdisciplina: más allá de la suma de saberes</h3>
+        <ul>
+          <li><b>Multidisciplina:</b> varias disciplinas trabajan en paralelo.</li>
+          <li><b>Interdisciplina:</b> diálogo e integración entre disciplinas.</li>
+          <li><b>Transdisciplina:</b> superación de fronteras disciplinares hacia un enfoque integral.</li>
+        </ul>
+        <p>Requiere apertura epistemológica, reconocimiento de los propios límites, capacidad de traducir conceptos entre campos y disposición al diálogo.</p>
+        <h3>6.3 Liderazgo horizontal</h3>
+        <p>Se caracteriza por la distribución de responsabilidades, la participación activa, la toma de decisiones compartida y la comunicación abierta. Sus competencias: escucha activa, capacidad de síntesis, gestión de tiempos, resolución de tensiones y facilitación del consenso.</p>
+        <h3>6.4 Gestión de conflictos</h3>
+        <p>El conflicto no es necesariamente negativo: puede ser fuente de aprendizaje si se gestiona bien. Pasos: identificar el problema real (sin personalizar), escuchar activamente, clarificar intereses, buscar soluciones cooperativas y establecer acuerdos explícitos.</p>
+        <h3>6.5 Evaluación del desempeño grupal</h3>
+        <table>
+          <tr><th>Criterio</th><th>Indicador</th></tr>
+          <tr><td>Participación equitativa</td><td>Todos los miembros contribuyen activamente</td></tr>
+          <tr><td>Integración interdisciplinaria</td><td>Se articulan conceptos de distintos campos</td></tr>
+          <tr><td>Gestión del tiempo</td><td>Cumplimiento de plazos establecidos</td></tr>
+          <tr><td>Resolución de conflictos</td><td>Manejo respetuoso de desacuerdos</td></tr>
+          <tr><td>Calidad argumentativa</td><td>Fundamentación sólida y coherente</td></tr>
+        </table>
+        <h3>6.6 Dimensión política del trabajo colectivo</h3>
+        <p>Toda construcción colectiva de conocimiento implica relaciones de poder y legitimidad. Boaventura de Sousa Santos propone una "ecología de saberes": reconocer la pluralidad epistemológica, valorar conocimientos diversos y evitar jerarquías excluyentes. El trabajo colectivo es también una <b>práctica democrática</b>.</p>
+      </section>
+
+      <section class="card" id="s7">
+        <h2>Sección 7 · Fundamentos de investigación</h2>
+        <h3>Propósito formativo</h3>
+        <p>Introducir la lógica metodológica básica de la investigación académica. Investigar no es exclusivo de científicos: es una competencia transversal. Implica formular preguntas pertinentes, buscar información confiable, analizar datos y elaborar conclusiones fundamentadas.</p>
+        <h3>7.1 y 7.2 ¿Qué es investigar? Estructura básica</h3>
+        <div class="flow">PROBLEMA &#8594; PREGUNTA &#8594; OBJETIVOS &#8594; MARCO TEÓRICO &#8594; MÉTODO &#8594; RESULTADOS &#8594; CONCLUSIONES</div>
+        <p>La investigación académica se diferencia del simple "buscar información" porque requiere método, fundamentación teórica y validación.</p>
+        <h3>7.3 a 7.6 Problema, pregunta, objetivos y marco teórico</h3>
+        <ul>
+          <li><b>Problema:</b> una situación concreta que genera interrogantes; debe ser relevante, delimitado, factible y vinculado a un campo teórico. Ejemplo delimitado: "Impacto del uso intensivo de redes sociales en la concentración académica de estudiantes de primer año".</li>
+          <li><b>Pregunta:</b> clara, específica y posible de responder con evidencia.</li>
+          <li><b>Objetivos:</b> general (finalidad principal) y específicos (acciones concretas). Se redactan con verbos en infinitivo: analizar, describir, comparar, identificar.</li>
+          <li><b>Marco teórico:</b> reúne conceptos, teorías e investigaciones previas que fundamentan el estudio.</li>
+        </ul>
+        <h3>7.7 Método</h3>
+        <table>
+          <tr><th>Aspecto</th><th>Enfoque cuantitativo</th><th>Enfoque cualitativo</th></tr>
+          <tr><td>Tipo de datos</td><td>Numéricos</td><td>Narrativos</td></tr>
+          <tr><td>Objetivo</td><td>Medir, comparar</td><td>Comprender, interpretar</td></tr>
+          <tr><td>Instrumentos</td><td>Encuestas, test</td><td>Entrevistas, observación</td></tr>
+          <tr><td>Análisis</td><td>Estadístico</td><td>Interpretativo</td></tr>
+        </table>
+        <h3>7.10 y 7.11 Citación académica y tipos de fuente</h3>
+        <p>Citar reconoce las fuentes, evita el plagio y respalda las afirmaciones. Existen distintos estilos (APA, MLA, Chicago). Ejemplo APA: (Pérez, 2020).</p>
+        <table>
+          <tr><th>Fuente académica</th><th>Contenido web general</th></tr>
+          <tr><td>Revisada por pares</td><td>Sin revisión formal</td></tr>
+          <tr><td>Autor identificado con trayectoria</td><td>Autor anónimo o no especializado</td></tr>
+          <tr><td>Publicada en revista científica o editorial académica</td><td>Publicada en blog o portal informal</td></tr>
+          <tr><td>Incluye referencias bibliográficas</td><td>No siempre incluye fuentes</td></tr>
+        </table>
+        <p>Para acceder a fuentes confiables se recomiendan buscadores especializados como <b>Google Scholar, SciELO, Redalyc y Dialnet</b>. Buenas prácticas: usar palabras clave específicas, filtrar por año, revisar el número de citas y verificar las credenciales del autor.</p>
+        <div class="box">
+          <p><b>Errores frecuentes en investigación inicial:</b></p>
+          <p>Confundir tema con problema &#183; Formular preguntas demasiado amplias &#183; Copiar información sin citar &#183; No delimitar la muestra &#183; Presentar conclusiones que no se derivan de los datos.</p>
+        </div>
+      </section>
+
+      <section class="card" id="s8">
+        <h2>Sección 8 · Tecnología y ciudadanía digital</h2>
+        <h3>Propósito formativo</h3>
+        <p>Formar profesionales conscientes, críticos y responsables en el entorno digital. La tecnología ya no es un complemento: es la infraestructura cotidiana. La identidad profesional también se construye online.</p>
+        <h3>8.1 Ciudadanía digital: concepto y alcance</h3>
+        <p>Es el ejercicio responsable, ético y crítico de la participación en entornos tecnológicos. Ser ciudadano digital no significa solo tener acceso a la tecnología, sino saber usarla con criterio.</p>
+        <h3>8.2 Huella digital profesional</h3>
+        <p>Es el conjunto de datos e información en línea que construyen la imagen pública de una persona en el ámbito académico o laboral.</p>
+        <table>
+          <tr><th>Huella digital positiva</th><th>Huella digital negativa</th></tr>
+          <tr><td>Perfil profesional actualizado</td><td>Contenido ofensivo o polémico</td></tr>
+          <tr><td>Publicaciones académicas</td><td>Comentarios agresivos</td></tr>
+          <tr><td>Participación en debates fundamentados</td><td>Información falsa compartida</td></tr>
+          <tr><td>Imagen coherente con valores profesionales</td><td>Exposición irresponsable de datos</td></tr>
+        </table>
+        <h3>8.4 Fake news y verificación de información</h3>
+        <div class="flow">CONTENIDO RECIBIDO &#8594; ¿FUENTE IDENTIFICADA? &#8594; VERIFICAR EN MEDIOS CONFIABLES &#8594; CONSULTAR ORGANISMOS OFICIALES &#8594; DECIDIR COMPARTIR O NO</div>
+        <p>Claves para detectar desinformación: revisar la autoría, confirmar la fecha, buscar otras fuentes que respalden la información, analizar si apela excesivamente a emociones y usar verificadores de datos.</p>
+        <h3>8.5 Protección de datos</h3>
+        <table>
+          <tr><th>Buenas prácticas</th><th>Malas prácticas</th></tr>
+          <tr><td>Usar contraseñas seguras</td><td>Reutilizar la misma contraseña</td></tr>
+          <tr><td>Activar doble autenticación</td><td>Compartir claves por mensaje</td></tr>
+          <tr><td>Leer políticas de privacidad</td><td>Aceptar términos sin revisar</td></tr>
+          <tr><td>Cerrar sesión en equipos públicos</td><td>Dejar cuentas abiertas</td></tr>
+        </table>
+        <h3>8.6 Reputación online y ciudadanía responsable</h3>
+        <p>La reputación online es la percepción pública construida a partir de la presencia digital. Ser ciudadano digital responsable significa no difundir discursos de odio, respetar la diversidad cultural, defender los derechos digitales y promover un uso ético de la tecnología.</p>
+        <div class="quote">
+          <p>&#8220;La tecnología no es buena ni mala: depende de cómo la uses. El problema es que muchas veces la usamos sin saber cómo nos está usando ella a nosotros. La ciudadanía digital empieza cuando dejamos de ser usuarios pasivos y nos convertimos en sujetos críticos.&#8221;</p>
+          <span class="src">Santiago Bilinkis, tecnólogo argentino, 2021</span>
+        </div>
+        <div class="box">
+          <p><b>Actividad de análisis:</b></p>
+          <p>1. ¿Qué crítica sugiere el autor sobre el uso cotidiano de la tecnología?</p>
+          <p>2. ¿Qué significa ser un "usuario pasivo"?</p>
+          <p>3. ¿Cómo podrías comenzar a desarrollar una ciudadanía digital más crítica?</p>
+        </div>
+      </section>
+
+      <section class="card tp">
+        <h2>&#128221; Trabajo Práctico · Mi huella digital y ciudadanía crítica</h2>
+        <p><b>Consigna:</b> Realizá un diagnóstico y reflexión personal sobre tu huella digital y tu uso actual de la tecnología.</p>
+        <ol>
+          <li>Buscá tu nombre completo en Google. ¿Qué aparece? ¿Te representa? ¿Qué debería estar y qué no?</li>
+          <li>Revisá tus redes sociales personales. ¿Qué imagen proyectás como futuro/a profesional? ¿Qué publicaciones pueden potenciarte o perjudicarte?</li>
+          <li>Reflexioná: ¿Cómo usás la tecnología para estudiar? ¿Cómo protegés tus datos? ¿Compartís contenido sin verificar? ¿Cómo podrías mejorar tu ciudadanía digital?</li>
+        </ol>
+        <p><b>Formato:</b> texto escrito de 2 a 3 páginas. Podés incluir capturas (opcionales), cuadros o recomendaciones propias.</p>
+        <div class="send">&#128231; Enviá tu trabajo para ser corregido a: <b>academiajason@gmail.com</b></div>
+      </section>
+
+      <section class="card" id="cierre">
+        <h2>Cierre del Módulo</h2>
+        <p>Finalizás aquí un recorrido que no solo introduce conceptos clave para tu formación profesional, sino que también invita a pensar el aprendizaje como una experiencia transformadora, crítica y profundamente humana.</p>
+        <p>A lo largo de estas ocho secciones abordaste temas transversales fundamentales para cualquier campo del saber: el rol del estudiante, el pensamiento autónomo, la ética, la comunicación, la investigación, el trabajo en equipo y la ciudadanía digital. Este trayecto no pretende darte todas las respuestas, sino estimularte a formular nuevas preguntas, mirar tu práctica con otros ojos y asumir tu futuro profesional con conciencia y compromiso.</p>
+        <p>Desde la <b>Academia Jasón</b> reafirmamos nuestra convicción de que la educación debe ser inclusiva, rigurosa, ética y contextualizada. Por eso, este módulo es mucho más que una introducción: es el punto de partida de un camino que vas a recorrer con tus saberes, tus decisiones, tus valores y tus acciones.</p>
+        <div class="box"><p>El conocimiento es un derecho, pero también una responsabilidad. ¡Gracias por haber transitado este primer paso en tu formación! Bienvenido/a a la Academia Jasón.</p></div>
+      </section>
+
+      <div class="nav-links">
+        <a href="aula.html" class="btn">&#8592; Volver al aula</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Módulo Introductorio &#183; Operador Preventor en Adicciones y Consumos Problemáticos &#183; <b>Academia Jasón</b></p>
+    </div>
+  </footer>
+</body>
+</html>
