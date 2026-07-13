@@ -13,7 +13,7 @@
     :root{
       --bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;
       --teal:#0d9488;--teal-dark:#0a5d5a;
-      --emerald:#10b981;--cyan:#0fb5c9;--coral:#ff6b5e;--gold:#f6a821;--gold-dark:#c67f0f;--violet:#7c6cf0;
+      --emerald:#10b981;--cyan:#0fb5c9;--cyan-dark:#0a7d8c;--coral:#ff6b5e;--gold:#f6a821;--gold-dark:#c67f0f;--violet:#7c6cf0;
       --white:#fff;--line:#cdeae6;--radius:16px;--container:920px
     }
     *{margin:0;padding:0;box-sizing:border-box}
@@ -45,6 +45,7 @@
     .mcard.c5{border-left-color:var(--cyan)}
     .mcard.c-exam{border-left-color:var(--gold)}
     .mcard.c-manual{border-left-color:var(--teal-dark)}
+    .mcard.c-familia{border-left-color:var(--cyan-dark)}
     .mcard.c-espiritual{border-left-color:var(--violet)}
     .mcard.c-espiritual2{border-left-color:var(--gold)}
     .mnum{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff}
@@ -56,6 +57,125 @@
     .c5 .mnum{background:var(--cyan)}
     .c-exam .mnum{background:var(--gold);font-size:1.4rem;color:#5a3a00}
     .c-manual .mnum{background:var(--teal-dark);font-size:1.4rem}
+    .c-familia .mnum{background:var(--cyan-dark);font-size:1.4rem}
     .c-espiritual .mnum{background:var(--violet);font-size:1.4rem}
     .c-espiritual2 .mnum{background:var(--gold);font-size:1.4rem;color:#5a3a00}
     .minfo{flex:1;min-width:0}
+    .minfo h3{font-size:1.02rem;margin-bottom:.15rem}
+    .minfo p{color:var(--ink-soft);font-size:.86rem}
+    .mgo{flex:none;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:.6rem 1rem;border-radius:10px;white-space:nowrap}
+    .mgo:hover{filter:brightness(1.08)}
+    .msoon{flex:none;background:#e7f2f0;color:#7d9b98;font-weight:700;font-size:.8rem;padding:.6rem 1rem;border-radius:10px;white-space:nowrap}
+    .divider{display:flex;align-items:center;gap:.8rem;margin:1.8rem 0 1rem;color:var(--teal-dark);font-weight:800;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
+    .divider:before,.divider:after{content:"";flex:1;height:2px;background:var(--line)}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.8rem 0;font-size:.82rem}
+    footer b{color:var(--gold)}
+    @media(min-width:768px){.head h1{font-size:2rem}}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">&#127891; <b>Academia Jas&#243;n</b> &#183; Aula Virtual</div>
+
+  <header class="head">
+    <div class="container">
+      <span class="brand"><span class="dot">&#9875;</span> Academia Jas&#243;n</span>
+      <span class="kick">Aula Virtual</span>
+      <h1>Operador Preventor en Adicciones y Consumos Problem&#225;ticos</h1>
+      <p>Bienvenido/a a tu espacio de estudio. Ingres&#225; a cada m&#243;dulo para leer el contenido y realizar los trabajos pr&#225;cticos.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <p class="intro-note">Te recomendamos avanzar en orden: comenz&#225; por el M&#243;dulo Introductorio y segu&#237; con los m&#243;dulos 1 al 5. Al finalizar, rend&#237;s el Examen Final Integral.</p>
+
+      <div class="divider">Comienzo del curso</div>
+
+      <div class="mcard c-intro">
+        <div class="mnum">INTRO</div>
+        <div class="minfo"><h3>M&#243;dulo Introductorio</h3><p>Formaci&#243;n transversal para el siglo XXI</p></div>
+        <a href="modulo-introduccion.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="divider">M&#243;dulos del curso</div>
+
+      <div class="mcard c1">
+        <div class="mnum">1</div>
+        <div class="minfo"><h3>M&#243;dulo 1</h3><p>Visi&#243;n integral de las adicciones y consumos problem&#225;ticos</p></div>
+        <a href="modulo1.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="mcard c2">
+        <div class="mnum">2</div>
+        <div class="minfo"><h3>M&#243;dulo 2</h3><p>Las adicciones como construcci&#243;n social</p></div>
+        <a href="modulo2.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="mcard c3">
+        <div class="mnum">3</div>
+        <div class="minfo"><h3>M&#243;dulo 3</h3><p>Adicciones conductuales y nuevos consumos</p></div>
+        <a href="modulo3.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="mcard c4">
+        <div class="mnum">4</div>
+        <div class="minfo"><h3>M&#243;dulo 4</h3><p>El tratamiento del consumo: el Modelo Matrix y las habilidades de recuperaci&#243;n</p></div>
+        <a href="modulo4.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="mcard c5">
+        <div class="mnum">5</div>
+        <div class="minfo"><h3>M&#243;dulo 5</h3><p>Prevenci&#243;n de reca&#237;das y mantenimiento de la recuperaci&#243;n</p></div>
+        <a href="modulo5.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="divider">Evaluaci&#243;n final</div>
+
+      <div class="mcard c-exam">
+        <div class="mnum">&#128221;</div>
+        <div class="minfo"><h3>Examen Final Integral</h3><p>Plan de campa&#241;a de prevenci&#243;n, mapa conceptual y an&#225;lisis final</p></div>
+        <a href="examen-final.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="divider">Material complementario</div>
+
+      <div class="mcard c-manual">
+        <div class="mnum">&#128218;</div>
+        <div class="minfo"><h3>Manual del Usuario (Modelo Matrix)</h3><p>Tratamiento ambulatorio intensivo del consumo de sustancias &#183; material de lectura y trabajo</p></div>
+        <a href="manual.pdf" class="mgo" target="_blank" rel="noopener">Descargar &#10140;</a>
+      </div>
+
+      <div class="divider">M&#243;dulo para la familia</div>
+
+      <div class="mcard c-familia">
+        <div class="mnum">&#128106;</div>
+        <div class="minfo"><h3>M&#243;dulo para la Familia</h3><p>Acompa&#241;ar la recuperaci&#243;n sin enfermarse &#183; el rol de la familia y la codependencia</p></div>
+        <a href="modulo-familia.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="divider">M&#243;dulos espirituales (optativos)</div>
+
+      <div class="mcard c-espiritual">
+        <div class="mnum">&#10024;</div>
+        <div class="minfo"><h3>M&#243;dulo Espiritual I <span style="font-weight:600;color:var(--violet)">(optativo)</span></h3><p>Libertad de la pornograf&#237;a y las pantallas &#183; ayuda espiritual y consejer&#237;a b&#237;blica</p></div>
+        <a href="modulo-espiritual.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+
+      <div class="mcard c-espiritual2">
+        <div class="mnum">&#10024;</div>
+        <div class="minfo"><h3>M&#243;dulo Espiritual II <span style="font-weight:600;color:var(--gold-dark,#c67f0f)">(optativo)</span></h3><p>Libertad de las adicciones &#183; una mirada espiritual de fe</p></div>
+        <a href="modulo-espiritual2.html" class="mgo">Ingresar &#10140;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&#169; <span id="year"></span> <b>Academia Jas&#243;n</b> &#183; Operador Preventor en Adicciones y Consumos Problem&#225;ticos</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
