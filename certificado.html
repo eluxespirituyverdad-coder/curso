@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificado | Academia Jas&#243;n</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--teal:#0d9488;--teal-dark:#0a5d5a;--gold:#f6a821;--gold-dark:#c67f0f;--ink:#0f3b39;--ink-soft:#48706d;--line:#cdeae6;--coral:#c23b30}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:#e7f1ef;color:var(--ink);padding:20px}
+
+    .gate{position:fixed;inset:0;background:linear-gradient(135deg,#0a5d5a,#0d9488);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
+    .gate-box{background:#fff;border-radius:18px;padding:2.2rem 1.7rem;max-width:370px;width:100%;text-align:center;box-shadow:0 30px 70px -25px rgba(0,0,0,.6)}
+    .gate-box .seal{width:66px;height:66px;border-radius:14px;background:var(--gold);color:#5a3a00;display:inline-flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:.8rem}
+    .gate-box h1{font-size:1.15rem;color:var(--teal-dark);margin-bottom:.3rem}
+    .gate-box p{font-size:.86rem;color:var(--ink-soft);margin-bottom:1.1rem}
+    .gate-box input{width:100%;font-family:inherit;font-size:1rem;text-align:center;padding:.8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.7rem}
+    .gate-box button{width:100%;font-family:inherit;font-weight:800;font-size:1rem;padding:.85rem;border:none;border-radius:10px;cursor:pointer;background:var(--teal);color:#fff}
+    .gate-box button:hover{filter:brightness(1.08)}
+    .gate-box .err{color:var(--coral);font-size:.83rem;min-height:1.1rem;margin-top:.5rem;font-weight:700}
+
+    #app{display:none}
+
+    .bar{max-width:1000px;margin:0 auto 18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;box-shadow:0 14px 34px -28px rgba(13,148,136,.8)}
+    .bar h1{font-size:1.05rem;color:var(--teal-dark);margin-bottom:.7rem}
+    .bar label{display:block;font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-bottom:.3rem}
+    .bar input{width:100%;font-family:inherit;font-size:1rem;padding:.7rem .9rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.8rem}
+    .bar .row{display:flex;gap:.8rem;flex-wrap:wrap}
+    .bar button{font-family:inherit;font-weight:800;font-size:.92rem;padding:.75rem 1.3rem;border:none;border-radius:10px;cursor:pointer;background:var(--teal);color:#fff}
+    .bar button:hover{filter:brightness(1.08)}
+    .bar .hint{font-size:.8rem;color:var(--ink-soft);margin-top:.6rem}
+
+    .cert{max-width:1000px;margin:0 auto;background:#fff;aspect-ratio:1.414/1;position:relative;overflow:hidden;box-shadow:0 24px 60px -30px rgba(0,0,0,.5)}
+    .cert .frame{position:absolute;inset:18px;border:3px solid var(--teal);border-radius:6px}
+    .cert .frame:before{content:"";position:absolute;inset:8px;border:1px solid var(--gold)}
+    .cert .c-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6% 9%}
+    .corner{position:absolute;width:70px;height:70px;border:0 solid var(--gold)}
+    .corner.tl{top:26px;left:26px;border-top-width:4px;border-left-width:4px}
+    .corner.tr{top:26px;right:26px;border-top-width:4px;border-right-width:4px}
+    .corner.bl{bottom:26px;left:26px;border-bottom-width:4px;border-left-width:4px}
+    .corner.br{bottom:26px;right:26px;border-bottom-width:4px;border-right-width:4px}
+    .seal{width:74px;height:74px;border-radius:12px;background:var(--gold);color:#5a3a00;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:.5rem;box-shadow:0 8px 18px -8px rgba(246,168,33,.9)}
+    .brand{font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--teal-dark);font-size:1rem}
+    .brand small{display:block;font-size:.62rem;letter-spacing:2px;color:var(--ink-soft);font-weight:700;margin-top:.15rem}
+    .cert h2{font-family:'Playfair Display',serif;font-weight:900;color:var(--teal-dark);font-size:2.2rem;margin:1.1rem 0 .3rem}
+    .cert .otorga{font-size:.9rem;color:var(--ink-soft);margin-bottom:.5rem}
+    .cert .nombre{font-family:'Playfair Display',serif;font-weight:900;font-size:2.4rem;color:var(--ink);border-bottom:2px solid var(--gold);padding:0 1rem .3rem;margin-bottom:.8rem;min-width:55%}
+    .cert .desc{font-size:.98rem;color:var(--ink-soft);max-width:62ch;line-height:1.55}
+    .cert .desc b{color:var(--ink)}
+    .cert .curso{font-weight:800;color:var(--teal);font-size:1.12rem;margin:.35rem 0}
+    .firmas{display:flex;gap:12%;margin-top:2rem}
+    .firma{text-align:center;min-width:200px}
+    .firma .linea{border-top:1.5px solid var(--ink);padding-top:.35rem;font-size:.82rem;font-weight:700;color:var(--ink)}
+    .firma small{display:block;font-weight:500;color:var(--ink-soft);font-size:.74rem}
+    .fecha{position:absolute;bottom:6.5%;left:0;right:0;text-align:center;font-size:.8rem;color:var(--ink-soft)}
+
+    @media print{
+      body{background:#fff;padding:0}
+      .gate,.bar{display:none !important}
+      #app{display:block !important}
+      .cert{max-width:none;width:100%;box-shadow:none}
+      @page{size:A4 landscape;margin:0}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gate" id="gate">
+    <div class="gate-box">
+      <div class="seal">&#128274;</div>
+      <h1>&#193;rea privada &#183; Academia Jas&#243;n</h1>
+      <p>Ingres&#225; la clave para generar certificados.</p>
+      <input id="clave" type="password" placeholder="Clave de acceso" autocomplete="off" />
+      <button onclick="entrar()">Ingresar</button>
+      <div class="err" id="err"></div>
+    </div>
+  </div>
+
+  <div id="app">
+    <div class="bar">
+      <h1>&#127891; Generador de certificado &#183; Academia Jas&#243;n</h1>
+      <label for="nombre">Nombre y apellido del alumno/a</label>
+      <input id="nombre" type="text" placeholder="Escrib&#237; ac&#225; el nombre completo" value="Nombre y Apellido" />
+      <label for="fecha">Fecha (opcional)</label>
+      <input id="fecha" type="text" placeholder="Ej: 5 de julio de 2026" />
+      <div class="row">
+        <button onclick="window.print()">&#128424;&#65039; Imprimir / Guardar como PDF</button>
+      </div>
+      <p class="hint">1) Escrib&#237; el nombre (y la fecha si quer&#233;s). &#183; 2) Toc&#225; "Imprimir". &#183; 3) En destino eleg&#237; <b>"Guardar como PDF"</b>. La barra celeste no aparece en el certificado impreso.</p>
+    </div>
+
+    <div class="cert">
+      <div class="frame"></div>
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <div class="c-in">
+        <div class="seal">&#9875;</div>
+        <div class="brand">Academia Jas&#243;n<small>Formaci&#243;n con certificado</small></div>
+
+        <h2>Certificado</h2>
+        <p class="otorga">Se otorga el presente certificado a:</p>
+        <div class="nombre" id="out-nombre">Nombre y Apellido</div>
+
+        <p class="desc">
+          Por haber completado satisfactoriamente la capacitaci&#243;n en<br>
+          <span class="curso">Operador Preventor en Adicciones y Consumos Problem&#225;ticos</span>
+          con una carga horaria de <b>640 horas</b>, aprobando la totalidad de los m&#243;dulos y el examen final integral.
+        </p>
+
+        <div class="firmas">
+          <div class="firma"><div class="linea">Academia Jas&#243;n</div><small>Direcci&#243;n Acad&#233;mica</small></div>
+          <div class="firma"><div class="linea">Firma y sello</div><small>Coordinaci&#243;n</small></div>
+        </div>
+      </div>
+      <div class="fecha" id="out-fecha"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ====== CAMBIA ESTA CLAVE POR LA QUE QUIERAS ====== */
+    var CLAVE = "jason640";
+    /* ================================================== */
+
+    function entrar(){
+      var v = document.getElementById('clave').value;
+      if(v === CLAVE){
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+      } else {
+        document.getElementById('err').textContent = 'Clave incorrecta. Intentá de nuevo.';
+      }
+    }
+    document.getElementById('clave').addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ entrar(); }
+    });
+
+    var inNombre=document.getElementById('nombre');
+    var inFecha=document.getElementById('fecha');
+    var outNombre=document.getElementById('out-nombre');
+    var outFecha=document.getElementById('out-fecha');
+    function upd(){
+      outNombre.textContent = inNombre.value.trim() || 'Nombre y Apellido';
+      outFecha.textContent = inFecha.value.trim() ? ('Emitido el ' + inFecha.value.trim()) : '';
+    }
+    inNombre.addEventListener('input',upd);
+    inFecha.addEventListener('input',upd);
+    upd();
+  </script>
+</body>
+</html>
