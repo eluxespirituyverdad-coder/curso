@@ -13,7 +13,7 @@
     :root{
       --bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;
       --teal:#0d9488;--teal-dark:#0a5d5a;
-      --emerald:#10b981;--cyan:#0fb5c9;--cyan-dark:#0a7d8c;--coral:#ff6b5e;--gold:#f6a821;--gold-dark:#c67f0f;--violet:#7c6cf0;
+      --emerald:#10b981;--cyan:#0fb5c9;--cyan-dark:#0a7d8c;--coral:#ff6b5e;--coral-dark:#c23b30;--gold:#f6a821;--gold-dark:#c67f0f;--violet:#7c6cf0;
       --white:#fff;--line:#cdeae6;--radius:16px;--container:920px
     }
     *{margin:0;padding:0;box-sizing:border-box}
@@ -21,6 +21,7 @@
     body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     h1,h2,h3{line-height:1.2;font-weight:800;color:var(--ink)}
     a{text-decoration:none;color:inherit}
+    ul{list-style:none}
     .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
     .topbar{background:var(--teal-dark);color:#d6f5f1;text-align:center;font-size:.82rem;font-weight:700;padding:.6rem 1rem;letter-spacing:.5px}
     .topbar b{color:var(--gold)}
@@ -32,8 +33,39 @@
     .brand .dot{width:32px;height:32px;border-radius:9px;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;color:#5a3a00}
     .head .kick{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:.74rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;margin-bottom:1rem;text-transform:uppercase}
     .head h1{color:#fff;font-size:1.6rem;font-weight:900;max-width:24ch;margin:0 auto .6rem}
-    .head p{color:#eafffb;font-size:.98rem;max-width:50ch;margin:0 auto}
-    main{padding:2.4rem 0 3rem}
+    .head p{color:#eafffb;font-size:.98rem;max-width:52ch;margin:0 auto 1.6rem}
+    .head .enter-btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--gold),#ffbe4d);color:#5a3a00;font-weight:800;font-size:1rem;padding:.95rem 1.8rem;border:none;border-radius:14px;cursor:pointer;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);transition:transform .15s ease,filter .2s ease}
+    .head .enter-btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    main{padding:2.6rem 0 3rem}
+    .sec-title{text-align:center;font-size:1.5rem;color:var(--teal-dark);margin-bottom:.5rem}
+    .sec-sub{text-align:center;color:var(--ink-soft);max-width:58ch;margin:0 auto 1.8rem;font-size:.96rem}
+    .block{margin-bottom:2.8rem}
+    .learn-grid{display:grid;gap:1rem}
+    .learn-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.2rem;display:flex;gap:.9rem;align-items:flex-start;border-top:4px solid var(--teal);box-shadow:0 14px 30px -26px rgba(13,148,136,.7)}
+    .learn-item:nth-child(2){border-top-color:var(--coral)}
+    .learn-item:nth-child(3){border-top-color:var(--gold)}
+    .learn-item:nth-child(4){border-top-color:var(--violet)}
+    .learn-item span{flex:none;font-size:1.5rem}
+    .learn-item p{color:var(--ink-soft);font-size:.92rem}
+    .learn-item b{color:var(--ink)}
+    .mod{border:1px solid var(--line);border-radius:14px;margin-bottom:.8rem;overflow:hidden;background:#fff;box-shadow:0 12px 26px -24px rgba(13,148,136,.6)}
+    .mod-head{width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:inherit;padding:1.05rem 1.15rem;display:flex;align-items:center;gap:1rem}
+    .mod-num{flex:none;width:40px;height:40px;border-radius:11px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem}
+    .mod-title{flex:1;font-weight:700;font-size:1rem;color:var(--ink)}
+    .mod-ico{flex:none;color:var(--teal);font-size:1.2rem;transition:transform .25s ease}
+    .mod.open .mod-ico{transform:rotate(180deg)}
+    .mod-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .mod-body-inner{padding:0 1.15rem 1.15rem;color:var(--ink-soft);font-size:.92rem}
+    .cert-card{background:#fff;border:2px solid var(--teal);border-radius:20px;padding:2rem 1.5rem;text-align:center;box-shadow:0 24px 50px -30px rgba(13,148,136,.6)}
+    .cert-ico{font-size:2.6rem;margin-bottom:.5rem}
+    .cert-card h3{color:var(--teal-dark);font-size:1.3rem;margin-bottom:.7rem}
+    .cert-card p{color:var(--ink-soft);max-width:48ch;margin:0 auto;font-size:.95rem}
+    .cta{text-align:center;background:linear-gradient(135deg,#0a5d5a,#0d9488);border-radius:20px;padding:2.4rem 1.5rem;color:#fff}
+    .cta h2{color:#fff;font-size:1.4rem;margin-bottom:.5rem}
+    .cta p{color:#d6f5f1;font-size:.95rem;margin-bottom:1.4rem;max-width:46ch;margin-left:auto;margin-right:auto}
+    .cta .enter-btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--gold),#ffbe4d);color:#5a3a00;font-weight:800;font-size:1.05rem;padding:1rem 2rem;border:none;border-radius:14px;cursor:pointer;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);transition:transform .15s ease,filter .2s ease}
+    .cta .enter-btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    #curso{display:none}
     .intro-note{text-align:center;color:var(--ink-soft);font-size:.96rem;max-width:60ch;margin:0 auto 2rem}
     .mcard{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:16px;padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:0 14px 34px -28px rgba(13,148,136,.8);transition:transform .15s ease,box-shadow .25s ease}
     .mcard:hover{transform:translateY(-2px);box-shadow:0 20px 40px -26px rgba(13,148,136,.8)}
@@ -65,12 +97,22 @@
     .minfo p{color:var(--ink-soft);font-size:.86rem}
     .mgo{flex:none;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:.6rem 1rem;border-radius:10px;white-space:nowrap}
     .mgo:hover{filter:brightness(1.08)}
-    .msoon{flex:none;background:#e7f2f0;color:#7d9b98;font-weight:700;font-size:.8rem;padding:.6rem 1rem;border-radius:10px;white-space:nowrap}
     .divider{display:flex;align-items:center;gap:.8rem;margin:1.8rem 0 1rem;color:var(--teal-dark);font-weight:800;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
     .divider:before,.divider:after{content:"";flex:1;height:2px;background:var(--line)}
+    .gate{display:none;position:fixed;inset:0;background:rgba(10,60,58,.75);backdrop-filter:blur(3px);align-items:center;justify-content:center;z-index:100;padding:20px}
+    .gate.show{display:flex}
+    .gate-box{background:#fff;border-radius:18px;padding:2.2rem 1.7rem;max-width:370px;width:100%;text-align:center;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+    .gate-box .glock{width:66px;height:66px;border-radius:14px;background:var(--teal);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:.8rem}
+    .gate-box h3{font-size:1.15rem;color:var(--teal-dark);margin-bottom:.3rem}
+    .gate-box p{font-size:.86rem;color:var(--ink-soft);margin-bottom:1.1rem}
+    .gate-box input{width:100%;font-family:inherit;font-size:1rem;text-align:center;padding:.8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.7rem}
+    .gate-box .g-btn{width:100%;font-family:inherit;font-weight:800;font-size:1rem;padding:.85rem;border:none;border-radius:10px;cursor:pointer;background:var(--teal);color:#fff}
+    .gate-box .g-btn:hover{filter:brightness(1.08)}
+    .gate-box .g-cancel{display:inline-block;margin-top:.8rem;font-size:.85rem;color:var(--ink-soft);cursor:pointer;background:none;border:none;font-family:inherit;text-decoration:underline}
+    .gate-box .err{color:var(--coral-dark);font-size:.83rem;min-height:1.1rem;margin-top:.5rem;font-weight:700}
     footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.8rem 0;font-size:.82rem}
     footer b{color:var(--gold)}
-    @media(min-width:768px){.head h1{font-size:2rem}}
+    @media(min-width:768px){.head h1{font-size:2rem}.learn-grid{grid-template-columns:repeat(2,1fr)}.sec-title{font-size:1.8rem}}
   </style>
 </head>
 <body>
@@ -82,89 +124,175 @@
       <span class="brand"><span class="dot">&#9875;</span> Academia Jas&#243;n</span>
       <span class="kick">Aula Virtual</span>
       <h1>Operador Preventor en Adicciones y Consumos Problem&#225;ticos</h1>
-      <p>Bienvenido/a a tu espacio de estudio. Ingres&#225; a cada m&#243;dulo para leer el contenido y realizar los trabajos pr&#225;cticos.</p>
+      <p>Este es el espacio de estudio de la capacitaci&#243;n. Conoc&#233; todo lo que vas a aprender y, cuando tengas tu clave, ingres&#225; para acceder a los m&#243;dulos.</p>
+      <button class="enter-btn" onclick="abrirGate()">&#128274; Ingresar al curso</button>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <p class="intro-note">Te recomendamos avanzar en orden: comenz&#225; por el M&#243;dulo Introductorio y segu&#237; con los m&#243;dulos 1 al 8. Al finalizar, rend&#237;s el Examen Final Integral.</p>
 
-      <div class="divider">Comienzo del curso</div>
-
-      <div class="mcard c-intro">
-        <div class="mnum">INTRO</div>
-        <div class="minfo"><h3>M&#243;dulo Introductorio</h3><p>Formaci&#243;n transversal para el siglo XXI</p></div>
-        <a href="modulo-introduccion.html" class="mgo">Ingresar &#10140;</a>
+      <div class="block">
+        <h2 class="sec-title">&#191;Qu&#233; vas a lograr?</h2>
+        <p class="sec-sub">Una formaci&#243;n pensada para darte herramientas reales y aplicables desde el primer m&#243;dulo.</p>
+        <div class="learn-grid">
+          <div class="learn-item"><span>&#129504;</span><p><b>Comprender el problema</b><br>Entender qu&#233; son las adicciones y los consumos problem&#225;ticos desde una mirada actual.</p></div>
+          <div class="learn-item"><span>&#129309;</span><p><b>Acompa&#241;ar y contener</b><br>Aprender a orientar y sostener a quien atraviesa una situaci&#243;n de consumo.</p></div>
+          <div class="learn-item"><span>&#128737;&#65039;</span><p><b>Prevenir</b><br>Conocer factores de riesgo y de protecci&#243;n para trabajar la prevenci&#243;n.</p></div>
+          <div class="learn-item"><span>&#128101;</span><p><b>Intervenir en la comunidad</b><br>Desarrollar el rol del operador preventor en distintos &#225;mbitos.</p></div>
+        </div>
       </div>
 
-      <div class="divider">M&#243;dulos del curso</div>
+      <div class="block">
+        <h2 class="sec-title">Contenido del curso</h2>
+        <p class="sec-sub">Un M&#243;dulo Introductorio y 8 m&#243;dulos. Toc&#225; cada uno para ver los temas.</p>
 
-      <div class="mcard c1">
-        <div class="mnum">1</div>
-        <div class="minfo"><h3>M&#243;dulo 1</h3><p>Visi&#243;n integral de las adicciones y consumos problem&#225;ticos</p></div>
-        <a href="modulo1.html" class="mgo">Ingresar &#10140;</a>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num" style="background:var(--gold);font-size:.66rem;color:#5a3a00">INTRO</span><span class="mod-title">M&#243;dulo Introductorio: formaci&#243;n transversal para el siglo XXI</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">El rol del estudiante, estudio aut&#243;nomo, comunicaci&#243;n acad&#233;mica, pensamiento cr&#237;tico, &#233;tica profesional, trabajo colaborativo, investigaci&#243;n b&#225;sica y ciudadan&#237;a digital.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num">1</span><span class="mod-title">Visi&#243;n integral de las adicciones y consumos problem&#225;ticos</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">Concepto de adicci&#243;n, caracter&#237;sticas de la conducta adictiva, sustancias, uso/abuso/dependencia, adicciones comportamentales, roles del operador, encuadre y las 10 reglas.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num">2</span><span class="mod-title">Las adicciones como construcci&#243;n social</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">Historia del consumo en occidente, sociolog&#237;a de la desviaci&#243;n, Ley de Salud Mental 26.657, abordajes subjetivantes, tratamientos en Argentina y la SEDRONAR.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num">3</span><span class="mod-title">Adicciones conductuales y nuevos consumos</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">Ludopat&#237;a, apuestas online, pantallas y redes. Mecanismos cerebrales, estad&#237;sticas actuales, factores protectores y de riesgo, y prevenci&#243;n.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num">4</span><span class="mod-title">El tratamiento del consumo: el Modelo Matrix y las habilidades de recuperaci&#243;n</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">El Modelo Matrix, las etapas de la recuperaci&#243;n, los disparadores, la parada de pensamiento, el an&#225;lisis de sustancias como herramienta y el rol del operador.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num">5</span><span class="mod-title">Prevenci&#243;n de reca&#237;das y mantenimiento de la recuperaci&#243;n</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">La deriva y los amarres, las justificaciones de la reca&#237;da, HALT, manejo del estr&#233;s y la ira, culpa y verg&#252;enza, aceptaci&#243;n y el diario de recuperaci&#243;n.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num" style="background:var(--cyan)">6</span><span class="mod-title">M&#243;dulo para la Familia: acompa&#241;ar la recuperaci&#243;n sin enfermarse</span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">El rol de la familia frente al consumo, la codependencia, el amor con l&#237;mites, reconstruir la confianza y c&#243;mo cuidarse para acompa&#241;ar sin enfermarse.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num" style="background:var(--violet)">7</span><span class="mod-title">Libertad de la pornograf&#237;a y las pantallas &#183; mirada espiritual <span style="font-weight:600;color:var(--violet)">(trabajo pr&#225;ctico optativo)</span></span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">Abordaje de ayuda espiritual y consejer&#237;a b&#237;blica frente a la pornograf&#237;a y las pantallas. M&#243;dulo con trabajo pr&#225;ctico optativo.</div></div>
+        </div>
+        <div class="mod">
+          <button class="mod-head"><span class="mod-num" style="background:var(--gold);color:#5a3a00">8</span><span class="mod-title">Libertad de las adicciones &#183; una mirada espiritual de fe <span style="font-weight:600;color:var(--violet)">(trabajo pr&#225;ctico optativo)</span></span><span class="mod-ico">&#8964;</span></button>
+          <div class="mod-body"><div class="mod-body-inner">Una mirada de fe para romper las cadenas de las dependencias: la identidad, la comunidad y el camino de recuperaci&#243;n. M&#243;dulo con trabajo pr&#225;ctico optativo.</div></div>
+        </div>
       </div>
 
-      <div class="mcard c2">
-        <div class="mnum">2</div>
-        <div class="minfo"><h3>M&#243;dulo 2</h3><p>Las adicciones como construcci&#243;n social</p></div>
-        <a href="modulo2.html" class="mgo">Ingresar &#10140;</a>
+      <div class="block">
+        <div class="cert-card">
+          <div class="cert-ico">&#128220;</div>
+          <h3>Certificado al finalizar</h3>
+          <p>Al completar los m&#243;dulos y el examen final integral, recib&#237;s tu <b>certificado de Operador Preventor en Adicciones y Consumos Problem&#225;ticos</b>, emitido por Academia Jas&#243;n (640 hs).</p>
+        </div>
       </div>
 
-      <div class="mcard c3">
-        <div class="mnum">3</div>
-        <div class="minfo"><h3>M&#243;dulo 3</h3><p>Adicciones conductuales y nuevos consumos</p></div>
-        <a href="modulo3.html" class="mgo">Ingresar &#10140;</a>
+      <div class="block" id="cta-ingresar">
+        <div class="cta">
+          <h2>&#191;Ya ten&#233;s tu clave?</h2>
+          <p>Ingres&#225; al aula para acceder a todos los m&#243;dulos y realizar los trabajos pr&#225;cticos.</p>
+          <button class="enter-btn" onclick="abrirGate()">&#128274; Ingresar al curso</button>
+        </div>
       </div>
 
-      <div class="mcard c4">
-        <div class="mnum">4</div>
-        <div class="minfo"><h3>M&#243;dulo 4</h3><p>El tratamiento del consumo: el Modelo Matrix y las habilidades de recuperaci&#243;n</p></div>
-        <a href="modulo4.html" class="mgo">Ingresar &#10140;</a>
+      <div id="curso">
+        <p class="intro-note">&#161;Bienvenido/a! Te recomendamos avanzar en orden: comenz&#225; por el M&#243;dulo Introductorio y segu&#237; con los m&#243;dulos 1 al 8. Al finalizar, rend&#237;s el Examen Final Integral.</p>
+
+        <div class="divider">Comienzo del curso</div>
+
+        <div class="mcard c-intro">
+          <div class="mnum">INTRO</div>
+          <div class="minfo"><h3>M&#243;dulo Introductorio</h3><p>Formaci&#243;n transversal para el siglo XXI</p></div>
+          <a href="modulo-introduccion.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="divider">M&#243;dulos del curso</div>
+
+        <div class="mcard c1">
+          <div class="mnum">1</div>
+          <div class="minfo"><h3>M&#243;dulo 1</h3><p>Visi&#243;n integral de las adicciones y consumos problem&#225;ticos</p></div>
+          <a href="modulo1.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c2">
+          <div class="mnum">2</div>
+          <div class="minfo"><h3>M&#243;dulo 2</h3><p>Las adicciones como construcci&#243;n social</p></div>
+          <a href="modulo2.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c3">
+          <div class="mnum">3</div>
+          <div class="minfo"><h3>M&#243;dulo 3</h3><p>Adicciones conductuales y nuevos consumos</p></div>
+          <a href="modulo3.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c4">
+          <div class="mnum">4</div>
+          <div class="minfo"><h3>M&#243;dulo 4</h3><p>El tratamiento del consumo: el Modelo Matrix y las habilidades de recuperaci&#243;n</p></div>
+          <a href="modulo4.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c5">
+          <div class="mnum">5</div>
+          <div class="minfo"><h3>M&#243;dulo 5</h3><p>Prevenci&#243;n de reca&#237;das y mantenimiento de la recuperaci&#243;n</p></div>
+          <a href="modulo5.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c-familia">
+          <div class="mnum">6</div>
+          <div class="minfo"><h3>M&#243;dulo 6</h3><p>M&#243;dulo para la Familia: acompa&#241;ar la recuperaci&#243;n sin enfermarse &#183; el rol de la familia y la codependencia</p></div>
+          <a href="modulo-familia.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c-espiritual">
+          <div class="mnum">7</div>
+          <div class="minfo"><h3>M&#243;dulo 7 <span style="font-weight:600;color:var(--violet)">(trabajo pr&#225;ctico optativo)</span></h3><p>Libertad de la pornograf&#237;a y las pantallas &#183; mirada espiritual y consejer&#237;a b&#237;blica</p></div>
+          <a href="modulo-espiritual.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c-espiritual2">
+          <div class="mnum">8</div>
+          <div class="minfo"><h3>M&#243;dulo 8 <span style="font-weight:600;color:var(--gold-dark,#c67f0f)">(trabajo pr&#225;ctico optativo)</span></h3><p>Libertad de las adicciones &#183; una mirada espiritual de fe</p></div>
+          <a href="modulo-espiritual2.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="divider">Evaluaci&#243;n final</div>
+
+        <div class="mcard c-exam">
+          <div class="mnum">&#128221;</div>
+          <div class="minfo"><h3>Examen Final Integral</h3><p>Plan de campa&#241;a de prevenci&#243;n, mapa conceptual y an&#225;lisis final</p></div>
+          <a href="examen-final.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="divider">Material del curso</div>
+
+        <div class="mcard c-manual">
+          <div class="mnum">&#128218;</div>
+          <div class="minfo"><h3>Manual del Usuario (Modelo Matrix)</h3><p>Material de lectura y trabajo &#183; tratamiento ambulatorio intensivo del consumo de sustancias</p></div>
+          <a href="https://drive.google.com/drive/folders/1xRHPt02hv_B1xBm7ZPpcLn8GmyJl7xhK?usp=drive_link" class="mgo" target="_blank" rel="noopener">Abrir &#10140;</a>
+        </div>
       </div>
 
-      <div class="mcard c5">
-        <div class="mnum">5</div>
-        <div class="minfo"><h3>M&#243;dulo 5</h3><p>Prevenci&#243;n de reca&#237;das y mantenimiento de la recuperaci&#243;n</p></div>
-        <a href="modulo5.html" class="mgo">Ingresar &#10140;</a>
-      </div>
-
-      <div class="mcard c-familia">
-        <div class="mnum">6</div>
-        <div class="minfo"><h3>M&#243;dulo 6</h3><p>M&#243;dulo para la Familia: acompa&#241;ar la recuperaci&#243;n sin enfermarse &#183; el rol de la familia y la codependencia</p></div>
-        <a href="modulo-familia.html" class="mgo">Ingresar &#10140;</a>
-      </div>
-
-      <div class="mcard c-espiritual">
-        <div class="mnum">7</div>
-        <div class="minfo"><h3>M&#243;dulo 7 <span style="font-weight:600;color:var(--violet)">(trabajo pr&#225;ctico optativo)</span></h3><p>Libertad de la pornograf&#237;a y las pantallas &#183; mirada espiritual y consejer&#237;a b&#237;blica</p></div>
-        <a href="modulo-espiritual.html" class="mgo">Ingresar &#10140;</a>
-      </div>
-
-      <div class="mcard c-espiritual2">
-        <div class="mnum">8</div>
-        <div class="minfo"><h3>M&#243;dulo 8 <span style="font-weight:600;color:var(--gold-dark,#c67f0f)">(trabajo pr&#225;ctico optativo)</span></h3><p>Libertad de las adicciones &#183; una mirada espiritual de fe</p></div>
-        <a href="modulo-espiritual2.html" class="mgo">Ingresar &#10140;</a>
-      </div>
-
-      <div class="divider">Evaluaci&#243;n final</div>
-
-      <div class="mcard c-exam">
-        <div class="mnum">&#128221;</div>
-        <div class="minfo"><h3>Examen Final Integral</h3><p>Plan de campa&#241;a de prevenci&#243;n, mapa conceptual y an&#225;lisis final</p></div>
-        <a href="examen-final.html" class="mgo">Ingresar &#10140;</a>
-      </div>
-
-      <div class="divider">Material del curso</div>
-
-      <div class="mcard c-manual">
-        <div class="mnum">&#128218;</div>
-        <div class="minfo"><h3>Manual del Usuario (Modelo Matrix)</h3><p>Material de lectura y trabajo &#183; tratamiento ambulatorio intensivo del consumo de sustancias</p></div>
-        <a href="https://drive.google.com/drive/folders/1xRHPt02hv_B1xBm7ZPpcLn8GmyJl7xhK?usp=drive_link" class="mgo" target="_blank" rel="noopener">Abrir &#10140;</a>
-      </div>
     </div>
   </main>
+
+  <div class="gate" id="gate">
+    <div class="gate-box">
+      <div class="glock">&#128274;</div>
+      <h3>Ingres&#225; al curso</h3>
+      <p>Escrib&#237; la clave que te dieron al inscribirte.</p>
+      <input id="claveAula" type="password" placeholder="Clave de acceso" autocomplete="off" />
+      <button class="g-btn" onclick="entrarCurso()">Ingresar</button>
+      <div class="err" id="errAula"></div>
+      <button class="g-cancel" onclick="cerrarGate()">Cancelar</button>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
@@ -172,6 +300,38 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    /* ====== CLAVE DEL AULA (cambiala si querés) ====== */
+    var CLAVE_AULA = "Jason777academia";
+    /* ================================================= */
+
+    var gate=document.getElementById('gate');
+    var inClave=document.getElementById('claveAula');
+    function abrirGate(){gate.classList.add('show');document.getElementById('errAula').textContent='';inClave.value='';setTimeout(function(){inClave.focus();},50);}
+    function cerrarGate(){gate.classList.remove('show');}
+    function entrarCurso(){
+      if(inClave.value === CLAVE_AULA){
+        gate.classList.remove('show');
+        document.getElementById('curso').style.display='block';
+        var cta=document.getElementById('cta-ingresar'); if(cta){cta.style.display='none';}
+        document.getElementById('curso').scrollIntoView({behavior:'smooth'});
+      } else {
+        document.getElementById('errAula').textContent='Clave incorrecta. Intentá de nuevo.';
+      }
+    }
+    inClave.addEventListener('keydown',function(e){if(e.key==='Enter'){entrarCurso();}});
+    gate.addEventListener('click',function(e){if(e.target===gate){cerrarGate();}});
+
+    document.querySelectorAll('.mod').forEach(function(m){
+      var h=m.querySelector('.mod-head'),b=m.querySelector('.mod-body');
+      h.addEventListener('click',function(){
+        var open=m.classList.contains('open');
+        if(open){m.classList.remove('open');b.style.maxHeight=null;}
+        else{m.classList.add('open');b.style.maxHeight=b.scrollHeight+'px';}
+      });
+    });
+  </script>
 </body>
 </html>
