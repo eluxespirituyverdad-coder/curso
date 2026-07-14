@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a5d5a" />
+  <title>M&#243;dulos del curso | Academia Jas&#243;n</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#eefbf8;--ink:#0f3b39;--ink-soft:#48706d;
+      --teal:#0d9488;--teal-dark:#0a5d5a;
+      --emerald:#10b981;--cyan:#0fb5c9;--cyan-dark:#0a7d8c;--coral:#ff6b5e;--coral-dark:#c23b30;--gold:#f6a821;--gold-dark:#c67f0f;--violet:#7c6cf0;
+      --white:#fff;--line:#cdeae6;--radius:16px;--container:920px
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3{line-height:1.2;font-weight:800;color:var(--ink)}
+    a{text-decoration:none;color:inherit}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    .topbar{background:var(--teal-dark);color:#d6f5f1;font-size:.82rem;font-weight:700;padding:.6rem 0;letter-spacing:.5px}
+    .topbar a{color:#fff}
+    .head{background:linear-gradient(135deg,#0a5d5a 0%,#0d9488 45%,#10b981 100%);color:#fff;text-align:center;padding:2.6rem 0 2.8rem;position:relative;overflow:hidden}
+    .head:before{content:"";position:absolute;top:-70px;right:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .head:after{content:"";position:absolute;bottom:-90px;left:-50px;width:210px;height:210px;border-radius:50%;background:rgba(15,181,201,.22)}
+    .head .container{position:relative;z-index:2}
+    .brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:900;font-size:1rem;letter-spacing:1px;color:#fff;margin-bottom:.9rem;text-transform:uppercase}
+    .brand .dot{width:32px;height:32px;border-radius:9px;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;color:#5a3a00}
+    .head .kick{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:.74rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;margin-bottom:1rem;text-transform:uppercase}
+    .head h1{color:#fff;font-size:1.6rem;font-weight:900;max-width:24ch;margin:0 auto}
+    main{padding:2.4rem 0 3rem}
+    #curso{display:none}
+    .intro-note{text-align:center;color:var(--ink-soft);font-size:.96rem;max-width:60ch;margin:0 auto 2rem}
+    .mcard{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:16px;padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:0 14px 34px -28px rgba(13,148,136,.8);transition:transform .15s ease,box-shadow .25s ease}
+    .mcard:hover{transform:translateY(-2px);box-shadow:0 20px 40px -26px rgba(13,148,136,.8)}
+    .mcard.c-intro{border-left-color:var(--gold)}
+    .mcard.c1{border-left-color:var(--teal)}
+    .mcard.c2{border-left-color:var(--emerald)}
+    .mcard.c3{border-left-color:var(--coral)}
+    .mcard.c4{border-left-color:var(--violet)}
+    .mcard.c5{border-left-color:var(--cyan)}
+    .mcard.c-exam{border-left-color:var(--gold)}
+    .mcard.c-manual{border-left-color:var(--teal-dark)}
+    .mcard.c-familia{border-left-color:var(--cyan-dark)}
+    .mcard.c-espiritual{border-left-color:var(--violet)}
+    .mcard.c-espiritual2{border-left-color:var(--gold)}
+    .mnum{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff}
+    .c-intro .mnum{background:var(--gold);font-size:.72rem;color:#5a3a00}
+    .c1 .mnum{background:var(--teal)}
+    .c2 .mnum{background:var(--emerald)}
+    .c3 .mnum{background:var(--coral)}
+    .c4 .mnum{background:var(--violet)}
+    .c5 .mnum{background:var(--cyan)}
+    .c-exam .mnum{background:var(--gold);font-size:1.4rem;color:#5a3a00}
+    .c-manual .mnum{background:var(--teal-dark);font-size:1.4rem}
+    .c-familia .mnum{background:var(--cyan-dark)}
+    .c-espiritual .mnum{background:var(--violet)}
+    .c-espiritual2 .mnum{background:var(--gold);color:#5a3a00}
+    .minfo{flex:1;min-width:0}
+    .minfo h3{font-size:1.02rem;margin-bottom:.15rem}
+    .minfo p{color:var(--ink-soft);font-size:.86rem}
+    .mgo{flex:none;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:.6rem 1rem;border-radius:10px;white-space:nowrap}
+    .mgo:hover{filter:brightness(1.08)}
+    .divider{display:flex;align-items:center;gap:.8rem;margin:1.8rem 0 1rem;color:var(--teal-dark);font-weight:800;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
+    .divider:before,.divider:after{content:"";flex:1;height:2px;background:var(--line)}
+    .backlink{display:inline-block;margin-top:1.6rem;color:var(--teal-dark);font-weight:700;font-size:.9rem}
+    .gate{position:fixed;inset:0;background:linear-gradient(135deg,#0a5d5a,#0d9488);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
+    .gate-box{background:#fff;border-radius:18px;padding:2.2rem 1.7rem;max-width:370px;width:100%;text-align:center;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+    .gate-box .glock{width:66px;height:66px;border-radius:14px;background:var(--teal);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:.8rem}
+    .gate-box h3{font-size:1.15rem;color:var(--teal-dark);margin-bottom:.3rem}
+    .gate-box p{font-size:.86rem;color:var(--ink-soft);margin-bottom:1.1rem}
+    .gate-box input{width:100%;font-family:inherit;font-size:1rem;text-align:center;padding:.8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.7rem}
+    .gate-box .g-btn{width:100%;font-family:inherit;font-weight:800;font-size:1rem;padding:.85rem;border:none;border-radius:10px;cursor:pointer;background:var(--teal);color:#fff}
+    .gate-box .g-btn:hover{filter:brightness(1.08)}
+    .gate-box .g-back{display:inline-block;margin-top:.8rem;font-size:.85rem;color:var(--ink-soft);text-decoration:underline}
+    .gate-box .err{color:var(--coral-dark);font-size:.83rem;min-height:1.1rem;margin-top:.5rem;font-weight:700}
+    footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.8rem 0;font-size:.82rem}
+    footer b{color:var(--gold)}
+    @media(min-width:768px){.head h1{font-size:2rem}}
+  </style>
+</head>
+<body>
+
+  <div class="gate" id="gate">
+    <div class="gate-box">
+      <div class="glock">&#128274;</div>
+      <h3>Ingres&#225; al curso</h3>
+      <p>Escrib&#237; la clave que te dieron al inscribirte.</p>
+      <input id="claveAula" type="password" placeholder="Clave de acceso" autocomplete="off" />
+      <button class="g-btn" onclick="entrarCurso()">Ingresar</button>
+      <div class="err" id="errAula"></div>
+      <a class="g-back" href="aula.html">&#8592; Volver a la presentaci&#243;n</a>
+    </div>
+  </div>
+
+  <div id="curso">
+    <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver a la presentaci&#243;n</a></div></div>
+
+    <header class="head">
+      <div class="container">
+        <span class="brand"><span class="dot">&#9875;</span> Academia Jas&#243;n</span>
+        <span class="kick">Aula Virtual</span>
+        <h1>M&#243;dulos del curso</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <p class="intro-note">&#161;Bienvenido/a! Te recomendamos avanzar en orden: comenz&#225; por el M&#243;dulo Introductorio y segu&#237; con los m&#243;dulos 1 al 8. Al finalizar, rend&#237;s el Examen Final Integral.</p>
+
+        <div class="divider">Comienzo del curso</div>
+
+        <div class="mcard c-intro">
+          <div class="mnum">INTRO</div>
+          <div class="minfo"><h3>M&#243;dulo Introductorio</h3><p>Formaci&#243;n transversal para el siglo XXI</p></div>
+          <a href="modulo-introduccion.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="divider">M&#243;dulos del curso</div>
+
+        <div class="mcard c1">
+          <div class="mnum">1</div>
+          <div class="minfo"><h3>M&#243;dulo 1</h3><p>Visi&#243;n integral de las adicciones y consumos problem&#225;ticos</p></div>
+          <a href="modulo1.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c2">
+          <div class="mnum">2</div>
+          <div class="minfo"><h3>M&#243;dulo 2</h3><p>Las adicciones como construcci&#243;n social</p></div>
+          <a href="modulo2.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c3">
+          <div class="mnum">3</div>
+          <div class="minfo"><h3>M&#243;dulo 3</h3><p>Adicciones conductuales y nuevos consumos</p></div>
+          <a href="modulo3.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c4">
+          <div class="mnum">4</div>
+          <div class="minfo"><h3>M&#243;dulo 4</h3><p>El tratamiento del consumo: el Modelo Matrix y las habilidades de recuperaci&#243;n</p></div>
+          <a href="modulo4.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c5">
+          <div class="mnum">5</div>
+          <div class="minfo"><h3>M&#243;dulo 5</h3><p>Prevenci&#243;n de reca&#237;das y mantenimiento de la recuperaci&#243;n</p></div>
+          <a href="modulo5.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c-familia">
+          <div class="mnum">6</div>
+          <div class="minfo"><h3>M&#243;dulo 6</h3><p>M&#243;dulo para la Familia: acompa&#241;ar la recuperaci&#243;n sin enfermarse &#183; el rol de la familia y la codependencia</p></div>
+          <a href="modulo-familia.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c-espiritual">
+          <div class="mnum">7</div>
+          <div class="minfo"><h3>M&#243;dulo 7 <span style="font-weight:600;color:var(--violet)">(trabajo pr&#225;ctico optativo)</span></h3><p>Libertad de la pornograf&#237;a y las pantallas &#183; mirada espiritual y consejer&#237;a b&#237;blica</p></div>
+          <a href="modulo-espiritual.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="mcard c-espiritual2">
+          <div class="mnum">8</div>
+          <div class="minfo"><h3>M&#243;dulo 8 <span style="font-weight:600;color:var(--gold-dark,#c67f0f)">(trabajo pr&#225;ctico optativo)</span></h3><p>Libertad de las adicciones &#183; una mirada espiritual de fe</p></div>
+          <a href="modulo-espiritual2.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="divider">Evaluaci&#243;n final</div>
+
+        <div class="mcard c-exam">
+          <div class="mnum">&#128221;</div>
+          <div class="minfo"><h3>Examen Final Integral</h3><p>Plan de campa&#241;a de prevenci&#243;n, mapa conceptual y an&#225;lisis final</p></div>
+          <a href="examen-final.html" class="mgo">Ingresar &#10140;</a>
+        </div>
+
+        <div class="divider">Material del curso</div>
+
+        <div class="mcard c-manual">
+          <div class="mnum">&#128218;</div>
+          <div class="minfo"><h3>Manual del Usuario (Modelo Matrix)</h3><p>Material de lectura y trabajo &#183; tratamiento ambulatorio intensivo del consumo de sustancias</p></div>
+          <a href="https://drive.google.com/drive/folders/1xRHPt02hv_B1xBm7ZPpcLn8GmyJl7xhK?usp=drive_link" class="mgo" target="_blank" rel="noopener">Abrir &#10140;</a>
+        </div>
+
+        <div style="text-align:center"><a href="aula.html" class="backlink">&#8592; Volver a la presentaci&#243;n</a></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&#169; <span id="year"></span> <b>Academia Jas&#243;n</b> &#183; Operador Preventor en Adicciones y Consumos Problem&#225;ticos</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    /* ====== CLAVE DEL AULA (igual que en aula.html) ====== */
+    var CLAVE_AULA = "Jason777academia";
+    /* ===================================================== */
+
+    var gate=document.getElementById('gate');
+    var curso=document.getElementById('curso');
+    var inClave=document.getElementById('claveAula');
+
+    function abrir(){ gate.style.display='none'; curso.style.display='block'; }
+    function entrarCurso(){
+      if(inClave.value === CLAVE_AULA){
+        try{sessionStorage.setItem('aula_ok','1');}catch(e){}
+        abrir();
+      } else {
+        document.getElementById('errAula').textContent='Clave incorrecta. Intentá de nuevo.';
+      }
+    }
+    inClave.addEventListener('keydown',function(e){if(e.key==='Enter'){entrarCurso();}});
+
+    try{
+      if(sessionStorage.getItem('aula_ok')==='1'){ abrir(); }
+      else { inClave.focus(); }
+    }catch(e){ inClave.focus(); }
+  </script>
+</body>
+</html>
