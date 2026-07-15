@@ -70,6 +70,8 @@
     .gate-box h3{font-size:1.15rem;color:var(--teal-dark);margin-bottom:.3rem}
     .gate-box p{font-size:.86rem;color:var(--ink-soft);margin-bottom:1.1rem}
     .gate-box input{width:100%;font-family:inherit;font-size:1rem;text-align:center;padding:.8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.7rem}
+    .gate-box .show-pass{display:flex;align-items:center;justify-content:center;gap:.45rem;font-size:.85rem;color:var(--ink-soft);margin-bottom:.9rem;cursor:pointer;user-select:none}
+    .gate-box .show-pass input{width:auto;margin:0;padding:0;cursor:pointer}
     .gate-box .g-btn{width:100%;font-family:inherit;font-weight:800;font-size:1rem;padding:.85rem;border:none;border-radius:10px;cursor:pointer;background:var(--teal);color:#fff}
     .gate-box .g-btn:hover{filter:brightness(1.08)}
     .gate-box .g-cancel{display:inline-block;margin-top:.8rem;font-size:.85rem;color:var(--ink-soft);cursor:pointer;background:none;border:none;font-family:inherit;text-decoration:underline}
@@ -174,6 +176,7 @@
       <h3>Ingres&#225; al curso</h3>
       <p>Escrib&#237; la clave que te dieron al inscribirte.</p>
       <input id="claveAula" type="password" placeholder="Clave de acceso" autocomplete="off" />
+      <label class="show-pass"><input type="checkbox" id="verClave" onclick="toggleClave()" /> &#128065;&#65039; Mostrar contrase&#241;a</label>
       <button class="g-btn" onclick="entrarCurso()">Ingresar</button>
       <div class="err" id="errAula"></div>
       <button class="g-cancel" onclick="cerrarGate()">Cancelar</button>
@@ -195,7 +198,8 @@
 
     var gate=document.getElementById('gate');
     var inClave=document.getElementById('claveAula');
-    function abrirGate(){gate.classList.add('show');document.getElementById('errAula').textContent='';inClave.value='';setTimeout(function(){inClave.focus();},50);}
+    function toggleClave(){inClave.type = document.getElementById('verClave').checked ? 'text' : 'password';}
+    function abrirGate(){gate.classList.add('show');document.getElementById('errAula').textContent='';inClave.value='';var v=document.getElementById('verClave');if(v){v.checked=false;}inClave.type='password';setTimeout(function(){inClave.focus();},50);}
     function cerrarGate(){gate.classList.remove('show');}
     function entrarCurso(){
       if(inClave.value === CLAVE_AULA){
