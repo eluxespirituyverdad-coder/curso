@@ -31,6 +31,12 @@
     .brand .dot{width:32px;height:32px;border-radius:9px;background:var(--gold);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;color:#5a3a00}
     .head .kick{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:.74rem;letter-spacing:2px;padding:.4rem 1rem;border-radius:999px;margin-bottom:1rem;text-transform:uppercase}
     .head h1{color:#fff;font-size:1.6rem;font-weight:900;max-width:24ch;margin:0 auto}
+    .head-logo{position:absolute;top:14px;right:14px;width:80px;height:auto;z-index:3;opacity:.95}
+    .aval{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:16px;padding:1.3rem 1.2rem;margin-bottom:2rem;box-shadow:0 14px 30px -26px rgba(13,148,136,.7)}
+    .aval-card{display:flex;gap:1.1rem;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+    .aval-logo{flex:none;width:104px;height:auto;object-fit:contain}
+    .aval-card p{color:var(--ink-soft);font-size:.9rem;max-width:46ch}
+    .aval-card b{color:var(--ink)}
     main{padding:2.4rem 0 3rem}
     #curso{display:none}
     .intro-note{text-align:center;color:var(--ink-soft);font-size:.96rem;max-width:60ch;margin:0 auto 2rem}
@@ -67,6 +73,7 @@
     .divider{display:flex;align-items:center;gap:.8rem;margin:1.8rem 0 1rem;color:var(--teal-dark);font-weight:800;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
     .divider:before,.divider:after{content:"";flex:1;height:2px;background:var(--line)}
     .backlink{display:inline-block;margin-top:1.6rem;color:var(--teal-dark);font-weight:700;font-size:.9rem}
+    /* PANTALLA DE CLAVE */
     .gate{position:fixed;inset:0;background:linear-gradient(135deg,#0a5d5a,#0d9488);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
     .gate-box{background:#fff;border-radius:18px;padding:2.2rem 1.7rem;max-width:370px;width:100%;text-align:center;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
     .gate-box .glock{width:66px;height:66px;border-radius:14px;background:var(--teal);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:.8rem}
@@ -81,11 +88,12 @@
     .gate-box .err{color:var(--coral-dark);font-size:.83rem;min-height:1.1rem;margin-top:.5rem;font-weight:700}
     footer{background:#083f3d;color:#a9d4cf;text-align:center;padding:1.8rem 0;font-size:.82rem}
     footer b{color:var(--gold)}
-    @media(min-width:768px){.head h1{font-size:2rem}}
+    @media(min-width:768px){.head h1{font-size:2rem}.head-logo{width:104px;top:18px;right:26px}.aval-logo{width:124px}}
   </style>
 </head>
 <body>
 
+  <!-- PANTALLA DE CLAVE -->
   <div class="gate" id="gate">
     <div class="gate-box">
       <div class="glock">&#128274;</div>
@@ -103,6 +111,7 @@
     <div class="topbar"><div class="container"><a href="aula.html">&#8592; Volver a la presentaci&#243;n</a></div></div>
 
     <header class="head">
+      <img src="logo.png" alt="Academia Jas&#243;n" class="head-logo" />
       <div class="container">
         <span class="brand"><span class="dot">&#9875;</span> Academia Jas&#243;n</span>
         <span class="kick">Aula Virtual</span>
@@ -112,6 +121,13 @@
 
     <main>
       <div class="container">
+        <div class="aval">
+          <div class="aval-card">
+            <img src="logo.png" alt="Academia Jas&#243;n" class="aval-logo" />
+            <img src="aval.png" alt="REFECAP" class="aval-logo" />
+            <p>Formaci&#243;n de <b>Academia Jas&#243;n</b>, avalada por <b>REFECAP</b> &#8212; Red Federal de Entidades de Capacitaci&#243;n y Formaci&#243;n Profesional.</p>
+          </div>
+        </div>
         <p class="intro-note">&#161;Bienvenido/a! Te recomendamos avanzar en orden: comenz&#225; por el M&#243;dulo Introductorio y segu&#237; con los m&#243;dulos 1 al 8. Al finalizar, rend&#237;s el Examen Final Integral.</p>
 
         <div class="divider">Comienzo del curso</div>
@@ -202,16 +218,19 @@
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
 
-    /* ====== CLAVE DEL AULA (igual que en aula.html) ====== */
+    /* ====== CLAVE DEL AULA (debe ser igual que en aula.html) ====== */
     var CLAVE_AULA = "Jason777academia";
-    /* ===================================================== */
+    /* ============================================================= */
 
     var gate=document.getElementById('gate');
     var curso=document.getElementById('curso');
     var inClave=document.getElementById('claveAula');
 
     function toggleClave(){inClave.type = document.getElementById('verClave').checked ? 'text' : 'password';}
-    function abrir(){ gate.style.display='none'; curso.style.display='block'; }
+    function abrir(){
+      gate.style.display='none';
+      curso.style.display='block';
+    }
     function entrarCurso(){
       if(inClave.value === CLAVE_AULA){
         try{sessionStorage.setItem('aula_ok','1');}catch(e){}
@@ -222,6 +241,7 @@
     }
     inClave.addEventListener('keydown',function(e){if(e.key==='Enter'){entrarCurso();}});
 
+    /* Si ya puso la clave en la presentaci&#243;n, entra directo */
     try{
       if(sessionStorage.getItem('aula_ok')==='1'){ abrir(); }
       else { inClave.focus(); }
