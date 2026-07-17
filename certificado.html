@@ -6,7 +6,7 @@
   <title>Certificado | Academia Jas&#243;n</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
   <style>
     :root{--teal:#0d9488;--teal-dark:#0a5d5a;--gold:#f6a821;--gold-dark:#c67f0f;--ink:#0f3b39;--ink-soft:#48706d;--line:#cdeae6;--coral:#c23b30}
     *{margin:0;padding:0;box-sizing:border-box}
@@ -41,9 +41,11 @@
     .cert .c-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5% 8%}
     .corner{position:absolute;width:70px;height:70px;border:0 solid var(--gold)}
     .corner.tl{top:26px;left:26px;border-top-width:4px;border-left-width:4px}
-    .corner.tr{top:26px;right:26px;border-top-width:4px;border-right-width:4px}
     .corner.bl{bottom:26px;left:26px;border-bottom-width:4px;border-left-width:4px}
     .corner.br{bottom:26px;right:26px;border-bottom-width:4px;border-right-width:4px}
+    .refecap{position:absolute;top:34px;right:42px;text-align:center;z-index:2}
+    .refecap img{width:140px;height:auto;object-fit:contain}
+    .refecap small{display:block;font-size:.58rem;font-weight:700;color:var(--ink-soft);letter-spacing:.5px;margin-top:2px}
     .cert-logo{width:82px;height:auto;margin-bottom:.4rem}
     .brand{font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--teal-dark);font-size:1rem}
     .brand small{display:block;font-size:.62rem;letter-spacing:2px;color:var(--ink-soft);font-weight:700;margin-top:.15rem}
@@ -53,11 +55,10 @@
     .cert .desc{font-size:.95rem;color:var(--ink-soft);max-width:64ch;line-height:1.5}
     .cert .desc b{color:var(--ink)}
     .cert .curso{font-weight:800;color:var(--teal);font-size:1.08rem;margin:.3rem 0}
-    .firmas{display:flex;gap:10%;margin-top:1.6rem;align-items:flex-end}
+    .firmas{display:flex;gap:14%;margin-top:1.8rem;align-items:flex-end;justify-content:center}
     .firma{text-align:center;min-width:210px}
-    .firma .cap{height:50px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:.15rem}
-    .firma .sign{font-family:'Dancing Script',cursive;font-weight:700;font-size:1.9rem;color:var(--ink);line-height:1}
-    .firma .aval-mini{max-height:50px;width:auto;object-fit:contain}
+    .firma .cap{height:58px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:.1rem}
+    .firma .sign-img{max-height:58px;width:auto;object-fit:contain}
     .firma .linea{border-top:1.5px solid var(--ink);padding-top:.35rem;font-size:.82rem;font-weight:700;color:var(--ink)}
     .firma small{display:block;font-weight:500;color:var(--ink-soft);font-size:.72rem;margin-top:.1rem}
     .fecha{position:absolute;bottom:5.5%;left:0;right:0;text-align:center;font-size:.8rem;color:var(--ink-soft)}
@@ -100,8 +101,14 @@
 
     <div class="cert">
       <div class="frame"></div>
-      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner tl"></span>
       <span class="corner bl"></span><span class="corner br"></span>
+
+      <div class="refecap">
+        <img src="aval.png" alt="REFECAP" />
+        <small>AVALADO POR REFECAP</small>
+      </div>
+
       <div class="c-in">
         <img src="logo.png" alt="Academia Jas&#243;n" class="cert-logo" />
         <div class="brand">Academia Jas&#243;n<small>Formaci&#243;n con certificado</small></div>
@@ -113,19 +120,19 @@
         <p class="desc">
           Por haber completado satisfactoriamente la capacitaci&#243;n en<br>
           <span class="curso">Operador Preventor en Adicciones y Consumos Problem&#225;ticos</span>
-          con una carga horaria de <b>640 horas</b>, aprobando la totalidad de los m&#243;dulos y el examen final integral. Formaci&#243;n <b>avalada por REFECAP</b>.
+          con una carga horaria de <b>640 horas</b>, aprobando la totalidad de los m&#243;dulos y el examen final integral. Formaci&#243;n <b>avalada por REFECAP</b> (Red Federal de Entidades de Capacitaci&#243;n y Formaci&#243;n Profesional).
         </p>
 
         <div class="firmas">
           <div class="firma">
-            <div class="cap"><span class="sign">Lic. El&#237;as Marcenaro</span></div>
+            <div class="cap"><img src="firma.png" alt="Firma" class="sign-img" /></div>
             <div class="linea">Lic. El&#237;as Marcenaro</div>
             <small>Rector &#183; Academia Jas&#243;n</small>
           </div>
           <div class="firma">
-            <div class="cap"><img src="aval.png" alt="REFECAP" class="aval-mini" /></div>
-            <div class="linea">REFECAP</div>
-            <small>Red Federal de Entidades de Capacitaci&#243;n y Formaci&#243;n Profesional</small>
+            <div class="cap"><img src="firma1.png" alt="Firma" class="sign-img" /></div>
+            <div class="linea">Cecilia G&#243;mez</div>
+            <small>Pro Tes. &#183; REFECAP</small>
           </div>
         </div>
       </div>
